@@ -1,20 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using ZealandZooEksamen.Services;
+using ZealandZooEksamen.Model;
 
 namespace ZealandZooEksamen.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
-
-        public IndexModel(ILogger<IndexModel> logger)
+        private IEventService _eventService;
+        public IndexModel(IEventService eventService)
         {
-            _logger = logger;
+            _eventService = eventService;
         }
-
+        public List<Event> Events { get; set; }
         public void OnGet()
         {
-
+            Events = _eventService.GetAllEvents();
         }
     }
 }
