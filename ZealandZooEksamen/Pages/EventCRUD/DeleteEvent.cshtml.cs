@@ -5,13 +5,14 @@ using ZealandZooEksamen.Services;
 
 namespace ZealandZooEksamen.Pages.EventCRUD
 {
-    public class Delete_EventModel : PageModel
+    public class DeleteEventModel : PageModel
     {
         private IEventService _eventService;
 
         [BindProperty]
         public Event SletEvent { get; set; }
-        public Delete_EventModel(IEventService eventService)
+
+        public DeleteEventModel(IEventService eventService)
         {
             _eventService = eventService;
         }

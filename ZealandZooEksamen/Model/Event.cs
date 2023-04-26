@@ -10,7 +10,7 @@
         public double AntalDeltagere { get; set; }
         public int EventId { get; set; }
         public string EventInfo { get; set; }
-        public Event(string navn, string dato, string timeStart, string timeEnd, double maksDeltagere, double AntalDeltagere, 
+        public Event(string navn, string dato, string timeStart, string timeEnd, double maksDeltagere, double antalDeltagere, 
             int eventId, string eventInfo)
         {
             Navn = navn;
@@ -18,7 +18,7 @@
             TimeStart = timeStart;
             TimeEnd = timeEnd;
             MaksDeltagere = maksDeltagere;
-            AntalDeltagere = 0;
+            AntalDeltagere = antalDeltagere;
             EventId = eventId;
             EventInfo = eventInfo;
         }
