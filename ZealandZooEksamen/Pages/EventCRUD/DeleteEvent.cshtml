@@ -1,5 +1,5 @@
 ﻿@page
-@model ZealandZooEksamen.Pages.EventCRUD.Delete_EventModel
+@model ZealandZooEksamen.Pages.EventCRUD.DeleteEventModel
 @{
 }
 
@@ -7,13 +7,13 @@
 <div class="row">
     <div class="col-sm-3 text-black bg-light">
         <p>Event Id: @Model.SletEvent.EventId</p>
-        <p>Event Id: @Model.SletEvent.Navn</p>
-        <p>Event Id: @Model.SletEvent.Dato</p>
-        <p>Event Id: @Model.SletEvent.EventInfo</p>
-        <p>Event Id: @Model.SletEvent.AntalDeltagere</p>
-        <p>Event Id: @Model.SletEvent.TimeStart</p>
-        <p>Event Id: @Model.SletEvent.TimeEnd</p>
-        <p>Event Id: @Model.SletEvent.MaksDeltagere</p>
+        <p>Event Navn: @Model.SletEvent.Navn</p>
+        <p>Event Dato: @Model.SletEvent.Dato</p>
+        <p>Event Info: @Model.SletEvent.EventInfo</p>
+        <p>Event Antal Deltagere: @Model.SletEvent.AntalDeltagere</p>
+        <p>Event Start Tid: @Model.SletEvent.TimeStart</p>
+        <p>Event Slut Tid: @Model.SletEvent.TimeEnd</p>
+        <p>Event Maksimum Deltagere: @Model.SletEvent.MaksDeltagere</p>
         
         <p></p>
         <form method="post">

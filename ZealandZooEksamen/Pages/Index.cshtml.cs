@@ -7,15 +7,15 @@ namespace ZealandZooEksamen.Pages
 {
     public class IndexModel : PageModel
     {
-        private IEventService _eventService;
-        public IndexModel(IEventService eventService)
+        private IEventService _service;
+        public IndexModel(IEventService service)
         {
-            _eventService = eventService;
+            _service = service;
         }
         public List<Event> Events { get; set; }
         public void OnGet()
         {
-            Events = _eventService.GetAllEvents();
+            Events = _service.GetAllEvents();
         }
     }
 }
