@@ -24,11 +24,11 @@ namespace ZealandZooEksamen.Pages.EventCRUD
         {
             _service.DeleteEvent(eventId);
 
-            return RedirectToPage("~\\Pages\\Index.cshtml");
+            return RedirectToPage("Pages/Index");
         }
         public IActionResult OnPostFortryd()
         {
-            return RedirectToPage("~\\Pages\\Index.cshtml");
+            return RedirectToPage("Pages/Index");
         }
     }
 }
