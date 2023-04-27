@@ -22,6 +22,12 @@
             EventId = eventId;
             EventInfo = eventInfo;
         }
+        public Event()
+        { }
+        public string GetInfo()
+        {
+            return ToString();
+        }
         public override string ToString()
         {
             return $"{{{nameof(Navn)}={Navn}, {nameof(Dato)}={Dato}, {nameof(TimeStart)}={TimeStart}, " +

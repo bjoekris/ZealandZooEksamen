@@ -9,7 +9,7 @@ namespace ZealandZooEksamen.Pages.EventCRUD
     {
         private IEventService _service;
 
-        [BindProperty]
+        //[BindProperty]
         public Event SletEvent { get; set; }
 
         public DeleteEventModel(IEventService service)
@@ -24,11 +24,11 @@ namespace ZealandZooEksamen.Pages.EventCRUD
         {
             _service.DeleteEvent(eventId);
 
-            return RedirectToPage("Pages/Index");
+            return RedirectToPage("Index");
         }
         public IActionResult OnPostFortryd()
         {
-            return RedirectToPage("Pages/Index");
+            return RedirectToPage("Index");
         }
     }
 }

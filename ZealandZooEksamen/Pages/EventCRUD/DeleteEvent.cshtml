@@ -12,14 +12,14 @@
         <p>Event Dato: @Model.SletEvent.Dato</p>
         <p>Event Info: @Model.SletEvent.EventInfo</p>
         <p>Event Antal Deltagere: @Model.SletEvent.AntalDeltagere</p>
+        <p>Event Maksimum Deltagere: @Model.SletEvent.MaksDeltagere</p>
         <p>Event Start Tid: @Model.SletEvent.TimeStart</p>
         <p>Event Slut Tid: @Model.SletEvent.TimeEnd</p>
-        <p>Event Maksimum Deltagere: @Model.SletEvent.MaksDeltagere</p>
         
         <p></p>
         <form method="post">
             <div class="form-group">
-                <input type="submit" value="Slet @Model.SletEvent.EventId" asp-page-handler="Slet" asp-route-sletEventId="@Model.SletEvent.EventId" />
+                <input type="submit" value="Slet @Model.SletEvent.EventId" asp-page-handler="Slet" asp-route-id="@Model.SletEvent.EventId" />
             </div>
             <p></p>
             <div class="form-group">
