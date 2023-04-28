@@ -21,11 +21,11 @@ namespace ZealandZooEksamen.Pages.EventCRUD
         {
             _eventService.CreateEvent(OpretEvent);
 
-            return RedirectToPage("/Index");
+            return RedirectToPage("Index");
         }
         public IActionResult OnPostBekræft()
         {
-            return RedirectToPage("/Index");
+            return RedirectToPage("Index");
         }
     }
 }

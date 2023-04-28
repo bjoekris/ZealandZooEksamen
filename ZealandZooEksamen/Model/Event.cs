@@ -25,8 +25,6 @@
             EventId = eventId;
             EventInfo = eventInfo;
         }
-        public Event()
-        { }
         public string GetInfo()
         {
             return ToString();

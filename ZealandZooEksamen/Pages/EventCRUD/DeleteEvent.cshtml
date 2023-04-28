@@ -1,22 +1,22 @@
 ﻿@page
 @model ZealandZooEksamen.Pages.EventCRUD.DeleteEventModel
 @{
-    @*ViewData["Title"] = "Slet Event " + @Model.SletEvent.EventId;*@
-    ViewData["Title"] = "Slet Mock Event " + Model.SletMockEvent.EventId;
+    ViewData["Title"] = "Slet Event " + @Model.SletEvent.EventId;
+    //ViewData["Title"] = "Slet Mock Event " + Model.SletMockEvent.EventId;
 }
 
 
 <div class="row">
     <div class="col-sm-3 text-black bg-light">
-        <p>Event Id: @Model.SletMockEvent.EventId</p>
+        @*<p>Event Id: @Model.SletMockEvent.EventId</p>
         <p>Event Navn: @Model.SletMockEvent.Navn</p>
         <p>Event Dato: @Model.SletMockEvent.Dato</p>
         <p>Event Info: @Model.SletMockEvent.EventInfo</p>
         <p>Event Antal Deltagere: @Model.SletMockEvent.AntalDeltagere</p>
         <p>Event Maksimum Deltagere: @Model.SletMockEvent.MaksDeltagere</p>
         <p>Event Start Tid: @Model.SletMockEvent.TimeStart</p>
-        <p>Event Slut Tid: @Model.SletMockEvent.TimeEnd</p>
-        @*
+        <p>Event Slut Tid: @Model.SletMockEvent.TimeEnd</p>*@
+        
         <p>Event Id: @Model.SletEvent.EventId</p>
         <p>Event Navn: @Model.SletEvent.Navn</p>
         <p>Event Dato: @Model.SletEvent.Dato</p>
@@ -25,13 +25,13 @@
         <p>Event Maksimum Deltagere: @Model.SletEvent.MaksDeltagere</p>
         <p>Event Start Tid: @Model.SletEvent.TimeStart</p>
         <p>Event Slut Tid: @Model.SletEvent.TimeEnd</p>
-        *@
+        
 
         <p></p>
         <form method="post">
             <div class="form-group">
-                <input type="submit" value="Slet Event" asp-page-handler="Slet" asp-route-eventId="@Model.SletMockEvent.EventId" />
-                @*<input type="submit" value="Slet Event" asp-page-handler="Slet" asp-route-eventId="@Model.SletEvent.EventId" />*@
+                @*<input type="submit" value="Slet Event" asp-page-handler="Slet" asp-route-eventId="@Model.SletMockEvent.EventId" />*@
+                <input type="submit" value="Slet Event" asp-page-handler="Slet" asp-route-eventId="@Model.SletEvent.EventId" />
             </div>
             <p></p>
             <div class="form-group">

@@ -10,7 +10,6 @@ namespace ZealandZooEksamen.Services
         public void DeleteMockEvent(int eventId);
         public Event FindEvent(int eventId);
         public Event FindMockEvent(int eventId);
-        public void CreateEvent(int eventId);
         public void CreateEvent(Event ev);
         
     }

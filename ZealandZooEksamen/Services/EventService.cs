@@ -17,7 +17,6 @@ namespace ZealandZooEksamen.Services
             mockEvents.SletMockEvent(eventId);
         }
 
-        public void CreateEvent(int eventId)
         public void CreateEvent(Event ev)
         {
             events.OpretEvent(ev);
