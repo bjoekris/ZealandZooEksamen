@@ -10,9 +10,9 @@ namespace ZealandZooEksamen.Services
             events.SletEvent(eventId);
         }
 
-        public void CreateEvent(int eventId)
+        public void CreateEvent(Event ev)
         {
-            events.OpretEvent(eventId);
+            events.OpretEvent(ev);
         }
 
         public Event FindEvent(int eventId)

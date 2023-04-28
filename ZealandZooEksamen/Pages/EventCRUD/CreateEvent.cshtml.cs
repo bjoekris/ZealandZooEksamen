@@ -16,19 +16,16 @@ namespace ZealandZooEksamen.Pages.EventCRUD
         {
             _eventService = eventService;
         }
-        public void OnGet(int eventId)
+        
+        public IActionResult OnPostOpret()
         {
-            OpretEvent = _eventService.FindEvent(eventId);
-        }
-        public IActionResult OnPostOpret(int eventId)
-        {
-            _eventService.CreateEvent(eventId);
+            _eventService.CreateEvent(OpretEvent);
 
-            return RedirectToPage("~\\Pages\\Index.cshtml");
+            return RedirectToPage("/Index");
         }
         public IActionResult OnPostBekræft()
         {
-            return RedirectToPage("~\\Pages\\Index.cshtml");
+            return RedirectToPage("/Index");
         }
     }
 }

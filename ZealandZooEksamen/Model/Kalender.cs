@@ -27,9 +27,9 @@
             throw new KeyNotFoundException();
         }
 
-        internal void OpretEvent(int eventId)
+        public void OpretEvent(Event ev)
         {
-            throw new NotImplementedException();
+            events.Add(ev);
         }
     }
 }
