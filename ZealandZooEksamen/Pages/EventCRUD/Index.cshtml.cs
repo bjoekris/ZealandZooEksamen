@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ZealandZooEksamen.Services;
 using ZealandZooEksamen.Model;
+using ZealandZooEksamen.MockData;
 
 namespace ZealandZooEksamen.Pages.EventCRUD
 {
@@ -12,10 +13,12 @@ namespace ZealandZooEksamen.Pages.EventCRUD
         {
             _service = service;
         }
-        public List<Event> Events { get; set; }
+        public List<Event> MockEvents { get; set; }
+        //public List<Event> Events { get; set; }
         public void OnGet()
         {
-            Events = _service.GetAllEvents();
+            MockEvents = _service.GetAllMockEvents();
+            //Events = _service.GetAllEvents();
         }
     }
 }

@@ -11,6 +11,7 @@ namespace ZealandZooEksamen.Pages.EventCRUD
 
         //[BindProperty]
         public Event SletEvent { get; set; }
+        public Event SletMockEvent { get; set; }
 
         public DeleteEventModel(IEventService service)
         {
@@ -18,11 +19,13 @@ namespace ZealandZooEksamen.Pages.EventCRUD
         }
         public void OnGet(int eventId)
         {
-            SletEvent = _service.FindEvent(eventId);
+            SletMockEvent = _service.FindMockEvent(eventId);
+            //SletEvent = _service.FindEvent(eventId);
         }
         public IActionResult OnPostSlet(int eventId)
         {
-            _service.DeleteEvent(eventId);
+            _service.DeleteMockEvent(eventId);
+            //_service.DeleteEvent(eventId);
 
             return RedirectToPage("Index");
         }
