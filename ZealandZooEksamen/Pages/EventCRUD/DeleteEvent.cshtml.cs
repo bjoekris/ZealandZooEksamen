@@ -9,8 +9,10 @@ namespace ZealandZooEksamen.Pages.EventCRUD
     {
         private IEventService _service;
 
-        //[BindProperty]
+        [BindProperty]
         public Event SletEvent { get; set; }
+        
+        [BindProperty]
         public Event SletMockEvent { get; set; }
 
         public DeleteEventModel(IEventService service)

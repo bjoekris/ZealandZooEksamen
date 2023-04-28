@@ -6,15 +6,18 @@
         {
             
         };
+        
         public List<Event> GetAllEvents()
         {
             return new List<Event> (events);
         }
+        
         public void SletEvent(int eventId)
         {
             Event sletEvent = FindEvent(eventId);
             events.Remove(sletEvent);
         }
+        
         public Event FindEvent(int eventId) 
         {
             foreach (Event e in events)
@@ -43,6 +46,5 @@
             editEvent.TimeEnd = newValues.TimeEnd;
             editEvent.MaksDeltagere = newValues.MaksDeltagere;
         }
-
     }
 }
