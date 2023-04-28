@@ -69,13 +69,13 @@ namespace ZealandZooEksamen.Pages.EventCRUD
 
             _Service.EditEvent(editEvent);
 
-            return RedirectToPage("/Index");
+            return RedirectToPage("Index");
             
 
         }
         public IActionResult OnPostFortryd()
         {
-            return RedirectToPage("/Index");
+            return RedirectToPage("Index");
         }
 
 
