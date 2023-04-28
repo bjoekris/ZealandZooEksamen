@@ -4,7 +4,7 @@
     {
         private List<Event> events = new List<Event>()
         {
-            new Event("Lav delete metode","26-04-2023","10:17","10:18",4,4,1,"Mock Data")
+            new Event("Lav delete metode","26-04-2023","10:17","10:18",5,4,1,"Mock Data")
         };
         public List<Event> GetAllEvents()
         {
