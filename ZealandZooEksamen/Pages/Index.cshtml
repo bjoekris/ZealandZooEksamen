@@ -10,7 +10,7 @@
 
 </div>
 
-<h2>Event Liste</h2>
+<h2>Event Liste (Ikke EventCRUD)</h2>
 <table>
     <thead>
         <tr>
@@ -31,8 +31,7 @@
                 <td>@events.MaksDeltagere</td>
                 <td>@events.Dato</td>
 
-                
-                <td><a class="btn" asp-page="EventCRUD/DeleteEvent" asp-route-id="@events.EventId">Slet</a></td>
+                <td><a class="btn" asp-page="EventCRUD/DeleteEvent" asp-route-eventId="@events.EventId">Slet</a></td>
             </tr>
         }
     </tbody>
