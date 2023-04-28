@@ -15,6 +15,8 @@ namespace ZealandZooEksamen.Services
             events.OpretEvent(eventId);
         }
 
+
+
         public Event FindEvent(int eventId)
         {
             return events.FindEvent(eventId);
@@ -24,6 +26,10 @@ namespace ZealandZooEksamen.Services
         {
             return events.GetAllEvents();
         }
-        
+
+        public void EditEvent(Event newValues)
+        {
+            events.EditEvent(newValues);
+        }
     }
 }

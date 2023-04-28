@@ -31,5 +31,18 @@
         {
             throw new NotImplementedException();
         }
+
+        public void EditEvent(Event newValues)
+        {
+            Event editEvent = FindEvent(newValues.EventId);
+
+            editEvent.Navn = newValues.Navn;
+            editEvent.EventInfo = newValues.EventInfo;
+            editEvent.Dato = newValues.Dato;
+            editEvent.TimeStart = newValues.TimeStart;
+            editEvent.TimeEnd = newValues.TimeEnd;
+            editEvent.MaksDeltagere = newValues.MaksDeltagere;
+        }
+
     }
 }

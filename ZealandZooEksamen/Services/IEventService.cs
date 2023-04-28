@@ -8,6 +8,9 @@ namespace ZealandZooEksamen.Services
         public void DeleteEvent(int eventId);
         public Event FindEvent(int eventId);
         public void CreateEvent(int eventId);
-        
+
+        public void EditEvent(Event newValues);
+
+
     }
 }
