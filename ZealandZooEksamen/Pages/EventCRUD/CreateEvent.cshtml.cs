@@ -5,28 +5,28 @@ using ZealandZooEksamen.Services;
 
 namespace ZealandZooEksamen.Pages.EventCRUD
 {
-    public class DeleteEventModel : PageModel
+    public class CreateEventModel : PageModel
     {
         private IEventService _eventService;
 
         [BindProperty]
-        public Event SletEvent { get; set; }
+        public Event OpretEvent { get; set; }
 
-        public DeleteEventModel(IEventService eventService)
+        public CreateEventModel(IEventService eventService)
         {
             _eventService = eventService;
         }
         public void OnGet(int eventId)
         {
-            SletEvent = _eventService.FindEvent(eventId);
+            OpretEvent = _eventService.FindEvent(eventId);
         }
-        public IActionResult OnPostSlet(int eventId)
+        public IActionResult OnPostOpret(int eventId)
         {
-            _eventService.DeleteEvent(eventId);
+            _eventService.CreateEvent(eventId);
 
             return RedirectToPage("~\\Pages\\Index.cshtml");
         }
-        public IActionResult OnPostFortryd()
+        public IActionResult OnPostBekræft()
         {
             return RedirectToPage("~\\Pages\\Index.cshtml");
         }

@@ -26,5 +26,10 @@
             }
             throw new KeyNotFoundException();
         }
+
+        internal void OpretEvent(int eventId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
