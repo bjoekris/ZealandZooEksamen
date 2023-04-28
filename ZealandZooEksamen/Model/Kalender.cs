@@ -2,9 +2,9 @@
 {
     public class Kalender
     {
-        private List<Event> events = new List<Event>()
+        private readonly List<Event> events = new List<Event>()
         {
-            new Event("Lav delete metode","26-04-2023","10:17","10:18",5,4,1,"Mock Data")
+            
         };
         public List<Event> GetAllEvents()
         {
@@ -27,9 +27,9 @@
             throw new KeyNotFoundException();
         }
 
-        internal void OpretEvent(int eventId)
+        public void OpretEvent(Event ev)
         {
-            throw new NotImplementedException();
+            events.Add(ev);
         }
 
         public void EditEvent(Event newValues)

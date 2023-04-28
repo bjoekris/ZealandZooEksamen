@@ -7,28 +7,31 @@ namespace ZealandZooEksamen.Pages.EventCRUD
 {
     public class DeleteEventModel : PageModel
     {
-        private IEventService _eventService;
+        private IEventService _service;
 
-        [BindProperty]
+        //[BindProperty]
         public Event SletEvent { get; set; }
+        public Event SletMockEvent { get; set; }
 
-        public DeleteEventModel(IEventService eventService)
+        public DeleteEventModel(IEventService service)
         {
-            _eventService = eventService;
+            _service = service;
         }
         public void OnGet(int eventId)
         {
-            SletEvent = _eventService.FindEvent(eventId);
+            //SletMockEvent = _service.FindMockEvent(eventId);
+            SletEvent = _service.FindEvent(eventId);
         }
         public IActionResult OnPostSlet(int eventId)
         {
-            _eventService.DeleteEvent(eventId);
+            //_service.DeleteMockEvent(eventId);
+            _service.DeleteEvent(eventId);
 
-            return RedirectToPage("~\\Pages\\Index.cshtml");
+            return RedirectToPage("Index");
         }
         public IActionResult OnPostFortryd()
         {
-            return RedirectToPage("~\\Pages\\Index.cshtml");
+            return RedirectToPage("Index");
         }
     }
 }
