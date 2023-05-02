@@ -1,20 +1,23 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using ZealandZooEksamen.Services;
+using ZealandZooEksamen.Userstory_12;
 
 namespace ZealandZooEksamen.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
-
-        public IndexModel(ILogger<IndexModel> logger)
+      private IPersonService _personService;
+        public IndexModel(IPersonService personService)
         {
-            _logger = logger;
+            _personService = personService;
         }
+
+        public List<PersonListe> Personer { get; set; }
 
         public void OnGet()
         {
-
+            Personer = _personService.GetAllPerson();
         }
     }
 }
