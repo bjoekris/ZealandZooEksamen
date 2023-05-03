@@ -6,16 +6,19 @@ namespace ZealandZooEksamen.Pages
 {
     public class LogoutModel : PageModel
     {
-        private IUserService _service;
+        private IUserService _userservice;
 
-        public LogoutModel(IUserService service)
+        public LogoutModel()
         {
-            _service = service;
+
         }
 
         public IActionResult OnGet()
         {
-            _service.UserLoggedOut();
+            _userservice = SessionHelper.GetUser(HttpContext);
+            _userservice.UserLoggedOut();
+            SessionHelper.SetUser(_userservice, HttpContext);
+
             return RedirectToPage("Index");
         }
     }

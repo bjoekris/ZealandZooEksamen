@@ -7,11 +7,11 @@ namespace ZealandZooEksamen.Pages
 {
     public class LoginModel : PageModel
     {
-        private readonly IUserService _service;
+        private IUserService _userservice;
 
-        public LoginModel(IUserService service)
+        public LoginModel()
         {
-            _service = service;
+
         }
 
 
@@ -27,23 +27,34 @@ namespace ZealandZooEksamen.Pages
         [StringLength(25, MinimumLength = 6, ErrorMessage = "Password skal være mere end 6 tegn")]
         public String Password1 { get; set; }
 
+
+        public void OnGet()
+        {
+            _userservice = SessionHelper.GetUser(HttpContext);
+        }
+
         public IActionResult OnPost()
         {
+            _userservice = SessionHelper.GetUser(HttpContext);
+
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
+
             if (Name == "admin" && Password1 == "secret")
             {
-                _service.SetUserLoggedIn(Name, true);
+                _userservice.SetUserLoggedIn(Name, true);
             }
             else
             {
-                _service.SetUserLoggedIn(Name, false);
+                _userservice.SetUserLoggedIn(Name, false);
             }
 
-            return RedirectToPage("Index");
+
+            SessionHelper.SetUser(_userservice, HttpContext);
+            return RedirectToPage("EventCRUD/Index");
         }
     }
 }

@@ -11,7 +11,10 @@
 </div>
 
 <h2>Event Liste (EventCRUD)</h2>
+@if (ZealandZooEksamen.Services.UserService.iAmAdmin)
+                        {
 <a class="btn" asp-page="CreateEvent">Opret Event</a>
+                        }
 <table>
     <thead>
         <tr>
@@ -41,10 +44,13 @@
                 <td>@events.MaksDeltagere</td>
                 <td>@events.Dato</td>
 
+                @if (ZealandZooEksamen.Services.UserService.iAmAdmin)
+                        {
                 <td><a class="btn" asp-page="EditEvent" asp-route-eventId="@events.EventId">Rediger Event</a></td>
 
                 @*<td><a class="btn" asp-page="DeleteEvent" asp-route-eventId="@mockEvents.EventId">Slet</a></td>*@
                 <td><a class="btn" asp-page="DeleteEvent" asp-route-eventId="@events.EventId">Slet</a></td>
+                        }
             </tr>
         }
     </tbody>

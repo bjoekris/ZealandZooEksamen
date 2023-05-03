@@ -8,15 +8,16 @@ namespace ZealandZooEksamen.Pages
     public class IndexModel : PageModel
     {
         private IEventService _service;
-        public IndexModel(IEventService service, IUserService UserService)
+        public IndexModel(IEventService service)
         {
             _service = service;
-            _userservice = UserService;
+            
         }
         public List<Event> Events { get; set; }
         public IActionResult OnGet()
         {
             Events = _service.GetAllEvents();
+            _userservice = SessionHelper.GetUser(HttpContext);
             if (!_userservice.IsLoggedIn)
             {
                 return RedirectToPage("Login");
