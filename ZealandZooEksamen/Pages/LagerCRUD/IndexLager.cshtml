@@ -2,3 +2,41 @@
 @model ZealandZooEksamen.Pages.LagerCRUD.IndexLagerModel
 @{
 }
+@*User story 10 - Bjørn*@
+
+
+
+
+<h2>Varer Liste (LagerCRUD)</h2>
+<a class="btn btn-success" asp-page="CreateLager">Ny Vare</a>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Lager Id</th>
+            <th>VareNavn</th>
+            <th>Antal Vare</th>
+            <th>Salgspris</th>
+            <th>IndkøbsPris</th>
+        </tr>
+    </thead>
+    <tbody>
+       
+        @foreach (var vare in Model.Lageret)
+        {
+            <tr>
+       
+
+                <td>@vare.LagerId</td>
+                <td>@vare.LagerNavn</td>
+                <td>@vare.LagerAntal</td>
+                <td>@vare.LagerPris</td>
+                <td>@vare.LagerIndkøbPris</td>
+
+                <td><a class="btn btn-primary" asp-page="EditLager" asp-route-lagerId="@vare.LagerId">Rediger vare</a></td>
+
+    
+                <td><a class="btn btn-danger" asp-page="DeleteLager" asp-route-lagerId="@vare.LagerId">Slet vare</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

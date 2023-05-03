@@ -7,14 +7,14 @@ namespace ZealandZooEksamen.Model
 
         public int LagerId { get; set; }
         public string LagerNavn { get; set; }
-        public string LagerAntal { get; set; }
+        public double LagerAntal { get; set; }
         public double LagerPris { get; set; }
         public double LagerIndkøbPris { get; set; }
 
 
         public Lager() { }
 
-        public Lager(int lagerId, string lagerNavn, string lagerAntal, double lagerPris, double lagerIndkøbPris)
+        public Lager(int lagerId, string lagerNavn, double lagerAntal, double lagerPris, double lagerIndkøbPris)
         {
             LagerId = lagerId;
             LagerNavn = lagerNavn;
@@ -44,7 +44,7 @@ namespace ZealandZooEksamen.Model
 
         };
 
-        public List<Lager> GetAllLageret()
+        public List<Lager> GetAllLager()
         {
             return new List<Lager>(lageret);
         }
@@ -85,10 +85,10 @@ namespace ZealandZooEksamen.Model
 
         }
 
-        internal List<Lager> GetAllLager()
-        {
-            throw new NotImplementedException();
-        }
+        //internal List<Lager> GetAllLager()
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 
 
