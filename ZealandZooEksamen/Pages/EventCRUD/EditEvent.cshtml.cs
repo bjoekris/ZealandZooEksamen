@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using ZealandZooEksamen.Model;
 using ZealandZooEksamen.Services;
 
+//User story 15 - Bjørn
+
 namespace ZealandZooEksamen.Pages.EventCRUD
 {
     public class EditEventModel : PageModel
