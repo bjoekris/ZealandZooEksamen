@@ -1,30 +1,37 @@
-﻿//Mathilde//
+﻿
+using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.CompilerServices;
+
+using ZealandZooEksamen.UserStory_12;
+
+//Mathilde//
 namespace ZealandZooEksamen.Userstory_12;
 
-public class PersonListe
-{
-    public PersonListe(int id, string name, string phoneNumber, bool attending)
+    public class PersonListe
     {
-        Id = id;
-        Name = name;
-        PhoneNumber = phoneNumber;
-        Attending = attending;
-    }
-
-    public int Id { get; set; }
 
 
-    public string Name { get; set; }
+         private readonly List<Person> _Personer = new List<Person>()
+         {
+            new Person(1, "Magnus", "11223344", true),
+            new Person(2, "Mathilde", "44332211", true),
+            new Person(3, "Kader", "99887766", false),
+            new Person(4, "Bjørn", "66778899", false)
 
 
-    public string PhoneNumber { get; set; }
 
-    public bool Attending { get; set; }
-    public PersonListe() { }
+            };
 
-    public PersonListe FindPerson(int id)
+        public PersonListe() { }
+
+    
+
+
+    public Person FindPerson(int id)
     {
-        foreach (PersonListe p in person)
+        foreach (Person p in _Personer)
         {
             if (p.Id == id)
             {
@@ -33,28 +40,29 @@ public class PersonListe
         }
         throw new Exception("Ingen tilmeldte");
     }
-    public List<PersonListe> GetAllPersons()
+
+    public List<Person> GetAllPersons()
     {
-        return new List<PersonListe>();
+        return new List<Person>(_Personer);
     }
 
-    private readonly List<PersonListe> person = new List<PersonListe>()
+    private readonly List<Person> person = new List<Person>()
     {
-        new PersonListe(1, "Magnus", "11223344", true),
-        new PersonListe(2, "Mathilde", "44332211", true),
-        new PersonListe(3, "Kader", "99887766", false),
-        new PersonListe(4, "Bjørn", "66778899", false)
+        new Person(1, "Magnus", "11223344", true),
+        new Person(2, "Mathilde", "44332211", true),
+        new Person(3, "Kader", "99887766", false),
+        new Person(4, "Bjørn", "66778899", false)
     };
 
-    public void OpretPerson(PersonListe pe)
+    public void OpretPerson(Person pe)
     {
-        person.Add(pe);
+        _Personer.Add(pe);
     }
 
     public void SletPerson(int id)
     {
-        PersonListe sletPerson = FindPerson(id);
-        person.Remove(sletPerson);
+        Person sletPerson = FindPerson(id);
+        _Personer.Remove(sletPerson);
     }
 
 }

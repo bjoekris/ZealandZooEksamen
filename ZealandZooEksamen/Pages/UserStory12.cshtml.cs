@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ZealandZooEksamen.Services;
 using ZealandZooEksamen.Userstory_12;
+using ZealandZooEksamen.UserStory_12;
 
 namespace ZealandZooEksamen.Pages
 {
@@ -10,7 +11,7 @@ namespace ZealandZooEksamen.Pages
 
         private readonly IPersonService? _personService;
         [BindProperty]
-        public PersonListe? OpretPerson { get; set; }
+        public Person OpretPerson { get; set; }
 
         public IPersonService? Get_personService()
         {
