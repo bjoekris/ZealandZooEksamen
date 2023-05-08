@@ -1,7 +1,7 @@
 ﻿
 
-namespace ZealandZooEksamen.Userstory_12
-{
+namespace ZealandZooEksamen.Userstory_12;
+
     public class MockData : PersonListe
     {
         private readonly List<PersonListe> mockPerson = new List<PersonListe>()
@@ -18,4 +18,3 @@ namespace ZealandZooEksamen.Userstory_12
 
       
     }
-}

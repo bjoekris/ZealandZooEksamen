@@ -1,4 +1,3 @@
-using DocumentFormat.OpenXml.Spreadsheet;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ZealandZooEksamen.Services;
@@ -9,7 +8,7 @@ namespace ZealandZooEksamen.Pages
     public class UserStory12Model : PageModel
     {
 
-        private IPersonService _personService;
+        private IPersonService? _personService;
         [BindProperty]
         public PersonListe OpretPerson { get; set; }
 

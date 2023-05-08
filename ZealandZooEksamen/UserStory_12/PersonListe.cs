@@ -1,11 +1,3 @@
-﻿using DocumentFormat.OpenXml.Bibliography;
-using DocumentFormat.OpenXml.InkML;
-using DocumentFormat.OpenXml.Office2019.Excel.ThreadedComments;
-using Microsoft.AspNetCore.Identity;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Runtime.CompilerServices;
-
 //Mathilde//
 namespace ZealandZooEksamen.Userstory_12;
 
