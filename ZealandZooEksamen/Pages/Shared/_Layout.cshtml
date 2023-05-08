@@ -22,13 +22,13 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/EventCRUD/Index">Home</a>
                         </li>
-                        @if (!ZealandZooEksamen.Services.UserService.iAmAdmin)
+                        @if (!ZealandZooEksamen.Services.UserService.LoggedIn)
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Login">Log ind</a>
                             </li>
                         }
-                        @if (ZealandZooEksamen.Services.UserService.iAmAdmin)
+                        @if (ZealandZooEksamen.Services.UserService.LoggedIn)
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Logout">Log ud</a>

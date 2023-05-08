@@ -7,6 +7,7 @@ namespace ZealandZooEksamen.Services
 
         // hack til menu bar
         public static bool iAmAdmin = false;
+        public static bool LoggedIn = false;
 
         private LoggedInUser _user;
 
@@ -23,6 +24,7 @@ namespace ZealandZooEksamen.Services
             _user.Name = name;
             _user.IsAdmin = isAdmin;
             iAmAdmin = isAdmin;
+            LoggedIn = true;
         }
 
         public void UserLoggedOut()
@@ -30,6 +32,7 @@ namespace ZealandZooEksamen.Services
             _user.Name = "";
             _user.IsAdmin = false;
             iAmAdmin = false;
+            LoggedIn = false;
         }
 
         public bool IsLoggedIn

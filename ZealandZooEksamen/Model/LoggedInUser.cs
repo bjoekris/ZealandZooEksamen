@@ -8,6 +8,7 @@
 
         public LoggedInUser() : this("", false)
         {
+            
         }
 
         public LoggedInUser(string name, bool isAdmin)
