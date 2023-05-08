@@ -1,25 +1,25 @@
-//Mathilde//
+﻿//Mathilde//
 namespace ZealandZooEksamen.Userstory_12;
 
-    public class PersonListe
-    {
-        public PersonListe(int id, string name, string phoneNumber, bool attending)
+public class PersonListe
+{
+    public PersonListe(int id, string name, string phoneNumber, bool attending)
     {
         Id = id;
         Name = name;
         PhoneNumber = phoneNumber;
-        Attending = attending; 
+        Attending = attending;
     }
-        
-        public int Id { get; set; }
 
- 
-        public string Name { get; set; }
-        
-    
-        public string PhoneNumber { get; set; }
+    public int Id { get; set; }
 
-        public bool Attending { get; set; }
+
+    public string Name { get; set; }
+
+
+    public string PhoneNumber { get; set; }
+
+    public bool Attending { get; set; }
     public PersonListe() { }
 
     public PersonListe FindPerson(int id)
@@ -56,7 +56,7 @@ namespace ZealandZooEksamen.Userstory_12;
         PersonListe sletPerson = FindPerson(id);
         person.Remove(sletPerson);
     }
-   
+
 }
 
 

@@ -6,7 +6,7 @@ namespace ZealandZooEksamen.Services
     {
         public void CreatePerson(PersonListe pe)
         {
-           _person.OpretPerson(pe);
+            _person.OpretPerson(pe);
         }
 
         public void DeletePerson(int id)
@@ -24,7 +24,7 @@ namespace ZealandZooEksamen.Services
             return _person.GetAllPersons();
         }
 
-        private PersonListe _person = new PersonListe();  
+        private PersonListe _person = new PersonListe();
 
     }
 }

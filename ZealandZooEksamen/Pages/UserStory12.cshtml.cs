@@ -8,13 +8,16 @@ namespace ZealandZooEksamen.Pages
     public class UserStory12Model : PageModel
     {
 
-        private IPersonService? _personService;
+        private readonly IPersonService? _personService;
         [BindProperty]
-        public PersonListe OpretPerson { get; set; }
+        public PersonListe? OpretPerson { get; set; }
 
-      
+        public IPersonService? Get_personService()
+        {
+            return _personService;
+        }
 
-        public IActionResult OnPostOpret()
+        public IActionResult OnPostOpret(IPersonService? _personService)
         {
             _personService.CreatePerson(OpretPerson);
             return RedirectToPage("UserStory12");

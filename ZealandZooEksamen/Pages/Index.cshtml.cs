@@ -1,11 +1,11 @@
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 using ZealandZooEksamen.Services;
 using ZealandZooEksamen.Userstory_12;
 namespace ZealandZooEksamen.Pages
 {
     public class IndexModel : PageModel
     {
-      private IPersonService _personService;
+        private IPersonService _personService;
         public IndexModel(IPersonService personService)
         {
             _personService = personService;
