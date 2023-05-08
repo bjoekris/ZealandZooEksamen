@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Zealand Zoo";
 }
+@*Bjørn*@
 
 <div class="text-center">
     <h1> Zealand Zoo</h1>
@@ -45,6 +46,33 @@
 
                 @*<td><a class="btn" asp-page="DeleteEvent" asp-route-eventId="@mockEvents.EventId">Slet</a></td>*@
                 <td><a class="btn btn-danger" asp-page="DeleteEvent" asp-route-eventId="@events.EventId">Slet</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+                <h2>Tilmeldte person </h2>
+
+
+<table>
+
+    <thead>
+    <th>Id</th>
+    <th>Navn</th>
+    <th>Telefon nr</th>
+    <th>Deltager</th>
+    </thead>
+
+    <tbody>
+        @foreach (var person in Model.Personer)
+        {
+            <tr>
+                <td>@person.Id</td>
+                <td>@person.Name</td>
+                <td>@person.PhoneNumber</td>
+                <td>@person.Attending</td>
             </tr>
         }
     </tbody>

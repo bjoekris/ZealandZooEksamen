@@ -18,6 +18,7 @@ namespace ZealandZooEksamen.Pages
         public void OnGet()
         {
             Events = _service.GetAllEvents();
+            Personer = _personService.GetAllPerson();
         }
 
         //Tilmeldingsting
@@ -29,9 +30,6 @@ namespace ZealandZooEksamen.Pages
 
         public List<Person> Personer { get; set; }
 
-        public void OnGet()
-        {
-            Personer = _personService.GetAllPerson();
-        }
+      
     }
 }
