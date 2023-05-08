@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 </head>
-@foreach (var events in Model.Events)
-{
 <body class="calendar">
     <div class="container" style="width: 510px;">
         <div>
@@ -40,7 +38,7 @@
                         <td class="prev-month">30</td>
                         <td class="prev-month">31</td>
                         <td class="event">
-                            <a type="button" class="btn stretched-link" data-bs-toggle="modal" data-bs-target="#@events.Dato">1</a>
+                            <a type="button" class="btn stretched-link" data-bs-toggle="modal" data-bs-target="#Modal1">1</a>
                         </td>
                         <td>2</td>
                         <td>3</td>
@@ -59,9 +57,13 @@
 
                     <tr>
                         <td>12</td>
-                        <td class="event">13</td>
+                        <td class="event">
+                            <a type="button" class="btn stretched-link" data-bs-toggle="modal" data-bs-target="#Modal13">13</a>
+                        </td>
                         <td>14</td>
-                        <td class="current-day ">15</td>
+                        <td class="event">
+                            <a type="button" class="btn stretched-link" data-bs-toggle="modal" data-bs-target="#Modal15">15</a>
+                        </td>
                         <td>16</td>
                         <td>17</td>
                         <td>18</td>
@@ -73,12 +75,16 @@
                         <td>21</td>
                         <td>22</td>
                         <td>23</td>
-                        <td class="event">24</td>
+                        <td class="event">
+                            <a type="button" class="btn stretched-link" data-bs-toggle="modal" data-bs-target="#Modal24">24</a>
+                        </td>
                         <td>25</td>
                     </tr>
 
                     <tr>
-                        <td class="event">26</td>
+                        <td class="event">
+                            <a type="button" class="btn stretched-link" data-bs-toggle="modal" data-bs-target="#Modal26">26</a>
+                        </td>
                         <td>27</td>
                         <td>28</td>
                         <td>29</td>
@@ -105,18 +111,18 @@
 <br></br>
 
 <!-- First Modal -->
-<div class="modal fade" id="@events.EventId">
+<div class="modal fade" id="Modal1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title"></h4>
+                <h4 class="modal-title">Event Name</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
             <!-- Modal body -->
             <div class="modal-body">
-                @events.GetInfo()
+                Event Info
             </div>
 
             <!-- Modal footer -->
@@ -126,20 +132,20 @@
         </div>
     </div>
 </div>
-}
+
 <!-- Second Modal -->
-<div class="modal fade" id="myModal2">
+<div class="modal fade" id="Modal13">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title"></h4>
+                <h4 class="modal-title">Event Name</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
             <!-- Modal body -->
             <div class="modal-body">
-                Modal body..
+                Event Info
             </div>
 
             <!-- Modal footer -->
@@ -151,18 +157,18 @@
 </div>
 
 <!-- Third Modal -->
-<div class="modal fade" id="myModal3">
+<div class="modal fade" id="Modal15">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title"></h4>
+                <h4 class="modal-title">Event Name</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
             <!-- Modal body -->
             <div class="modal-body">
-                Modal body..
+                Event Info
             </div>
 
             <!-- Modal footer -->
@@ -174,18 +180,18 @@
 </div>
 
 <!-- Fourth Modal -->
-<div class="modal fade" id="myModal4">
+<div class="modal fade" id="Modal24">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title"></h4>
+                <h4 class="modal-title">Event Name</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
             <!-- Modal body -->
             <div class="modal-body">
-                Modal body..
+                Event Info
             </div>
 
             <!-- Modal footer -->
@@ -197,18 +203,18 @@
 </div>
 
 <!-- Fifth Modal -->
-<div class="modal fade" id="myModal5">
+<div class="modal fade" id="Modal26">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title"></h4>
+                <h4 class="modal-title">Event Name</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
             <!-- Modal body -->
             <div class="modal-body">
-                Modal body..
+                Event Info
             </div>
 
             <!-- Modal footer -->
