@@ -1,20 +1,25 @@
 ﻿namespace ZealandZooEksamen.Model
 {
+
+    //Magnus
     public class Kalender
     {
         private readonly List<Event> events = new List<Event>()
         {
             
         };
+        
         public List<Event> GetAllEvents()
         {
             return new List<Event> (events);
         }
+        
         public void SletEvent(int eventId)
         {
             Event sletEvent = FindEvent(eventId);
             events.Remove(sletEvent);
         }
+        
         public Event FindEvent(int eventId) 
         {
             foreach (Event e in events)
@@ -43,6 +48,5 @@
             editEvent.TimeEnd = newValues.TimeEnd;
             editEvent.MaksDeltagere = newValues.MaksDeltagere;
         }
-
     }
 }

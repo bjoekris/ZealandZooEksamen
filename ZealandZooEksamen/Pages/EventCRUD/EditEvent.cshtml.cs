@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using ZealandZooEksamen.Model;
 using ZealandZooEksamen.Services;
 
+//User story 15 - Bjørn
+
 namespace ZealandZooEksamen.Pages.EventCRUD
 {
     public class EditEventModel : PageModel
@@ -12,7 +14,6 @@ namespace ZealandZooEksamen.Pages.EventCRUD
         public EditEventModel(IEventService service)
         {
             _Service = service;
-
         }
 
         [BindProperty]
@@ -43,21 +44,16 @@ namespace ZealandZooEksamen.Pages.EventCRUD
         {
             Event editEvent = _Service.FindEvent(eventId);
 
-            
             Navn = editEvent.Navn;
             EventInfo = editEvent.EventInfo;
             Dato = editEvent.Dato;
             TimeStart = editEvent.TimeStart;
             TimeEnd = editEvent.TimeEnd;
             MaksDeltagere = editEvent.MaksDeltagere;
-
-
         }
-
 
         public IActionResult OnPostEdit(int eventId)
         {
-
             Event editEvent = _Service.FindEvent(eventId);
 
             editEvent.Navn = Navn;
@@ -70,16 +66,11 @@ namespace ZealandZooEksamen.Pages.EventCRUD
             _Service.EditEvent(editEvent);
 
             return RedirectToPage("Index");
-            
-
         }
         public IActionResult OnPostFortryd()
         {
             return RedirectToPage("Index");
         }
-
-
-
     }
 }
 

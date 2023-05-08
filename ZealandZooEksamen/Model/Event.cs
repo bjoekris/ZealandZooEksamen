@@ -1,5 +1,7 @@
 ﻿namespace ZealandZooEksamen.Model
 {
+
+    //Bjørn
     public class Event
     {
         public string Navn { get; set; }

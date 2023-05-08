@@ -16,7 +16,7 @@
                         {
 <a class="btn" asp-page="CreateEvent">Opret Event</a>
                         }
-<table>
+<table class="table table-striped table-hover">
     <thead>
         <tr>
             <th>Event Id</th>
@@ -32,26 +32,23 @@
         {
             <tr>
                 @*
-                <td>@mockEvents.EventId</td>
-                <td>@mockEvents.Navn</td>
-                <td>@mockEvents.AntalDeltagere</td>
-                <td>@mockEvents.MaksDeltagere</td>
-                <td>@mockEvents.Dato</td>
-                *@
-                
+            <td>@mockEvents.EventId</td>
+            <td>@mockEvents.Navn</td>
+            <td>@mockEvents.AntalDeltagere</td>
+            <td>@mockEvents.MaksDeltagere</td>
+            <td>@mockEvents.Dato</td>
+            *@
+
                 <td>@events.EventId</td>
                 <td>@events.Navn</td>
                 <td>@events.AntalDeltagere</td>
                 <td>@events.MaksDeltagere</td>
                 <td>@events.Dato</td>
 
-                @if (ZealandZooEksamen.Services.UserService.iAmAdmin)
-                        {
                 <td><a class="btn" asp-page="EditEvent" asp-route-eventId="@events.EventId">Rediger Event</a></td>
 
                 @*<td><a class="btn" asp-page="DeleteEvent" asp-route-eventId="@mockEvents.EventId">Slet</a></td>*@
                 <td><a class="btn" asp-page="DeleteEvent" asp-route-eventId="@events.EventId">Slet</a></td>
-                        }
             </tr>
         }
     </tbody>

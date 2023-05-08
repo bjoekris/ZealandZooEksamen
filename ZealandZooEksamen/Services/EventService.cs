@@ -22,8 +22,6 @@ namespace ZealandZooEksamen.Services
             events.OpretEvent(ev);
         }
 
-
-
         public Event FindEvent(int eventId)
         {
             return events.FindEvent(eventId);

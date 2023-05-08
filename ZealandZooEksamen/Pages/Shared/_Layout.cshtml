@@ -37,6 +37,11 @@
 
                         @if (ZealandZooEksamen.Services.UserService.iAmAdmin)
                         {
+                            <a class="nav-link text-dark" asp-area="" asp-page="/EventCRUD/Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/LagerCRUD/IndexLager">VareLager</a>
+                        </li>
                         <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-page="/Admin">Admin</a>
                         </li>

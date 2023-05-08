@@ -8,6 +8,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddSingleton<IEventService, EventService>();
 //builder.Services.AddSingleton<IUserService, UserService>();
 builder.Services.AddSession(); // opretter login session
+builder.Services.AddSingleton<ILagerService, LagerService>();
 
 var app = builder.Build();
 
