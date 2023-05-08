@@ -1,30 +1,35 @@
 ﻿using ZealandZooEksamen.Userstory_12;
+using ZealandZooEksamen.UserStory_12;
 
 namespace ZealandZooEksamen.Services
 {
     public class PersonService : IPersonService
     {
-        public void CreatePerson(PersonListe pe)
+
+        private readonly PersonListe liste = new PersonListe();
+
+
+        public void CreatePerson(Person pe)
         {
-           _person.OpretPerson(pe);
+           liste.OpretPerson(pe);
         }
 
         public void DeletePerson(int id)
         {
-            _person.SletPerson(id);
+            liste.SletPerson(id);
         }
 
-        public PersonListe FindPerson(int id)
+        public Person FindPerson(int id)
         {
-            return _person.FindPerson(id);
+            return liste.FindPerson(id);
         }
 
-        public List<PersonListe> GetAllPerson()
+        public List<Person> GetAllPerson()
         {
-            return _person.GetAllPersons();
+            return liste.GetAllPersons();
         }
 
-        private PersonListe _person = new PersonListe();  
+       
 
     }
 }

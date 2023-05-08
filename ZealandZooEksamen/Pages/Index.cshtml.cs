@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ZealandZooEksamen.Services;
 using ZealandZooEksamen.Userstory_12;
+using ZealandZooEksamen.UserStory_12;
 
 namespace ZealandZooEksamen.Pages
 {
@@ -13,7 +14,7 @@ namespace ZealandZooEksamen.Pages
             _personService = personService;
         }
 
-        public List<PersonListe> Personer { get; set; }
+        public List<Person> Personer { get; set; }
 
         public void OnGet()
         {
