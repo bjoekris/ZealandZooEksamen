@@ -4,31 +4,37 @@ using ZealandZooEksamen.Model;
 using ZealandZooEksamen.Services;
 using ZealandZooEksamen.Userstory_12;
 using ZealandZooEksamen.UserStory_12;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ZealandZooEksamen.Pages
 {
     public class IndexModel : PageModel
     {
         private IEventService _service;
-        public IndexModel(IEventService service)
+        private IPersonService _personService;
+        private IUserService _userservice;
+
+
+
+        public IndexModel(IEventService service, IPersonService personService)
         {
             _service = service;
-            
+
+            _personService = personService;
+
+
+           
+
         }
-       public List<Event> Events { get; set; }
-        public void OnGet()
         public List<Event> Events { get; set; }
+        public List<Person> Personer { get; set; }
+
+
         public IActionResult OnGet()
         {
             Events = _service.GetAllEvents();
             Personer = _personService.GetAllPerson();
-        }
 
-        //Tilmeldingsting
-        private IPersonService _personService;
-        public IndexModel(IPersonService personService)
-        {
-            _personService = personService;
             _userservice = SessionHelper.GetUser(HttpContext);
             if (!_userservice.IsLoggedIn)
             {
@@ -38,12 +44,9 @@ namespace ZealandZooEksamen.Pages
             return Page();
         }
 
-        public List<Person> Personer { get; set; }
-
       
-
         //login
-        private IUserService _userservice;
+        
 
         public bool IsAdmin
         {
@@ -53,6 +56,6 @@ namespace ZealandZooEksamen.Pages
             }
         }
 
-        public String Name => _userservice.UserName;   
+        public String Name => _userservice.UserName;
     }
 }
