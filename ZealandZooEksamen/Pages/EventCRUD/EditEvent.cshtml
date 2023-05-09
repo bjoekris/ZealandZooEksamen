@@ -6,7 +6,7 @@
 
     <div class="container border-2 rounded-2">
 
-        <h1>Ændre Event @Model.EventId @Model.Navn</h1>
+        <h1>Rediger Event @Model.EventId @Model.Navn</h1>
         <div class="row">
             <div class="col-md-6 text-white">
                 <form method="post">
@@ -59,7 +59,7 @@
 
                     <form method="post">
                         <div class="form-group">
-                            <input type="submit" value="Ændre @Model.Navn" asp-page-handler="Edit" asp-route-eventId="@Model.EventId" class="btn btn-warning" />
+                            <input type="submit" value="Rediger" asp-page-handler="Edit" asp-route-eventId="@Model.EventId" class="btn btn-warning" />
                         </div>
                         <p></p>
                         <div class="form-group">
