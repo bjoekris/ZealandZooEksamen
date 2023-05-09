@@ -11,7 +11,7 @@
 
 </div>
 
-<h2>Event Liste (EventCRUD)</h2>
+<h2>Event Liste</h2>
 @*giver kun admin adgang til opret*@
 @if (ZealandZooEksamen.Services.UserService.iAmAdmin)
 {
@@ -23,9 +23,11 @@
         <tr>
             <th>Event Id</th>
             <th>Navn</th>
+            <th>Dato</th>
+            <th>Start tid</th>
+            <th>Slut tid</th>
             <th>Antal Deltagere</th>
             <th>Maks Antal Deltagere</th>
-            <th>Dato</th>
         </tr>
     </thead>
     <tbody>
@@ -43,9 +45,11 @@
 
                 <td>@events.EventId</td>
                 <td>@events.Navn</td>
+                <td>@events.Dato</td>
+                <td>@events.TimeStart</td>
+                <td>@events.TimeEnd</td>
                 <td>@events.AntalDeltagere</td>
                 <td>@events.MaksDeltagere</td>
-                <td>@events.Dato</td>
 
                 @*giver kun admin adgang til rediger*@
                 @if (ZealandZooEksamen.Services.UserService.iAmAdmin)
