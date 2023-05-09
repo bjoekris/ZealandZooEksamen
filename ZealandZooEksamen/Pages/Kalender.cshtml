@@ -33,15 +33,17 @@
 
                 <tbody>
                     <tr>
+                        @foreach (var e in Model.Events) {
                         <td class="prev-month">29</td>
                         <td class="prev-month">30</td>
                         <td class="prev-month">31</td>
                         <td class="event">
-                            <a type="button" class="btn stretched-link" data-bs-toggle="modal" data-bs-target="#Modal1">1</a>
+                            <a class="btn stretched-link" data-bs-toggle="modal" data-bs-target="#Modal1">1</a>
                         </td>
                         <td>2</td>
                         <td>3</td>
                         <td>4</td>
+                        }
                     </tr>
 
                     <tr>
@@ -58,10 +60,10 @@
                         <td>12</td>
                         <td>13</td>
                         <td class="event">
-                            <a type="button" class="btn stretched-link" data-bs-toggle="modal" data-bs-target="#Modal14">14</a>
+                            <a class="btn stretched-link" data-bs-toggle="modal" data-bs-target="#Modal14">14</a>
                         </td>
                         <td class="event">
-                            <a type="button" class="btn stretched-link" data-bs-toggle="modal" data-bs-target="#Modal15">15</a>
+                            <a class="btn stretched-link" data-bs-toggle="modal" data-bs-target="#Modal15">15</a>
                         </td>
                         <td>16</td>
                         <td>17</td>
@@ -75,14 +77,14 @@
                         <td>22</td>
                         <td>23</td>
                         <td class="event">
-                            <a type="button" class="btn stretched-link" data-bs-toggle="modal" data-bs-target="#Modal24">24</a>
+                            <a class="btn stretched-link" data-bs-toggle="modal" data-bs-target="#Modal24">24</a>
                         </td>
                         <td>25</td>
                     </tr>
 
                     <tr>
                         <td class="event">
-                            <a type="button" class="btn stretched-link" data-bs-toggle="modal" data-bs-target="#Modal26">26</a>
+                            <a class="btn stretched-link" data-bs-toggle="modal" data-bs-target="#Modal26">26</a>
                         </td>
                         <td>27</td>
                         <td>28</td>
@@ -107,21 +109,27 @@
         </div>
     </div>
 </body>
-<br></br>
+<br>
 
+@foreach (var e in Model.Events) {
 <!-- First Modal -->
 <div class="modal fade" id="Modal1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">Event Name</h4>
+                <h4 class="modal-title">@e.Navn</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
             <!-- Modal body -->
             <div class="modal-body">
-                Event Info
+                <p>@e.EventInfo</p>
+                <p>The event will be held on the <strong>@e.Dato</strong></p>
+                <p>The event will start at <strong>@e.TimeStart</strong></p>
+                <p>The event will end at <strong>@e.TimeEnd</strong></p>
+                <p>The event has room for <strong>@e.MaksDeltagere</strong> partisipants</p>
+                <p>The event has <strong>@e.AntalDeltagere</strong> current partisipants</p>
             </div>
 
             <!-- Modal footer -->
@@ -131,7 +139,7 @@
         </div>
     </div>
 </div>
-
+}
 <!-- Second Modal -->
 <div class="modal fade" id="Modal14">
     <div class="modal-dialog modal-dialog-centered">

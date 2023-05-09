@@ -7,15 +7,15 @@ namespace ZealandZooEksamen.Pages
 {
     public class KalenderModel : PageModel
     {
-        private IEventService _service;
-        public KalenderModel(IEventService service)
+        private IEventService _kalenderService;
+        public KalenderModel(IEventService kalenderService)
         {
-            _service = service;
+            _kalenderService = kalenderService;
         }
         public List<Event> Events { get; set; }
         public void OnGet()
         {
-            Events = _service.GetAllEvents();
+            Events = _kalenderService.GetAllEvents();
         }
     }
 }
