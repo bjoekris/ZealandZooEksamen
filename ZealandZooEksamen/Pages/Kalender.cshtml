@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 </head>
+
 <body class="calendar">
     <div class="container" style="width: 510px;">
         <div>
@@ -33,7 +34,6 @@
 
                 <tbody>
                     <tr>
-                        @foreach (var e in Model.Events) {
                         <td class="prev-month">29</td>
                         <td class="prev-month">30</td>
                         <td class="prev-month">31</td>
@@ -43,7 +43,6 @@
                         <td>2</td>
                         <td>3</td>
                         <td>4</td>
-                        }
                     </tr>
 
                     <tr>
@@ -103,18 +102,18 @@
                         <td class="next-month">8</td>
                         <td class="next-month">9</td>
                     </tr>
-                    
                 </tbody>
             </table>
         </div>
     </div>
 </body>
-<br>
+<br></br>
 
-@foreach (var e in Model.Events) {
 <!-- First Modal -->
 <div class="modal fade" id="Modal1">
     <div class="modal-dialog modal-dialog-centered">
+        @foreach (var e in Model.Events)
+            {
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
@@ -137,9 +136,10 @@
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
+        }
     </div>
 </div>
-}
+
 <!-- Second Modal -->
 <div class="modal fade" id="Modal14">
     <div class="modal-dialog modal-dialog-centered">
