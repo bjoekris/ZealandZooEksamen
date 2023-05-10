@@ -4,8 +4,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddSingleton<IPersonService, PersonService>();
 
 builder.Services.AddSingleton<IEventService, EventService>();
+//builder.Services.AddSingleton<IUserService, UserService>();
+builder.Services.AddSession(); // opretter login session
+builder.Services.AddSingleton<ILagerService, LagerService>();
 
 var app = builder.Build();
 
@@ -24,6 +28,10 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+app.UseSession(); // gør brug af session
+
 app.MapRazorPages();
 
 app.Run();
+
+

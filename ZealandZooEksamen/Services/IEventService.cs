@@ -4,6 +4,7 @@ namespace ZealandZooEksamen.Services
 {
     public interface IEventService
     {
+
         public List<Event> GetAllEvents();
         public List<Event> GetAllMockEvents();
         public void DeleteEvent(int eventId);

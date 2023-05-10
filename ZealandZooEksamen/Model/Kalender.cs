@@ -1,5 +1,7 @@
 ﻿namespace ZealandZooEksamen.Model
 {
+
+    //Magnus
     public class Kalender
     {
         private readonly List<Event> events = new List<Event>()
