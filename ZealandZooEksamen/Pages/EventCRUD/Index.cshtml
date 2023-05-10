@@ -1,0 +1,51 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Zealand Zoo";
+}
+
+<div class="text-center">
+    <h1> Zealand Zoo</h1>
+    <img src="~/images/Zealand Zoo.jpg" class="card-img-top w-25" alt="Zealand Zoo Logo">
+
+</div>
+
+<h2>Event Liste (EventCRUD)</h2>
+<a class="btn btn-success" asp-page="CreateEvent">Opret Event</a>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Event Id</th>
+            <th>Navn</th>
+            <th>Antal Deltagere</th>
+            <th>Maks Antal Deltagere</th>
+            <th>Dato</th>
+        </tr>
+    </thead>
+    <tbody>
+        @*@foreach (var mockEvents in Model.MockEvents)*@
+        @foreach (var events in Model.Events)
+        {
+            <tr>
+                @*
+            <td>@mockEvents.EventId</td>
+            <td>@mockEvents.Navn</td>
+            <td>@mockEvents.AntalDeltagere</td>
+            <td>@mockEvents.MaksDeltagere</td>
+            <td>@mockEvents.Dato</td>
+            *@
+
+                <td>@events.EventId</td>
+                <td>@events.Navn</td>
+                <td>@events.AntalDeltagere</td>
+                <td>@events.MaksDeltagere</td>
+                <td>@events.Dato</td>
+
+                <td><a class="btn btn-primary" asp-page="EditEvent" asp-route-eventId="@events.EventId">Rediger Event</a></td>
+
+                @*<td><a class="btn" asp-page="DeleteEvent" asp-route-eventId="@mockEvents.EventId">Slet</a></td>*@
+                <td><a class="btn btn-danger" asp-page="DeleteEvent" asp-route-eventId="@events.EventId">Slet</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

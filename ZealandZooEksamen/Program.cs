@@ -6,6 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddSingleton<IPersonService, PersonService>();
 
+builder.Services.AddSingleton<IEventService, EventService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
