@@ -28,5 +28,5 @@
             return $"{{{nameof(Id)}={Id.ToString()}, {nameof(Name)}={Name}, {nameof(PhoneNumber)}={PhoneNumber}, {nameof(Attending)}={Attending.ToString()}}}";
         }
     }
-
+    
 }

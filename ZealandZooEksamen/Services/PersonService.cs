@@ -29,7 +29,6 @@ namespace ZealandZooEksamen.Services
             return liste.GetAllPersons();
         }
 
-       
-
+      
     }
 }
