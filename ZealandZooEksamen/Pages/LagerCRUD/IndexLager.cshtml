@@ -37,6 +37,11 @@
     
                 <td><a class="btn btn-danger" asp-page="DeleteLager" asp-route-lagerId="@vare.LagerId">Slet vare</a></td>
             </tr>
+
+
         }
     </tbody>
 </table>
+
+
+<div class="container p-3 my-3 bg-dark text-white"> Dagens omsætning er: <strong>@Model.UdregnOmsætning(1)</strong>  </div>
