@@ -5,10 +5,10 @@ using ZealandZooEksamen.Services;
 
 namespace ZealandZooEksamen.Pages
 {
-    public class KalenderModel : PageModel
+    public class KalenderItemModel : PageModel
     {
         private IEventService _kalenderService;
-        public KalenderModel(IEventService kalenderService)
+        public KalenderItemModel(IEventService kalenderService)
         {
             _kalenderService = kalenderService;
         }
