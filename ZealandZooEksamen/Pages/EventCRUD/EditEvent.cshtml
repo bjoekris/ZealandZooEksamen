@@ -28,19 +28,19 @@
 
                     <div class="form-group">
                         <label>Dato</label><br>
-                        <input asp-for="@Model.Dato" class="form-control-sm" /><br />
+                        <input type="date" asp-for="@Model.Dato" class="form-control" /><br />
                         <span asp-validation-for="@Model.Dato" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
                         <label>Start Tidspunkt</label><br>
-                        <input asp-for="@Model.TimeStart" class="form-control-sm" /><br />
+                        <input type="time" asp-for="@Model.TimeStart" class="form-control" /><br />
                         <span asp-validation-for="@Model.TimeStart" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
                         <label>Slut Tidspunkt</label><br>
-                        <input asp-for="@Model.TimeEnd" class="form-control-sm" /><br />
+                        <input type="time" asp-for="@Model.TimeEnd" class="form-control" /><br />
                         <span asp-validation-for="@Model.TimeEnd" class="text-danger"></span>
                     </div>
 
