@@ -13,17 +13,9 @@ namespace ZealandZooEksamen.Pages
             _kalenderService = kalenderService;
         }
         public List<Event> Events { get; set; }
-        public void OnGetEvents()
+        public void OnGet()
         {
             Events = _kalenderService.GetAllEvents();
-        }
-
-        [BindProperty]
-        public Event EventFinder { get; set; }
-
-        public void OnGetEventFinder(int eventId)
-        {
-            EventFinder = _kalenderService.FindEvent(eventId);
         }
     }
 }
