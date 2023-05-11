@@ -12,20 +12,27 @@
         <form method="post">
             <div class="form-group">
                 <label asp-for="@Model.Name" class="control-label">Navn</label><br>
-                <input asp-for="@Model.Name" class="form-control" /><br>
+                <input asp-for="@Model.Name" class="form-control-sm" /><br>
             </div>
 
 
             <div class="form-group">
                 <label asp-for="@Model.Password1" class="control-label">Password</label><br>
-                <input type="password" asp-for="@Model.Password1" class="form-control" /><br>
+                <input type="password" asp-for="@Model.Password1" class="form-control-sm" 
+                placeholder="Mindst 6 tegn">
+                <br>
             </div>
 
 
-            <div class="form-group">
-                <input type="submit" value="Log ind" asp-page-handler="Log Ind" class="btn btn-success" />
+            <div class="col-auto">
+                <input type="submit" value="Log ind" asp-page-handler="Log Ind" />
             </div>
         </form>
 
     </div>
 </div>
+
+@*<label asp-for="@Model.Password1" class="control-label">Password</label>
+<br>
+<input type="password" asp-for="@Model.Password1" class="form-control-sm" class="control-label"> Skal være mindst 6 tegn< >
+<br>*@

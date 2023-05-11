@@ -1,0 +1,240 @@
+﻿@page
+@model ZealandZooEksamen.Pages.KalenderModel
+@{
+    ViewData["Title"] = "Kalender";
+}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+
+<body class="calendar">
+    <div class="container" style="width: 510px;">
+        <div>
+            <header style="display: flex; justify-content: space-around">
+                <a class="btn-sm btn-outline-primary" href="#"><span class="bi-arrow-left-circle"> Forrige</span></a>
+                <h3>Juni</h3>
+                <a class="btn-sm btn-outline-primary" href="#">Næste <span class="bi-arrow-right-circle"></span></a>
+            </header>
+
+            <table>
+                <thead>
+                    <tr>
+                        <td>Ma</td>
+                        <td>Ti</td>
+                        <td>On</td>
+                        <td>To</td>
+                        <td>Fr</td>
+                        <td>Lø</td>
+                        <td>Sø</td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td class="prev-month">29</td>
+                        <td class="prev-month">30</td>
+                        <td class="prev-month">31</td>
+                        <td class="event">
+                            <a class="btn stretched-link" data-bs-toggle="modal" data-bs-target="#Modal1">1</a>
+                        </td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                    </tr>
+
+                    <tr>
+                        <td>12</td>
+                        <td>13</td>
+                        <td class="event">
+                            <a class="btn stretched-link" data-bs-toggle="modal" data-bs-target="#Modal14">14</a>
+                        </td>
+                        <td class="event">
+                            <a class="btn stretched-link" data-bs-toggle="modal" data-bs-target="#Modal15">15</a>
+                        </td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                    </tr>
+
+                    <tr>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td class="event">
+                            <a class="btn stretched-link" data-bs-toggle="modal" data-bs-target="#Modal24">24</a>
+                        </td>
+                        <td>25</td>
+                    </tr>
+
+                    <tr>
+                        <td class="event">
+                            <a class="btn stretched-link" data-bs-toggle="modal" data-bs-target="#Modal26">26</a>
+                        </td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td class="next-month">1</td>
+                        <td class="next-month">2</td>
+                    </tr>
+
+                    <tr>
+                        <td class="next-month">3</td>
+                        <td class="next-month">4</td>
+                        <td class="next-month">5</td>
+                        <td class="next-month">6</td>
+                        <td class="next-month">7</td>
+                        <td class="next-month">8</td>
+                        <td class="next-month">9</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<br></br>
+
+<!-- First Modal -->
+<div class="modal fade" id="Modal1">
+    <div class="modal-dialog modal-dialog-centered">
+        @foreach (var e in Model.Events)
+            {
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">@e.Navn</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <p>@e.EventInfo</p>
+                <p>The event will be held on the <strong>@e.Dato</strong></p>
+                <p>The event will start at <strong>@e.TimeStart</strong></p>
+                <p>The event will end at <strong>@e.TimeEnd</strong></p>
+                <p>The event has room for <strong>@e.MaksDeltagere</strong> partisipants</p>
+                <p>The event has <strong>@e.AntalDeltagere</strong> current partisipants</p>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+        }
+    </div>
+</div>
+
+<!-- Second Modal -->
+<div class="modal fade" id="Modal14">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Magnus' Fødselsdag!</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <p>I dag er det Magnus' fødselsdag!</p>
+                <p>Arrangement bliver afholdt kl: 09:30 til 13:00 den 14-06-2023.</p>
+                <p>Der kan være op til 10 deltagere.</p>
+                <p>Der er nuværende 4 deltagere.</p>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Third Modal -->
+<div class="modal fade" id="Modal15">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Eksamens dag!</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <p>I dag er det eksamens dag!</p>
+                <p>Arrengement bliver afholt kl 10:40 til 11:40 den 15-06-2023.</p>
+                <p>Der kan være op til 7 deltagere.</p>
+                <p>Der er nuværende 7 deltagere.</p>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Fourth Modal -->
+<div class="modal fade" id="Modal24">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Event Name</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                Event Info
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Fifth Modal -->
+<div class="modal fade" id="Modal26">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Event Name</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                Event Info
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+

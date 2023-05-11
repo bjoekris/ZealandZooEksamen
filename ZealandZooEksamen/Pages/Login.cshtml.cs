@@ -5,6 +5,7 @@ using ZealandZooEksamen.Services;
 
 namespace ZealandZooEksamen.Pages
 {
+    //Kader
     public class LoginModel : PageModel
     {
         private IUserService _userservice;

@@ -24,12 +24,30 @@ namespace ZealandZooEksamen.Pages.LagerCRUD
         public List<Lager> Lageret { get; set; }
         public void OnGet()
         {
-
+         
+            
             Lageret = _service.GetAllLager();
 
-            
+            double Omsætning = UdregnOmsætning(1);
+
+        }
+
+        public double UdregnOmsætning(int lagerId)
+        {
+
+            var lager = Lageret.Where(s => s.LagerId == lagerId);
 
 
+            double sum = 0;
+            foreach (var vare in lager)
+            {
+                sum += vare.LagerPris * vare.LagerAntal;
+            }
+
+
+            double average = sum;
+
+            return average;
         }
 
 
