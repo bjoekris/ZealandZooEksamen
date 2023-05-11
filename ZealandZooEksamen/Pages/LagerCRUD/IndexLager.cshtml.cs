@@ -24,10 +24,16 @@ namespace ZealandZooEksamen.Pages.LagerCRUD
         public List<Lager> Lageret { get; set; }
         public void OnGet()
         {
-         
-            
+
             Lageret = _service.GetAllLager();
+
+            
+
+
         }
+
+
+
 
 
 
