@@ -45,6 +45,13 @@
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Admin">Admin</a>
                             </li>
                         }
+
+                       @* Midlertidigt knap så jeg ikke skal logge ind hele tiden*@
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/LagerCRUD/IndexLager">VareSalg</a>
+                        </li>
+
+
                         @*log ud vises kun når man er logget ind*@
                             @if (ZealandZooEksamen.Services.UserService.LoggedIn)
                             {

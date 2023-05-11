@@ -16,6 +16,6 @@ namespace ZealandZooEksamen.Services
 
 
 
-        object Where(Func<object, bool> value);
+    
     }
 }
