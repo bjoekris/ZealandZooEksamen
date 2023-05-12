@@ -13,6 +13,8 @@ namespace ZealandZooEksamen.Pages.EventCRUD
 
         [BindProperty]
         public Event OpretEvent { get; set; }
+        public int AntalDeltagere { get; private set; }
+        public int MaksDeltagere { get; private set; }
 
         public CreateEventModel(IEventService eventService)
         {
@@ -22,6 +24,10 @@ namespace ZealandZooEksamen.Pages.EventCRUD
         public IActionResult OnPostOpret()
         {
             _eventService.CreateEvent(OpretEvent);
+            if (AntalDeltagere > MaksDeltagere)
+            {
+                Console.WriteLine("20 is greater than 18");
+            }
 
             return RedirectToPage("Index");
         }
