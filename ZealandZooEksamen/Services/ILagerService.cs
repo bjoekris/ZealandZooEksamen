@@ -6,16 +6,14 @@ namespace ZealandZooEksamen.Services
     { 
         public List<Lager> GetAllLager();
        
-        public void DeleteLager(int lagerId);
+        public Lager DeleteLager(int lagerId);
     
         public Lager FindLager(int lagerId);
       
-        public void CreateLager(Lager la);
+        public Lager CreateLager(Lager la);
 
-        public void EditLager(Lager newValuesLager);
-
-
-
-    
+        public Lager EditLager(int lagerId, Lager Lager);
+        
+        
     }
 }

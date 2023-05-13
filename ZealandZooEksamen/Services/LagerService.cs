@@ -1,4 +1,5 @@
 ﻿using DocumentFormat.OpenXml.InkML;
+using DocumentFormat.OpenXml.Office.Word;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System.Data.SqlClient;
 using ZealandZooEksamen.MockData;
@@ -14,25 +15,116 @@ namespace ZealandZooEksamen.Services
 
         private const String ConnectionString = "Data Source = mssql5.unoeuro.com; Initial Catalog = bbksolutions_dk_db_databasen; User ID = bbksolutions_dk; Password=cmfbeAtrkR5zBaF426x3;Connect Timeout = 30; Encrypt=False;TrustServerCertificate=False;ApplicationIntent = ReadWrite; MultiSubnetFailover=False\r\n";
         //SQL koden cmfbeAtrkR5zBaF426x3
+
+
         private Lager lageret = new Lager();
 
-        public void DeleteLager(int lagerId)
+
+
+        public Lager DeleteLager(int lagerId)
         {
-            lageret.SletLager(lagerId);
+            Lager l = FindLager(lagerId);
+            if (l is null)
+            {
+                return null;
+            }
+
+            String sql = "delete from Lager where LagerId = @LagerID";
+
+            SqlConnection conn = new SqlConnection (ConnectionString);
+            conn.Open ();
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@LagerID", lagerId);
+
+            int row = cmd.ExecuteNonQuery();
+
+            if(row == 1)
+            {
+                return l;
+            }
+            else
+            {
+                return null;
+            }
+
+
+            //Uden SQL
+            //lageret.SletLager(lagerId);
         }
 
 
-        public void CreateLager(Lager la)
+
+
+
+        public Lager CreateLager(Lager lager)
         {
-            lageret.OpretLager(la);
+            String sql = "insert into Person values(@LagerId,@LagerNavn,@LagerAntal,@LagerPris,@LagerIndkøbPris)";
+
+            SqlConnection conn = new SqlConnection(ConnectionString);
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@LagerId", lager.LagerId);
+            cmd.Parameters.AddWithValue("@LagerNavn", lager.LagerNavn);
+            cmd.Parameters.AddWithValue("@LagerAntal", lager.LagerAntal);
+            cmd.Parameters.AddWithValue("@LagerPris", lager.LagerPris);
+            cmd.Parameters.AddWithValue("@LagerIndkøbPris", lager.LagerIndkøbPris);
+
+            int row = cmd.ExecuteNonQuery();
+
+            if(row == 1)
+            {
+                return lager;
+            }
+            else
+            {
+                return null; 
+            }
+
+
+
+            //uden SQL
+            //lageret.OpretLager(la);
         }
+
+
+     
+
+
+
+
+
 
         public Lager FindLager(int lagerId)
         {
-            return lageret.FindLager(lagerId);
+            String sql = "select * from Lager where LagerId = @LagerId";
+
+            SqlConnection conn = new SqlConnection(ConnectionString);
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@LagerId",lagerId);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            
+            if(reader.Read())
+            {
+                return ReadLager(reader);
+
+            }
+            return null;
+
+
+            //Uden SQL
+            //return lageret.FindLager(lagerId);
         }
 
   
+
+
+
+
 
         public List<Lager> GetAllLager()
         {
@@ -71,9 +163,35 @@ namespace ZealandZooEksamen.Services
             return l;
         }
 
-        public void EditLager(Lager newValuesLager)
+        public Lager EditLager(int lagerId, Lager lager)
         {
-            lageret.EditLager(newValuesLager);
+            String sql = "update Lager set LagerName=@LagerName, LagerAntal=@LagerAntal, LagerPris=@LagerPris,LagerIndkøbPris=@LagerIndkøbPris";
+
+            SqlConnection conn = new SqlConnection(ConnectionString);
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            cmd.Parameters.AddWithValue("@LagerId", lagerId);
+            cmd.Parameters.AddWithValue("@LagerNavn", lager.LagerNavn);
+            cmd.Parameters.AddWithValue("@LagerAntal", lager.LagerAntal);
+            cmd.Parameters.AddWithValue("@LagerPris", lager.LagerPris);
+            cmd.Parameters.AddWithValue("@LagerIndkøbPris", lager.LagerIndkøbPris);
+
+            int row = cmd.ExecuteNonQuery();
+            if (row == 1)
+            {
+                lager.LagerId = lagerId;
+                return lager;
+            }
+            else
+            {
+                return null;
+            }
+
+
+            //Uden SQL
+            //lageret.EditLager(Lager);
         }
     }
 
