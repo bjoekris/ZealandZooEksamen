@@ -33,8 +33,9 @@ namespace ZealandZooEksamen.Pages.EventCRUD
         public List<Person> Personer { get; set; }
 
 
-        public void OnGet()
+        public void OnGet(int? eventId)
         {
+            if (eventId is null) { 
 
             //Events
             /*MockEvents = _service.GetAllMockEvents()*/;
@@ -42,6 +43,23 @@ namespace ZealandZooEksamen.Pages.EventCRUD
 
             //Tilmelding
             Personer = _personService.GetAllPerson();
+        }
+            else
+            {
+                IUserService user = SessionHelper.GetUser(HttpContext);
+                Event ev = _service.FindEvent((int)eventId);
+                if (!ev.Tilmeldte.Contains(user.UserName))
+                {
+                    ev.Tilmeldte.Add(user.UserName);
+                }
+                Events = _service.GetAllEvents();
+                Personer = _personService.GetAllPerson();
+            }
+        }
+
+        public void OnPost(int eventId)
+        {
+            
         }
 
 
