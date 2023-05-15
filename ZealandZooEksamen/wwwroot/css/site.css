@@ -25,6 +25,20 @@ body {
     font-family: Verdana, sans-serif;
 }
 
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 /* Kalender CSS */
 
 @import url(https://weloveiconfonts.com/api/?family=fontawesome);
