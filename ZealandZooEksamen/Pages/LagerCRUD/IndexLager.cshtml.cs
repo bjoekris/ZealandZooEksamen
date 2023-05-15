@@ -28,14 +28,14 @@ namespace ZealandZooEksamen.Pages.LagerCRUD
             
             Lageret = _service.GetAllLager();
 
-            double Omsætning = UdregnOmsætning(1);
+            double Omsætning = UdregnOmsætning();
 
         }
 
-        public double UdregnOmsætning(int lagerId)
+        public double UdregnOmsætning()
         {
 
-            var lager = Lageret.Where(s => s.LagerId == lagerId);
+            var lager = Lageret;
 
 
             double sum = 0;
@@ -49,6 +49,9 @@ namespace ZealandZooEksamen.Pages.LagerCRUD
 
             return average;
         }
+
+
+
 
 
 

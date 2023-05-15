@@ -5,14 +5,12 @@ namespace ZealandZooEksamen.Services
 {
     public class LagerService : ILagerService
     {
-        
         private Lager lageret = new Lager();
 
         public void DeleteLager(int lagerId)
         {
             lageret.SletLager(lagerId);
         }
-
 
         public void CreateLager(Lager la)
         {
@@ -24,21 +22,20 @@ namespace ZealandZooEksamen.Services
             return lageret.FindLager(lagerId);
         }
 
-  
-
         public List<Lager> GetAllLager()
         {
             return lageret.GetAllLager();
         }
 
-   
-
         public void EditLager(Lager newValuesLager)
         {
             lageret.EditLager(newValuesLager);
         }
+
+        public object Where(Func<object, bool> value)
+        {
+            throw new NotImplementedException();
+        }
     }
-
-
 }
 
