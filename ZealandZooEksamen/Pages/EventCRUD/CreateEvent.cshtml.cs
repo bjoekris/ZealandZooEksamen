@@ -22,10 +22,6 @@ namespace ZealandZooEksamen.Pages.EventCRUD
         public IActionResult OnPostOpret()
         {
             _eventService.CreateEvent(OpretEvent);
-            if (AntalDeltagere > MaksDeltagere)
-            {
-                Console.WriteLine("20 is greater than 18");
-            }
 
             return RedirectToPage("Index");
         }
