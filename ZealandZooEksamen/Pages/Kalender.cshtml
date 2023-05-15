@@ -33,35 +33,34 @@
                 </thead>
 
                 <tbody>
-                    @foreach (var e in Model.Events) {
                     <form method="post">
                         <tr>
                             <td class="prev-month">
                                 <div>
-                                    <input class="btn stretch-link disabled" type="submit" asp-route-dag="" value="29" />
+                                    <input class="btn stretch-link disabled" type="submit" value="29" />
                                 </div>
                             </td>
                             <td class="prev-month">
                                 <div>
-                                    <input class="btn stretch-link disabled" type="submit" asp-route-dag="" value="30" />
+                                    <input class="btn stretch-link disabled" type="submit" value="30" />
                                 </div>
                             </td>
                             <td class="prev-month">
                                 <div>
-                                    <input class="btn stretch-link disabled" type="submit" asp-route-dag="" value="31" />
+                                    <input class="btn stretch-link disabled" type="submit" value="31" />
                                 </div>
                             </td>
                             <td>
                                 @if (Model.HasEvent(1))
                                     {
                                         <div class="event">
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="1" value="1" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-eventId="1" value="1" />
                                         </div>
                                     }
                                 else
                                     {
                                         <div>
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" asp-route-dag="1" value="1" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" value="1" />
                                         </div>
                                     }
                             </td>
@@ -69,13 +68,13 @@
                                  @if (Model.HasEvent(2))
                                     {
                                         <div class="event">
-                                            <input class="streatch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="2" value="2" />
+                                            <input class="btn streatch-link" type="submit" asp-page="KalenderEvent" asp-route-eventId="2" value="2" />
                                         </div>
                                     }
                                 else
                                     {
                                         <div>
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" asp-route-dag="2" value="2" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" value="2" />
                                         </div>
                                     }
                             </td>
@@ -83,13 +82,13 @@
                                 @if (Model.HasEvent(3))
                                     {
                                         <div class="event">
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="3" value="3" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-eventId="3" value="3" />
                                         </div>
                                     }
                                 else
                                     {
                                         <div>
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" asp-route-dag="3" value="3" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" value="3" />
                                         </div>
                                     }
                             </td>
@@ -97,13 +96,13 @@
                                 @if (Model.HasEvent(4))
                                     {
                                         <div class="event">
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="4" value="4" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="X" value="4" />
                                         </div>
                                     }
                                 else
                                     {
                                         <div>
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" asp-route-dag="4" value="4" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" value="4" />
                                         </div>
                                     }
                             </td>
@@ -114,13 +113,13 @@
                                 @if (Model.HasEvent(5))
                                     {
                                         <div class="event">
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="5" value="5" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="X" value="5" />
                                         </div>
                                     }
                                 else
                                     {
                                         <div>
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" asp-route-dag="5" value="5" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" value="5" />
                                         </div>
                                     }
                             </td>
@@ -128,13 +127,13 @@
                                 @if (Model.HasEvent(6))
                                     {
                                         <div class="event">
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="6" value="6" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="X" value="6" />
                                         </div>
                                     }
                                 else
                                     {
                                         <div>
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" asp-route-dag="6" value="6" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" value="6" />
                                         </div>
                                     }
                             </td>
@@ -142,13 +141,13 @@
                                 @if (Model.HasEvent(7))
                                     {
                                         <div class="event">
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="7" value="7" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="X" value="7" />
                                         </div>
                                     }
                                 else
                                     {
                                         <div>
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" asp-route-dag="7" value="7" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" value="7" />
                                         </div>
                                     }
                             </td>
@@ -156,13 +155,13 @@
                                 @if (Model.HasEvent(8))
                                     {
                                         <div class="event">
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="8" value="8" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="X" value="8" />
                                         </div>
                                     }
                                 else
                                     {
                                         <div>
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" asp-route-dag="8" value="8" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" value="8" />
                                         </div>
                                     }
                             </td>
@@ -170,13 +169,13 @@
                                 @if (Model.HasEvent(9))
                                     {
                                         <div class="event">
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="9" value="9" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="X" value="9" />
                                         </div>
                                     }
                                 else
                                     {
                                         <div>
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" asp-route-dag="9" value="9" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" value="9" />
                                         </div>
                                     }
                             </td>
@@ -184,13 +183,13 @@
                                 @if (Model.HasEvent(10))
                                     {
                                         <div class="event">
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="10" value="10" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="X" value="10" />
                                         </div>
                                     }
                                 else
                                     {
                                         <div>
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" asp-route-dag="10" value="10" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" value="10" />
                                         </div>
                                     }
                             </td>
@@ -198,13 +197,13 @@
                                 @if (Model.HasEvent(11))
                                     {
                                         <div class="event">
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="11" value="11" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="X" value="11" />
                                         </div>
                                     }
                                 else
                                     {
                                         <div>
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" asp-route-dag="11" value="11" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" value="11" />
                                         </div>
                                     }
                             </td>
@@ -221,7 +220,7 @@
                                 else
                                     {
                                         <div>
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" asp-route-dag="12" value="12" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" value="12" />
                                         </div>
                                     }
                             </td>
@@ -229,13 +228,13 @@
                                 @if (Model.HasEvent(13))
                                     {
                                         <div class="event">
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="13" value="13" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="X" value="13" />
                                         </div>
                                     }
                                 else
                                     {
                                         <div>
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" asp-route-dag="13" value="13" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" value="13" />
                                         </div>
                                     }
                             </td>
@@ -243,13 +242,13 @@
                                 @if (Model.HasEvent(14))
                                     {
                                         <div class="event">
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="13" value="14" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="X" value="14" />
                                         </div>
                                     }
                                 else
                                     {
                                         <div>
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" asp-route-dag="@e.EventId" value="14" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" value="14" />
                                         </div>
                                     }
                             </td>
@@ -257,13 +256,13 @@
                                 @if (Model.HasEvent(15))
                                     {
                                         <div class="event">
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="15" value="15" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="X" value="15" />
                                         </div>
                                     }
                                 else
                                     {
                                         <div>
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" asp-route-dag="15" value="15" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" value="15" />
                                         </div>
                                     }
                             </td>
@@ -271,13 +270,13 @@
                                 @if (Model.HasEvent(16))
                                     {
                                         <div class="event">
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="16" value="16" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="X" value="16" />
                                         </div>
                                     }
                                 else
                                     {
                                         <div>
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" asp-route-dag="16" value="16" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" value="16" />
                                         </div>
                                     }
                             </td>
@@ -285,13 +284,13 @@
                                 @if (Model.HasEvent(17))
                                     {
                                         <div class="event">
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="17" value="17" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="X" value="17" />
                                         </div>
                                     }
                                 else
                                     {
                                         <div>
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" asp-route-dag="17" value="17" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" value="17" />
                                         </div>
                                     }
                             </td>
@@ -299,13 +298,13 @@
                                 @if (Model.HasEvent(18))
                                     {
                                         <div class="event">
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="18" value="18" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="X" value="18" />
                                         </div>
                                     }
                                 else
                                     {
                                         <div>
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" asp-route-dag="18" value="18" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" value="18" />
                                         </div>
                                     }
                             </td>
@@ -316,13 +315,13 @@
                                 @if (Model.HasEvent(19))
                                     {
                                         <div class="event">
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="19" value="19" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="X" value="19" />
                                         </div>
                                     }
                                 else
                                     {
                                         <div>
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" asp-route-dag="19" value="19" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" value="19" />
                                         </div>
                                     }
                             </td>
@@ -330,13 +329,13 @@
                                 @if (Model.HasEvent(20))
                                     {
                                         <div class="event">
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="20" value="20" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="X" value="20" />
                                         </div>
                                     }
                                 else
                                     {
                                         <div>
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" asp-route-dag="20" value="20" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" value="20" />
                                         </div>
                                     }
                             </td>
@@ -344,13 +343,13 @@
                                 @if (Model.HasEvent(21))
                                     {
                                         <div class="event">
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="21" value="21" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="X" value="21" />
                                         </div>
                                     }
                                 else
                                     {
                                         <div>
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" asp-route-dag="21" value="21" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" value="21" />
                                         </div>
                                     }
                             </td>
@@ -358,13 +357,13 @@
                                 @if (Model.HasEvent(22))
                                     {
                                         <div class="event">
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="22" value="22" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="X" value="22" />
                                         </div>
                                     }
                                 else
                                     {
                                         <div>
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" asp-route-dag="22" value="22" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" value="22" />
                                         </div>
                                     }
                             </td>
@@ -372,13 +371,13 @@
                                 @if (Model.HasEvent(23))
                                     {
                                         <div class="event">
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="23" value="23" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="X" value="23" />
                                         </div>
                                     }
                                 else
                                     {
                                         <div>
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" asp-route-dag="23" value="23" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" value="23" />
                                         </div>
                                     }
                             </td>
@@ -386,13 +385,13 @@
                                 @if (Model.HasEvent(24))
                                     {
                                         <div class="event">
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="24" value="24" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="X" value="24" />
                                         </div>
                                     }
                                 else
                                     {
                                         <div>
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" asp-route-dag="24" value="24" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" value="24" />
                                         </div>
                                     }
                             </td>
@@ -400,13 +399,13 @@
                                 @if (Model.HasEvent(25))
                                     {
                                         <div class="event">
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="25" value="25" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="X" value="25" />
                                         </div>
                                     }
                                 else
                                     {
                                         <div>
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" asp-route-dag="25" value="25" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" value="25" />
                                         </div>
                                     }
                             </td>
@@ -417,13 +416,13 @@
                                 @if (Model.HasEvent(26))
                                     {
                                         <div class="event">
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="26" value="26" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="X" value="26" />
                                         </div>
                                     }
                                 else
                                     {
                                         <div>
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" asp-route-dag="26" value="26" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" value="26" />
                                         </div>
                                     }
                             </td>
@@ -431,13 +430,13 @@
                                 @if (Model.HasEvent(27))
                                     {
                                         <div class="event">
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="27" value="27" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="X" value="27" />
                                         </div>
                                     }
                                 else
                                     {
                                         <div>
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" asp-route-dag="27" value="27" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" value="27" />
                                         </div>
                                     }
                             </td>
@@ -445,13 +444,13 @@
                                 @if (Model.HasEvent(28))
                                     {
                                         <div class="event">
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="28" value="28" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="X" value="28" />
                                         </div>
                                     }
                                 else
                                     {
                                         <div>
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" asp-route-dag="28" value="28" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" value="28" />
                                         </div>
                                     }
                             </td>
@@ -459,13 +458,13 @@
                                 @if (Model.HasEvent(29))
                                     {
                                         <div class="event">
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="29" value="29" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="X" value="29" />
                                         </div>
                                     }
                                 else
                                     {
                                         <div>
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" asp-route-dag="29" value="29" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" value="29" />
                                         </div>
                                     }
                             </td>
@@ -473,29 +472,28 @@
                                 @if (Model.HasEvent(30))
                                     {
                                         <div class="event">
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="30" value="30" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderEvent" asp-route-dag="X" value="30" />
                                         </div>
                                     }
                                 else
                                     {
                                         <div>
-                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" asp-route-dag="30" value="30" />
+                                            <input class="btn stretch-link" type="submit" asp-page="KalenderNoEvent" value="30" />
                                         </div>
                                     }
                             </td>
                             <td class="next-month">
                                 <div>
-                                    <input class="btn stretch-link disabled" type="submit" asp-route-dag="" value="1" />
+                                    <input class="btn stretch-link disabled" type="submit" value="1" />
                                 </div>
                             </td>
                             <td class="next-month">
                                 <div>
-                                    <input class="btn stretch-link disabled" type="submit" asp-route-dag="" value="2" />
+                                    <input class="btn stretch-link disabled" type="submit" value="2" />
                                 </div>
                             </td>
                         </tr>
                     </form>
-                    }
                 </tbody>
             </table>
         </div>

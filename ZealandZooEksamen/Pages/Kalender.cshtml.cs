@@ -19,9 +19,17 @@ namespace ZealandZooEksamen.Pages
         }
         public void OnPost(int dag)
         {
-
+            string kalenderDag = HentDag(dag);
+            Events.Find(e => e.Dato == kalenderDag);
         }
         public bool HasEvent(int dag)
+        {
+            string kalenderDag = HentDag(dag);
+
+            return Events.Any(e => e.Dato == kalenderDag);
+        }
+
+        private static string HentDag(int dag)
         {
             string kalenderDag = "";
             if (dag < 10)
@@ -33,7 +41,7 @@ namespace ZealandZooEksamen.Pages
                 kalenderDag = "2023-06-" + dag;
             }
 
-            return Events.Any(e => e.Dato == kalenderDag);
+            return kalenderDag;
         }
     }
 }
