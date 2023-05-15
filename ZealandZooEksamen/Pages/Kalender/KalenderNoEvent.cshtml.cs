@@ -10,7 +10,7 @@ namespace ZealandZooEksamen.Pages
         }
         public IActionResult OnPostTilbage()
         {
-            return RedirectToPage("Index");
+            return RedirectToPage("EventCRUD/Index");
         }
     }
 }
