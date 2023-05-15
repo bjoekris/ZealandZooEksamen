@@ -59,7 +59,7 @@ namespace ZealandZooEksamen.Services
 
         public Lager CreateLager(Lager lager)
         {
-            String sql = "insert into Person values(@LagerId,@LagerNavn,@LagerAntal,@LagerPris,@LagerIndkøbPris)";
+            String sql = "insert into Lager values(@LagerId,@LagerNavn,@LagerAntal,@LagerPris,@LagerIndkøbPris)";
 
             SqlConnection conn = new SqlConnection(ConnectionString);
             conn.Open();
@@ -165,7 +165,7 @@ namespace ZealandZooEksamen.Services
 
         public Lager EditLager(int lagerId, Lager lager)
         {
-            String sql = "update Lager set LagerName=@LagerName, LagerAntal=@LagerAntal, LagerPris=@LagerPris,LagerIndkøbPris=@LagerIndkøbPris";
+            String sql = "update Lager set LagerNavn=@LagerNavn, LagerAntal=@LagerAntal, LagerPris=@LagerPris, LagerIndkøbPris=@LagerIndkøbPris";
 
             SqlConnection conn = new SqlConnection(ConnectionString);
             conn.Open();

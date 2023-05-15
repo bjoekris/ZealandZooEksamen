@@ -12,8 +12,7 @@ namespace ZealandZooEksamen.Services
       
         public Lager CreateLager(Lager la);
 
-        public Lager EditLager(int lagerId, Lager Lager);
-        
-        
+        public Lager EditLager(int lagerId, Lager lager);
+       
     }
 }

@@ -58,7 +58,7 @@ namespace ZealandZooEksamen.Pages.LagerCRUD
         
         }
 
-        public IActionResult OnPostEdit(int lagerId)
+        public IActionResult OnPostEdit(int lagerId, Lager lager)
         {
             Lager editLager = _Service.FindLager(LagerId);
 
@@ -69,7 +69,7 @@ namespace ZealandZooEksamen.Pages.LagerCRUD
             editLager.LagerIndkøbPris = LagerIndkøbPris;
            
 
-            _Service.EditLager(editLager);
+            _Service.EditLager(lagerId,editLager);
 
             return RedirectToPage("IndexLager");
         }
