@@ -10,8 +10,8 @@ using ZealandZooEksamen.UserStory_12;
 //Mathilde//
 namespace ZealandZooEksamen.Userstory_12;
 
-    public class PersonListe
-    {
+    public class PersonListe 
+{
 
 
          private readonly List<Person> _Personer = new List<Person>()
@@ -27,8 +27,19 @@ namespace ZealandZooEksamen.Userstory_12;
 
         public PersonListe() { }
 
-  
 
+    public List<Person> GetAllPersons(bool attending)
+    {
+        if (attending == true)
+        {
+            return new List<Person>(_Personer);
+        }
+
+        else
+        {
+            return null; 
+        }
+    }
 
     public Person FindPerson(int id)
     {
@@ -40,11 +51,6 @@ namespace ZealandZooEksamen.Userstory_12;
             }
         }
         throw new Exception("Ingen tilmeldte");
-    }
-
-    public List<Person> GetAllPersons()
-    {
-        return new List<Person>(_Personer);
     }
 
     private readonly List<Person> person = new List<Person>()
@@ -66,7 +72,11 @@ namespace ZealandZooEksamen.Userstory_12;
         _Personer.Remove(sletPerson);
     }
 
- 
+   internal List<Person> GetAllPersons()
+    {
+        throw new NotImplementedException();
+
+    }
 }
 
 

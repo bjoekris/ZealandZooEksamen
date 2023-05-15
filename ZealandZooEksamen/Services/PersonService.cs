@@ -26,6 +26,11 @@ namespace ZealandZooEksamen.Services
 
         public List<Person> GetAllPerson()
         {
+            throw new NotImplementedException();
+        }
+
+        public List<Person> GetAllPersons()
+        {
             return liste.GetAllPersons();
         }
 

@@ -20,5 +20,12 @@ namespace ZealandZooEksamen.Pages.EventCRUD
             /*MockEvents = _service.GetAllMockEvents()*/;
             Events = _service.GetAllEvents();
         }
+
+      
+       
+   
+       
+
+
     }
 }
