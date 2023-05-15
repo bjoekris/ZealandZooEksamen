@@ -59,13 +59,13 @@ namespace ZealandZooEksamen.Services
 
         public Lager CreateLager(Lager lager)
         {
-            String sql = "insert into Lager values(@LagerId,@LagerNavn,@LagerAntal,@LagerPris,@LagerIndkøbPris)";
+            String sql = "insert into Lager values(@LagerNavn,@LagerAntal,@LagerPris,@LagerIndkøbPris)";
 
             SqlConnection conn = new SqlConnection(ConnectionString);
             conn.Open();
 
             SqlCommand cmd = new SqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@LagerId", lager.LagerId);
+            //cmd.Parameters.AddWithValue("@LagerId", lager.LagerId);
             cmd.Parameters.AddWithValue("@LagerNavn", lager.LagerNavn);
             cmd.Parameters.AddWithValue("@LagerAntal", lager.LagerAntal);
             cmd.Parameters.AddWithValue("@LagerPris", lager.LagerPris);
