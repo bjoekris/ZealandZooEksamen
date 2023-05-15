@@ -193,8 +193,11 @@ namespace ZealandZooEksamen.Services
             //Uden SQL
             //lageret.EditLager(Lager);
         }
+
+        public object Where(Func<object, bool> value)
+        {
+            throw new NotImplementedException();
+        }
     }
-
-
 }
 
