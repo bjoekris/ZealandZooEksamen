@@ -17,5 +17,23 @@ namespace ZealandZooEksamen.Pages
         {
             Events = _kalenderService.GetAllEvents();
         }
+        public void OnPost(int dag)
+        {
+
+        }
+        public bool HasEvent(int dag)
+        {
+            string kalenderDag = "";
+            if (dag < 10)
+            {
+                kalenderDag = "2023-06-0" + dag;
+            }
+            else
+            {
+                kalenderDag = "2023-06-" + dag;
+            }
+
+            return Events.Any(e => e.Dato == kalenderDag);
+        }
     }
 }

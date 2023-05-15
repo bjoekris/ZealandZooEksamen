@@ -31,11 +31,6 @@ namespace ZealandZooEksamen.Services
         {
             lageret.EditLager(newValuesLager);
         }
-
-        public object Where(Func<object, bool> value)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
 

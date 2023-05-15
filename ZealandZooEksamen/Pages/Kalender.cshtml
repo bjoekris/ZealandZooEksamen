@@ -33,208 +33,470 @@
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td class="prev-month">29</td>
-                        <td class="prev-month">30</td>
-                        <td class="prev-month">31</td>
-                        <td class="event">
-                            <a class="btn stretched-link" data-bs-toggle="modal" data-bs-target="#Modal1">1</a>
-                        </td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                    </tr>
+                    <form method="post">
+                        <tr>
+                            <td class="prev-month">
+                                <div>
+                                    <input class="btn stretch-link disabled" type="submit" asp-route-dag="" value="29" />
+                                </div>
+                            </td>
+                            <td class="prev-month">
+                                <div>
+                                    <input class="btn stretch-link disabled" type="submit" asp-route-dag="" value="30" />
+                                </div>
+                            </td>
+                            <td class="prev-month">
+                                <div>
+                                    <input class="btn stretch-link disabled" type="submit" asp-route-dag="" value="31" />
+                                </div>
+                            </td>
+                            <td>
+                                @if (Model.HasEvent(1))
+                                    {
+                                        <div class="event">
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="1" value="1" />
+                                        </div>
+                                    }
+                                else
+                                    {
+                                        <div>
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="1" value="1" />
+                                        </div>
+                                    }
+                            </td>
+                            <td>
+                                 @if (Model.HasEvent(2))
+                                    {
+                                        <div class="event">
+                                            <input class="streatch-link" type="submit" asp-route-dag="2" value="2" />
+                                        </div>
+                                    }
+                                else
+                                    {
+                                        <div>
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="2" value="2" />
+                                        </div>
+                                    }
+                            </td>
+                            <td>
+                                @if (Model.HasEvent(3))
+                                    {
+                                        <div class="event">
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="3" value="3" />
+                                        </div>
+                                    }
+                                else
+                                    {
+                                        <div>
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="3" value="3" />
+                                        </div>
+                                    }
+                            </td>
+                            <td>
+                                @if (Model.HasEvent(4))
+                                    {
+                                        <div class="event">
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="4" value="4" />
+                                        </div>
+                                    }
+                                else
+                                    {
+                                        <div>
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="4" value="4" />
+                                        </div>
+                                    }
+                            </td>
+                        </tr>
 
-                    <tr>
-                        <td>5</td>
-                        <td>6</td>
-                        <td>7</td>
-                        <td>8</td>
-                        <td>9</td>
-                        <td>10</td>
-                        <td>11</td>
-                    </tr>
+                        <tr>
+                            <td>
+                                @if (Model.HasEvent(5))
+                                    {
+                                        <div class="event">
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="5" value="5" />
+                                        </div>
+                                    }
+                                else
+                                    {
+                                        <div>
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="5" value="5" />
+                                        </div>
+                                    }
+                            </td>
+                            <td>
+                                @if (Model.HasEvent(6))
+                                    {
+                                        <div class="event">
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="6" value="6" />
+                                        </div>
+                                    }
+                                else
+                                    {
+                                        <div>
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="6" value="6" />
+                                        </div>
+                                    }
+                            </td>
+                            <td>
+                                @if (Model.HasEvent(7))
+                                    {
+                                        <div class="event">
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="7" value="7" />
+                                        </div>
+                                    }
+                                else
+                                    {
+                                        <div>
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="7" value="7" />
+                                        </div>
+                                    }
+                            </td>
+                            <td>
+                                @if (Model.HasEvent(8))
+                                    {
+                                        <div class="event">
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="8" value="8" />
+                                        </div>
+                                    }
+                                else
+                                    {
+                                        <div>
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="8" value="8" />
+                                        </div>
+                                    }
+                            </td>
+                            <td>
+                                @if (Model.HasEvent(9))
+                                    {
+                                        <div class="event">
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="9" value="9" />
+                                        </div>
+                                    }
+                                else
+                                    {
+                                        <div>
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="9" value="9" />
+                                        </div>
+                                    }
+                            </td>
+                            <td>
+                                @if (Model.HasEvent(10))
+                                    {
+                                        <div class="event">
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="10" value="10" />
+                                        </div>
+                                    }
+                                else
+                                    {
+                                        <div>
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="10" value="10" />
+                                        </div>
+                                    }
+                            </td>
+                            <td>
+                                @if (Model.HasEvent(11))
+                                    {
+                                        <div class="event">
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="11" value="11" />
+                                        </div>
+                                    }
+                                else
+                                    {
+                                        <div>
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="11" value="11" />
+                                        </div>
+                                    }
+                            </td>
+                        </tr>
 
-                    <tr>
-                        <td>12</td>
-                        <td>13</td>
-                        <td class="event">
-                            <a class="btn stretched-link" data-bs-toggle="modal" data-bs-target="#Modal14">14</a>
-                        </td>
-                        <td class="event">
-                            <a class="btn stretched-link" data-bs-toggle="modal" data-bs-target="#Modal15">15</a>
-                        </td>
-                        <td>16</td>
-                        <td>17</td>
-                        <td>18</td>
-                    </tr>
+                        <tr>
+                            <td>
+                                @if (Model.HasEvent(12))
+                                    {
+                                        <div class="event">
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="12" value="12" />
+                                        </div>
+                                    }
+                                else
+                                    {
+                                        <div>
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="12" value="12" />
+                                        </div>
+                                    }
+                            </td>
+                            <td>
+                                @if (Model.HasEvent(13))
+                                    {
+                                        <div class="event">
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="13" value="13" />
+                                        </div>
+                                    }
+                                else
+                                    {
+                                        <div>
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="13" value="13" />
+                                        </div>
+                                    }
+                            </td>
+                            <td>
+                                @if (Model.HasEvent(14))
+                                    {
+                                        <div class="event">
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="14" value="14" />
+                                        </div>
+                                    }
+                                else
+                                    {
+                                        <div>
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="14" value="14" />
+                                        </div>
+                                    }
+                            </td>
+                            <td>
+                                @if (Model.HasEvent(15))
+                                    {
+                                        <div class="event">
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="15" value="15" />
+                                        </div>
+                                    }
+                                else
+                                    {
+                                        <div>
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="15" value="15" />
+                                        </div>
+                                    }
+                            </td>
+                            <td>
+                                @if (Model.HasEvent(16))
+                                    {
+                                        <div class="event">
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="16" value="16" />
+                                        </div>
+                                    }
+                                else
+                                    {
+                                        <div>
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="16" value="16" />
+                                        </div>
+                                    }
+                            </td>
+                            <td>
+                                @if (Model.HasEvent(17))
+                                    {
+                                        <div class="event">
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="17" value="17" />
+                                        </div>
+                                    }
+                                else
+                                    {
+                                        <div>
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="17" value="17" />
+                                        </div>
+                                    }
+                            </td>
+                            <td>
+                                @if (Model.HasEvent(18))
+                                    {
+                                        <div class="event">
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="18" value="18" />
+                                        </div>
+                                    }
+                                else
+                                    {
+                                        <div>
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="18" value="18" />
+                                        </div>
+                                    }
+                            </td>
+                        </tr>
 
-                    <tr>
-                        <td>19</td>
-                        <td>20</td>
-                        <td>21</td>
-                        <td>22</td>
-                        <td>23</td>
-                        <td class="event">
-                            <a class="btn stretched-link" data-bs-toggle="modal" data-bs-target="#Modal24">24</a>
-                        </td>
-                        <td>25</td>
-                    </tr>
+                        <tr>
+                            <td>
+                                @if (Model.HasEvent(19))
+                                    {
+                                        <div class="event">
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="19" value="19" />
+                                        </div>
+                                    }
+                                else
+                                    {
+                                        <div>
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="19" value="19" />
+                                        </div>
+                                    }
+                            </td>
+                            <td>
+                                @if (Model.HasEvent(20))
+                                    {
+                                        <div class="event">
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="20" value="20" />
+                                        </div>
+                                    }
+                                else
+                                    {
+                                        <div>
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="20" value="20" />
+                                        </div>
+                                    }
+                            </td>
+                            <td>
+                                @if (Model.HasEvent(21))
+                                    {
+                                        <div class="event">
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="21" value="21" />
+                                        </div>
+                                    }
+                                else
+                                    {
+                                        <div>
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="21" value="21" />
+                                        </div>
+                                    }
+                            </td>
+                            <td>
+                                @if (Model.HasEvent(22))
+                                    {
+                                        <div class="event">
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="22" value="22" />
+                                        </div>
+                                    }
+                                else
+                                    {
+                                        <div>
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="22" value="22" />
+                                        </div>
+                                    }
+                            </td>
+                            <td>
+                                @if (Model.HasEvent(23))
+                                    {
+                                        <div class="event">
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="23" value="23" />
+                                        </div>
+                                    }
+                                else
+                                    {
+                                        <div>
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="23" value="23" />
+                                        </div>
+                                    }
+                            </td>
+                            <td>
+                                @if (Model.HasEvent(24))
+                                    {
+                                        <div class="event">
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="24" value="24" />
+                                        </div>
+                                    }
+                                else
+                                    {
+                                        <div>
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="24" value="24" />
+                                        </div>
+                                    }
+                            </td>
+                            <td>
+                                @if (Model.HasEvent(25))
+                                    {
+                                        <div class="event">
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="25" value="25" />
+                                        </div>
+                                    }
+                                else
+                                    {
+                                        <div>
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="25" value="25" />
+                                        </div>
+                                    }
+                            </td>
+                        </tr>
 
-                    <tr>
-                        <td class="event">
-                            <a class="btn stretched-link" data-bs-toggle="modal" data-bs-target="#Modal26">26</a>
-                        </td>
-                        <td>27</td>
-                        <td>28</td>
-                        <td>29</td>
-                        <td>30</td>
-                        <td class="next-month">1</td>
-                        <td class="next-month">2</td>
-                    </tr>
-
-                    <tr>
-                        <td class="next-month">3</td>
-                        <td class="next-month">4</td>
-                        <td class="next-month">5</td>
-                        <td class="next-month">6</td>
-                        <td class="next-month">7</td>
-                        <td class="next-month">8</td>
-                        <td class="next-month">9</td>
-                    </tr>
+                        <tr>
+                            <td>
+                                @if (Model.HasEvent(26))
+                                    {
+                                        <div class="event">
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="26" value="26" />
+                                        </div>
+                                    }
+                                else
+                                    {
+                                        <div>
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="26" value="26" />
+                                        </div>
+                                    }
+                            </td>
+                            <td>
+                                @if (Model.HasEvent(27))
+                                    {
+                                        <div class="event">
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="27" value="27" />
+                                        </div>
+                                    }
+                                else
+                                    {
+                                        <div>
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="27" value="27" />
+                                        </div>
+                                    }
+                            </td>
+                            <td>
+                                @if (Model.HasEvent(28))
+                                    {
+                                        <div class="event">
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="28" value="28" />
+                                        </div>
+                                    }
+                                else
+                                    {
+                                        <div>
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="28" value="28" />
+                                        </div>
+                                    }
+                            </td>
+                            <td>
+                                @if (Model.HasEvent(29))
+                                    {
+                                        <div class="event">
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="29" value="29" />
+                                        </div>
+                                    }
+                                else
+                                    {
+                                        <div>
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="29" value="29" />
+                                        </div>
+                                    }
+                            </td>
+                            <td>
+                                @if (Model.HasEvent(30))
+                                    {
+                                        <div class="event">
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="30" value="30" />
+                                        </div>
+                                    }
+                                else
+                                    {
+                                        <div>
+                                            <input class="btn stretch-link" type="submit" asp-route-dag="30" value="30" />
+                                        </div>
+                                    }
+                            </td>
+                            <td class="next-month">
+                                <div>
+                                    <input class="btn stretch-link disabled" type="submit" asp-route-dag="" value="1" />
+                                </div>
+                            </td>
+                            <td class="next-month">
+                                <div>
+                                    <input class="btn stretch-link disabled" type="submit" asp-route-dag="" value="2" />
+                                </div>
+                            </td>
+                        </tr>
+                    </form>
                 </tbody>
             </table>
         </div>
     </div>
 </body>
 <br></br>
-
-<!-- First Modal -->
-<div class="modal fade" id="Modal1">
-    <div class="modal-dialog modal-dialog-centered">
-        @foreach (var e in Model.Events)
-            {
-        <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">@e.Navn</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-                <p>@e.EventInfo</p>
-                <p>The event will be held on the <strong>@e.Dato</strong></p>
-                <p>The event will start at <strong>@e.TimeStart</strong></p>
-                <p>The event will end at <strong>@e.TimeEnd</strong></p>
-                <p>The event has room for <strong>@e.MaksDeltagere</strong> partisipants</p>
-                <p>The event has <strong>@e.AntalDeltagere</strong> current partisipants</p>
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-        }
-    </div>
-</div>
-
-<!-- Second Modal -->
-<div class="modal fade" id="Modal14">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Magnus' Fødselsdag!</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-                <p>I dag er det Magnus' fødselsdag!</p>
-                <p>Arrangement bliver afholdt kl: 09:30 til 13:00 den 14-06-2023.</p>
-                <p>Der kan være op til 10 deltagere.</p>
-                <p>Der er nuværende 4 deltagere.</p>
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Third Modal -->
-<div class="modal fade" id="Modal15">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Eksamens dag!</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-                <p>I dag er det eksamens dag!</p>
-                <p>Arrengement bliver afholt kl 10:40 til 11:40 den 15-06-2023.</p>
-                <p>Der kan være op til 7 deltagere.</p>
-                <p>Der er nuværende 7 deltagere.</p>
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Fourth Modal -->
-<div class="modal fade" id="Modal24">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Event Name</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-                Event Info
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Fifth Modal -->
-<div class="modal fade" id="Modal26">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Event Name</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-                Event Info
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-

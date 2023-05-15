@@ -13,9 +13,5 @@ namespace ZealandZooEksamen.Services
         public void CreateLager(Lager la);
 
         public void EditLager(Lager newValuesLager);
-
-
-
-        object Where(Func<object, bool> value);
     }
 }
