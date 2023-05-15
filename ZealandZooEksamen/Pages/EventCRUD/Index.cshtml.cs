@@ -13,16 +13,16 @@ namespace ZealandZooEksamen.Pages.EventCRUD
     {
        //Services til Index
         private IEventService _service;
-        private IPersonService _personService;
+     
 
 
 
 
 
-        public IndexModel(IEventService service, IPersonService personService)
+        public IndexModel(IEventService service)
         {
             _service = service;
-            _personService = personService;
+           
         }
 
 
@@ -30,7 +30,7 @@ namespace ZealandZooEksamen.Pages.EventCRUD
         //public List<Event> MockEvents { get; set; }
         public List<Event> Events { get; set; }
 
-        public List<Person> Personer { get; set; }
+      
 
 
         public void OnGet()
@@ -40,8 +40,7 @@ namespace ZealandZooEksamen.Pages.EventCRUD
             /*MockEvents = _service.GetAllMockEvents()*/;
             Events = _service.GetAllEvents();
 
-            //Tilmelding
-            Personer = _personService.GetAllPerson();
+         
         }
 
 
