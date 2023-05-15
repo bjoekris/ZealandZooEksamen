@@ -13,8 +13,6 @@ namespace ZealandZooEksamen.Pages.EventCRUD
 
         [BindProperty]
         public Event OpretEvent { get; set; }
-        public int AntalDeltagere { get; private set; }
-        public int MaksDeltagere { get; private set; }
 
         public CreateEventModel(IEventService eventService)
         {
