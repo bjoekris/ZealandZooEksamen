@@ -14,37 +14,30 @@ namespace ZealandZooEksamen.Pages.LagerCRUD
         //}
 
      
-            private ILagerService _service;
+        private ILagerService _service;
 
-            [BindProperty]
-            public Lager SletLager { get; set; }
-
+        [BindProperty]
+        public Lager SletLager { get; set; }
         
-
-            public DeleteLagerModel(ILagerService service)
-            {
-                _service = service;
-            }
-            public void OnGet(int lagerId)
-            {
-                //SletMockEvent = _service.FindMockEvent(eventId);
-                SletLager = _service.FindLager(lagerId);
-            }
-            public IActionResult OnPostSlet(int lagerId)
-            {
-                //_service.DeleteMockEvent(eventId);
-                _service.DeleteLager(lagerId);
-
-                return RedirectToPage("IndexLager");
-            }
-            public IActionResult OnPostFortryd()
-            {
-                return RedirectToPage("IndexLager");
-            }
-
-
-
-
-
+        public DeleteLagerModel(ILagerService service)
+        {
+            _service = service;
         }
+        public void OnGet(int lagerId)
+        {
+            //SletMockEvent = _service.FindMockEvent(eventId);
+            SletLager = _service.FindLager(lagerId);
+        }
+        public IActionResult OnPostSlet(int lagerId)
+        {
+            //_service.DeleteMockEvent(eventId);
+            _service.DeleteLager(lagerId);
+
+            return RedirectToPage("IndexLager");
+        }
+        public IActionResult OnPostFortryd()
+        {
+            return RedirectToPage("IndexLager");
+        }
+    }
 }

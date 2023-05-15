@@ -1,0 +1,20 @@
+﻿@page
+@model ZealandZooEksamen.Pages.KalenderEventModel
+@{
+    ViewData["Title"] = "Se Event " + @Model.SeEvent.EventId;
+}
+
+<p>Event Id: @Model.SeEvent.EventId</p>
+<p>Event Navn: @Model.SeEvent.Navn</p>
+<p>Event Dato: @Model.SeEvent.Dato</p>
+<p>Event Info: @Model.SeEvent.EventInfo</p>
+<p>Event Antal Deltagere: @Model.SeEvent.AntalDeltagere</p>
+<p>Event Maksimum Deltagere: @Model.SeEvent.MaksDeltagere</p>
+<p>Event Start Tid: @Model.SeEvent.TimeStart</p>
+<p>Event Slut Tid: @Model.SeEvent.TimeEnd</p>
+
+<form>
+    <div class="form-group">
+        <input type="submit" value="Tilbage" class="btn btn-primary" asp-page="Kalender" />
+    </div>
+</form>
