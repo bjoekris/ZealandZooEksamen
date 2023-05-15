@@ -9,8 +9,8 @@ namespace ZealandZooEksamen.Userstory_12
         {
             new Person(1, "Magnus", "11223344", true),
             new Person(2, "Mathilde", "44332211", true),
-            new Person(3, "Kader", "99887766", false),
-            new Person(4, "Bjørn", "66778899", false)
+            new Person(3, "Kader", "99887766", true),
+            new Person(4, "Bjørn", "66778899", true)
         };
         public List<Person> GetAll(IEnumerable<Person> mockPerson)
         {
