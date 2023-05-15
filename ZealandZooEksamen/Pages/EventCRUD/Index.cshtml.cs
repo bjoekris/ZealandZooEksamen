@@ -25,13 +25,11 @@ namespace ZealandZooEksamen.Pages.EventCRUD
            
         }
 
-
         //Diverse lister
         //public List<Event> MockEvents { get; set; }
         public List<Event> Events { get; set; }
 
       
-
 
         public void OnGet()
         {
@@ -42,12 +40,18 @@ namespace ZealandZooEksamen.Pages.EventCRUD
 
          
         }
+        public double LedigePladser(int eventId)
+        {
 
+            var events = Events.Where(s => s.EventId == eventId);
 
-       
-   
-       
+            double sum = 0;
+            foreach (var e in events)
+            {
+                sum += e.MaksDeltagere - e.AntalDeltagere;
+            }
 
-
+            return sum;
+        }
     }
 }

@@ -6,60 +6,59 @@
 
     <div class="container border-2 rounded-2">
 
-        <h1>Ændre Event @Model.EventId @Model.Navn</h1>
+        <h1>Rediger Event @Model.EventId @Model.Navn</h1>
         <div class="row">
-            <div class="col-md-6 text-white bg-dark">
+            <div class="col-md-6 text-white">
                 <form method="post">
                     <div>
                         <input type="hidden" asp-for="@Model.EventId" />
-
                     </div>
 
                     <div class="form-group">
                         <label>Event Navn</label><br>
-                        <input asp-for="@Model.Navn" class="form-control" /><br />
+                        <input asp-for="@Model.Navn" class="form-control-sm" /><br />
                     </div>
 
                     <div class="form-group">
                         <label>Event Info</label><br>
-                        <input asp-for="@Model.EventInfo" class="form-control" /><br />
+                        <input asp-for="@Model.EventInfo" class="form-control-sm" /><br />
                         <span asp-validation-for="@Model.EventInfo" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
                         <label>Dato</label><br>
-                        <input asp-for="@Model.Dato" class="form-control" /><br />
+                        <input type="date" asp-for="@Model.Dato" class="form-control" /><br />
                         <span asp-validation-for="@Model.Dato" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
                         <label>Start Tidspunkt</label><br>
-                        <input asp-for="@Model.TimeStart" class="form-control" /><br />
+                        <input type="time" asp-for="@Model.TimeStart" class="form-control" /><br />
                         <span asp-validation-for="@Model.TimeStart" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
                         <label>Slut Tidspunkt</label><br>
-                        <input asp-for="@Model.TimeEnd" class="form-control" /><br />
+                        <input type="time" asp-for="@Model.TimeEnd" class="form-control" /><br />
                         <span asp-validation-for="@Model.TimeEnd" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
                         <label>Maks Antal Deltagere</label><br>
-                        <input asp-for="@Model.MaksDeltagere" class="form-control" /><br />
+                        <input asp-for="@Model.MaksDeltagere" class="form-control-sm" /><br />
                         <span asp-validation-for="@Model.MaksDeltagere" class="text-danger"></span>
                     </div>
 
-                    <div class="form-group">
+                    @*<div class="form-group">
                         <label>Antal tilmeldte Deltagere</label><br>
-                        <input asp-for="@Model.AntalDeltagere" class="form-control" /><br />
+                        <input asp-for="@Model.AntalDeltagere" class="form-control-sm" /><br />
                         <span asp-validation-for="@Model.AntalDeltagere" class="text-danger"></span>
-                    </div>
+                    </div>*@
 
 
                     <form method="post">
                         <div class="form-group">
-                            <input type="submit" value="Ændre @Model.Navn" asp-page-handler="Edit" asp-route-eventId="@Model.EventId" class="btn btn-warning" />
+                            <input type="submit" value="Rediger" asp-page-handler="Edit" asp-route-eventId="@Model.EventId" class="btn btn-warning" />
                         </div>
                         <p></p>
                         <div class="form-group">

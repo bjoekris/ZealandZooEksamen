@@ -27,16 +27,17 @@
             EventId = eventId;
             EventInfo = eventInfo;
         }
+
         public string GetInfo()
         {
             return ToString();
         }
         public override string ToString()
         {
-            return $"{{{nameof(Navn)}={Navn}, {nameof(Dato)}={Dato}, {nameof(TimeStart)}={TimeStart}, " +
+            return $"{nameof(Navn)}={Navn}, {nameof(Dato)}={Dato}, {nameof(TimeStart)}={TimeStart}, " +
                 $"{nameof(TimeEnd)}={TimeEnd}, {nameof(MaksDeltagere)}={MaksDeltagere.ToString()}, " +
                 $"{nameof(AntalDeltagere)}={AntalDeltagere.ToString()}, {nameof(EventId)}={EventId.ToString()}, " +
-                $"{nameof(EventInfo)}={EventInfo}}}";
+                $"{nameof(EventInfo)}={EventInfo}";
         }
     }
 }
