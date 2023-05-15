@@ -17,10 +17,18 @@ namespace ZealandZooEksamen.Pages
         {
             Events = _kalenderService.GetAllEvents();
         }
-        public void OnPost(int dag)
+        public IActionResult OnPost(int dag)
         {
             string kalenderDag = HentDag(dag);
-            Events.Find(e => e.Dato == kalenderDag);
+            Events = _kalenderService.GetAllEvents();
+            Event? ev = Events.Find(e => e.Dato == kalenderDag);
+
+            if (ev is null)
+            {
+                return Page();
+            }
+
+            return RedirectToPage("KalenderEvent", new { eventId = ev.EventId });
         }
         public bool HasEvent(int dag)
         {
