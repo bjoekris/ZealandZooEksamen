@@ -31,13 +31,39 @@ namespace ZealandZooEksamen.Pages.EventCRUD
 
       
 
-        public void OnGet()
+        public void OnGet(int? eventId)
         {
+            if (eventId is null) { 
 
             //Events
             /*MockEvents = _service.GetAllMockEvents()*/;
             Events = _service.GetAllEvents();
 
+            //Tilmelding
+            Personer = _personService.GetAllPerson();
+        }
+            else
+            {
+                IUserService user = SessionHelper.GetUser(HttpContext);
+                Event ev = _service.FindEvent((int)eventId);
+                if (!ev.Tilmeldte.Contains(user.UserName))
+                {
+                    ev.Tilmeldte.Add(user.UserName);
+                }
+                Events = _service.GetAllEvents();
+                Personer = _personService.GetAllPerson();
+            }
+        }
+
+        public void OnPost(int eventId)
+        {
+            
+        }
+
+
+       
+   
+       
          
         }
         public double LedigePladser(int eventId)
