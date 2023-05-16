@@ -12,6 +12,8 @@ namespace ZealandZooEksamen.Pages
         [BindProperty]
         public Event SeEvent { get; set; }
 
+        public List<Event> Events { get; set; }
+
         public KalenderEventModel(IEventService service)
         {
             _service = service;
