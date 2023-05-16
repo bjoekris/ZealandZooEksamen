@@ -6,7 +6,7 @@
     {
         private readonly List<Event> events = new List<Event>()
         {
-            new Event("Mock Event","2023-06-14","00:00","23:59",25,0,0,"Magnus' Fødselsdag")
+            new Event("Mock Event","2023-06-14","00:00","23:59",25,1,"Magnus' Fødselsdag")
         };
         
         public List<Event> GetAllEvents()
