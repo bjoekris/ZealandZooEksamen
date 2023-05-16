@@ -6,7 +6,7 @@ namespace ZealandZooEksamen.Services
     {
         public List<Tilmeldte> GetAllTilmeldte();
 
-        public Tilmeldte FindTilmeldte(int id);
+        public Tilmeldte FindTilmeldte(int tilmeldingId);
 
         public Tilmeldte CreateTilmeldte(Tilmeldte t);
 

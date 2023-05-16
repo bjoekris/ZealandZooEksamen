@@ -55,7 +55,13 @@
 
                 @if (ZealandZooEksamen.Services.UserService.LoggedIn)
                 {
-                            <td><a class="btn btn-success" asp-page="Index" asp-route-eventId="@events.EventId">Tilmeld</a></td>
+                    @*@foreach (var t in Model.Tilmeldte)
+                    {
+                            <td><a class="btn btn-success" asp-page="/TilmeldteCR/CreateTilmelding" asp-route-tilmeldingId="@t.TilmeldingId">Tilmeld</a></td>
+                    }*@
+
+                    <td><a class="btn btn-success" asp-page="EditEvent" asp-route-eventId="@events.EventId">Rediger</a></td>
+
                 }
 
                 @*giver kun admin adgang til rediger*@

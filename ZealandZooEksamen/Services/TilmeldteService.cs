@@ -64,7 +64,7 @@ namespace ZealandZooEksamen.Services
 
 
         //Find Tilmelding
-        public Tilmeldte FindTilmeldte(int Id)
+        public Tilmeldte FindTilmeldte(int TilmeldingId)
         {
             String sql = "select * from Tilmeldte where Id = @Id";
 
@@ -72,7 +72,7 @@ namespace ZealandZooEksamen.Services
             conn.Open();
 
             SqlCommand cmd = new SqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@Id", Id);
+            cmd.Parameters.AddWithValue("@Id", TilmeldingId);
 
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -91,7 +91,7 @@ namespace ZealandZooEksamen.Services
         {
             Tilmeldte t = new Tilmeldte();
 
-            t.Id = reader.GetInt32(0);
+            t.TilmeldingId = reader.GetInt32(0);
             t.Navn = reader.GetString(1);
             t.Telefon = reader.GetInt32(2);
 

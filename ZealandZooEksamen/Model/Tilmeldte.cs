@@ -2,7 +2,7 @@
 {
     public class Tilmeldte
     {
-        public int Id { get; set; }
+        public int TilmeldingId { get; set; }
         public string Navn { get; set; }
 
         public int Telefon { get; set; }
@@ -11,9 +11,9 @@
         public Tilmeldte() { }
 
 
-        public Tilmeldte(int id, string navn, int telefon) 
+        public Tilmeldte(int tilmeldingId, string navn, int telefon) 
         {
-            Id = id;
+            TilmeldingId = tilmeldingId;
             Navn = navn;
             Telefon = telefon;
         }
@@ -37,11 +37,11 @@
         }
 
 
-        public Tilmeldte FindTilmeldte(int id)
+        public Tilmeldte FindTilmeldte(int tilmeldingId)
         {
             foreach (Tilmeldte t in tilmeldt)
             {
-                if (t.Id == id)
+                if (t.TilmeldingId == tilmeldingId)
                 {
                     return t;
                 }

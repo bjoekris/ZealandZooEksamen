@@ -14,7 +14,7 @@ namespace ZealandZooEksamen.Pages.TilmeldteCR
         private ITilmeldteService _tilmeldteService;
 
         [BindProperty]
-        public Tilmeldte OpretTilmelding { get; set; }
+        public Tilmeldte OpretTilmeldte { get; set; }
 
         public CreateTilmeldingModel(ITilmeldteService tilmeldteService)
         {
@@ -23,13 +23,13 @@ namespace ZealandZooEksamen.Pages.TilmeldteCR
 
         public IActionResult OnPostOpret()
         {
-            _tilmeldteService.CreateTilmeldte(OpretTilmelding);
+            _tilmeldteService.CreateTilmeldte(OpretTilmeldte);
 
-            return RedirectToPage("Index");
+            return RedirectToPage("IndexTilmelding");
         }
         public IActionResult OnPostBekræft()
         {
-            return RedirectToPage("Index");
+            return RedirectToPage("IndexTilmelding");
         }
     }
 }
