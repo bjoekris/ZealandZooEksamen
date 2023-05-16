@@ -9,13 +9,16 @@
         public string TimeStart { get; set; }
         public string TimeEnd { get; set; }
         public double MaksDeltagere { get; set; }
-        public double AntalDeltagere { get; set; }
+        public double AntalDeltagere { get { return Tilmeldte.Count; } }
         public int EventId { get; set; }
         public string EventInfo { get; set; }
 
-        public Event() { }
+        public List<string> Tilmeldte { get; set; }
 
-        public Event(string navn, string dato, string timeStart, string timeEnd, double maksDeltagere, double antalDeltagere, 
+
+        public Event() { Tilmeldte = new List<string>(); }
+
+        public Event(string navn, string dato, string timeStart, string timeEnd, double maksDeltagere, 
             int eventId, string eventInfo)
         {
             Navn = navn;
@@ -23,9 +26,9 @@
             TimeStart = timeStart;
             TimeEnd = timeEnd;
             MaksDeltagere = maksDeltagere;
-            AntalDeltagere = antalDeltagere;
             EventId = eventId;
             EventInfo = eventInfo;
+            Tilmeldte = new List<string>();
         }
 
         public string GetInfo()

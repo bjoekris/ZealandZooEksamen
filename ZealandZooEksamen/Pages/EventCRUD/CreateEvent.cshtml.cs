@@ -29,5 +29,6 @@ namespace ZealandZooEksamen.Pages.EventCRUD
         {
             return RedirectToPage("Index");
         }
+
     }
 }

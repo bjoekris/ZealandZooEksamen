@@ -53,12 +53,17 @@
                 <td>@events.AntalDeltagere</td>
                 <td>@events.MaksDeltagere</td>
 
+                @if (ZealandZooEksamen.Services.UserService.LoggedIn)
+                {
+                            <td><a class="btn btn-success" asp-page="Index" asp-route-eventId="@events.EventId">Tilmeld</a></td>
+                }
+
                 @*giver kun admin adgang til rediger*@
                 @if (ZealandZooEksamen.Services.UserService.iAmAdmin)
                 {
                     <td><a class="btn btn-warning" asp-page="EditEvent" asp-route-eventId="@events.EventId">Rediger</a></td>
                 }
-                @*<td><a class="btn" asp-page="DeleteEvent" asp-route-eventId="@mockEvents.EventId">Slet</a></td>*@
+                
 
                 @*giver kun admin adgang til slet*@
                 @if (ZealandZooEksamen.Services.UserService.iAmAdmin)
@@ -87,8 +92,8 @@
     }
 </div>
 <br />
-
-<h2>Tilmeldte person </h2>
+@*
+<h2>Tilmeldte personer (Nyhedsbrev) </h2>
 <table>
     <thead>
         <tr>
@@ -110,7 +115,7 @@
             </tr>
         }
     </tbody>
-</table>
+</table>*@
 
 <script>
     // Her finder vi elementerne med class="column"
