@@ -39,40 +39,12 @@ namespace ZealandZooEksamen.Services
             }
         }
 
-        public Event DeleteMockEvent(int eventId)
-        {
-            Event me = FindMockEvent(eventId);
-            if (me is null)
-            {
-                return null;
-            }
-
-            String sql = "delete from MockEvent where EventId = @EventId";
-
-            SqlConnection conn = new SqlConnection(ConnectionString);
-            conn.Open();
-
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@EventId", eventId);
-
-            int row = cmd.ExecuteNonQuery();
-
-            if (row == 1)
-            {
-                return me;
-            }
-            else
-            {
-                return null;
-            }
-        }
-
         //events.SletEvent(eventId);
         //mockEvents.SletMockEvent(eventId);
 
         public Event CreateEvent(Event ev)
         {
-            String sql = "insert into Event values(@Navn, @Dato, @TimeStart, @TimeEnd, @MaksDeltagere, @TilmeldingId, @EventInfo)";
+            String sql = @"insert into Event values(@Navn, @Dato, @TimeStart, @TimeEnd, @MaksDeltagere, --@TilmeldingId,-- @EventInfo)";
 
             SqlConnection conn = new SqlConnection(ConnectionString);
             conn.Open();
@@ -83,7 +55,7 @@ namespace ZealandZooEksamen.Services
             cmd.Parameters.AddWithValue("@TimeStart", ev.TimeStart);
             cmd.Parameters.AddWithValue("@TimeEnd", ev.TimeEnd);
             cmd.Parameters.AddWithValue("@MaksDeltagere", ev.MaksDeltagere);
-            //cmd.Parameters.AddWithValue("@TilmeldingId", ); //Skal add en foreign key, men ved ikke hvordan.
+            //cmd.Parameters.AddWithValue("@TilmeldingId", ); //Skal adde en foreign key, men skal bruge Tilmelding Service først.
             cmd.Parameters.AddWithValue("@EventInfo", ev.EventInfo);
 
             int row = cmd.ExecuteNonQuery();
@@ -121,7 +93,7 @@ namespace ZealandZooEksamen.Services
 
         //return events.FindEvent(eventId);
 
-        public List<Event> GetAllEvent()
+        public List<Event> GetAllEvents()
         {
             String sql = "select * from Event";
 
@@ -150,6 +122,7 @@ namespace ZealandZooEksamen.Services
             e.TimeStart = reader.GetString(3);
             e.TimeEnd = reader.GetString(4);
             e.MaksDeltagere = reader.GetDouble(5);
+            //e.TilmeldingId = reader.GetInt32(6);
             e.EventInfo = reader.GetString(7);
 
             return e;
@@ -163,7 +136,6 @@ namespace ZealandZooEksamen.Services
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
-            cmd.Parameters.AddWithValue("@EventId", eventId);
             cmd.Parameters.AddWithValue("@Navn", events.Navn);
             cmd.Parameters.AddWithValue("@Dato", events.Dato);
             cmd.Parameters.AddWithValue("@TimeStart", events.TimeStart);
@@ -184,22 +156,5 @@ namespace ZealandZooEksamen.Services
         }
 
         //events.EditEvent(newValues);
-
-        public Event FindMockEvent(int eventId)
-        {
-            return events.FindEvent(eventId);
-            //Skal normalt være return mockEvents.FindMockEvent(eventId); men programmet deffinere ikke længere mockEvents.
-        }
-
-        public List<Event> GetAllEvents()
-        {
-            return events.GetAllEvents();
-        }
-
-        public List<Event> GetAllMockEvents()
-        {
-            return events.GetAllEvents();
-            //Skal normalt være return mockEvents.GetAllMockEvents(); men programmet deffinere ikke længere mockEvents.
-        }
     }
 }
