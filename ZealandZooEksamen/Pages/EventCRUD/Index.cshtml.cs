@@ -21,8 +21,6 @@ namespace ZealandZooEksamen.Pages.EventCRUD
 
 
 
-
-
         public IndexModel(IEventService service, IPersonService personService, ITilmeldteService tilmeldteService)
         {
             _service = service;
