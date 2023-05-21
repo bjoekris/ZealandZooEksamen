@@ -40,7 +40,7 @@ namespace ZealandZooEksamen.Services
         //Tilmeldingsliste
         public List<Tilmeldte> GetAllTilmeldte()
         {
-            String sql = "select * from Tilmeldte";
+            String sql = "select * from TilmeldteEvent";
 
             //connection
             SqlConnection conn = new SqlConnection(ConnectionString);
@@ -66,7 +66,7 @@ namespace ZealandZooEksamen.Services
         //Find Tilmelding
         public Tilmeldte FindTilmeldte(int TilmeldingId)
         {
-            String sql = "select * from Tilmeldte where Id = @Id";
+            String sql = "select * from TilmeldteEvent where Id = @Id";
 
             SqlConnection conn = new SqlConnection(ConnectionString);
             conn.Open();
