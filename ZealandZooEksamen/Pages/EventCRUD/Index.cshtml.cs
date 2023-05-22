@@ -4,6 +4,8 @@ using ZealandZooEksamen.Services;
 using ZealandZooEksamen.Model;
 using ZealandZooEksamen.MockData;
 using ZealandZooEksamen.UserStory_12;
+using ZealandZooEksamen.Pages.TilmeldteCR;
+
 
 namespace ZealandZooEksamen.Pages.EventCRUD
 {
@@ -14,17 +16,24 @@ namespace ZealandZooEksamen.Pages.EventCRUD
         //Services til Index
         private IEventService _service;
         private IPersonService _personService;
+        private ITilmeldteService _tilmeldteService;
 
-        public IndexModel(IEventService service, IPersonService personService)
+
+
+
+        public IndexModel(IEventService service, IPersonService personService, ITilmeldteService tilmeldteService)
         {
             _service = service;
             _personService = personService;
+            _tilmeldteService = tilmeldteService;
         }
 
         //Diverse lister
         //public List<Event> MockEvents { get; set; }
         public List<Event> Events { get; set; }
         public List<Person> Personer { get; set; }
+
+        public List <Tilmeldte> Tilmeldte { get; set; }
 
 
 
@@ -38,8 +47,11 @@ namespace ZealandZooEksamen.Pages.EventCRUD
                 
                 Events = _service.GetAllEvents();
 
-                ////Tilmelding
+                //Login
                 Personer = _personService.GetAllPerson();
+
+                //Tilmelding
+                Tilmeldte = _tilmeldteService.GetAllTilmeldte();
             }
             else
             {
@@ -51,6 +63,7 @@ namespace ZealandZooEksamen.Pages.EventCRUD
                 }
                 Events = _service.GetAllEvents();
                 Personer = _personService.GetAllPerson();
+                Tilmeldte = _tilmeldteService.GetAllTilmeldte();
             }
         }
 
