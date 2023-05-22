@@ -8,9 +8,7 @@ namespace ZealandZooEksamen.Pages.TilmeldteCR
 {
     public class CreateTilmeldingModel : PageModel
     {
-        //public void OnGet()
-        //{
-        //}
+
 
         private ITilmeldteService _tilmeldteService;
 

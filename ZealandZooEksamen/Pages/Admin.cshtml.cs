@@ -7,6 +7,7 @@ namespace ZealandZooEksamen.Pages
 {
     public class AdminModel : PageModel
     {
+
         private IPersonService _personService;
         public AdminModel(IPersonService personService)
         {
@@ -20,10 +21,6 @@ namespace ZealandZooEksamen.Pages
         {
             Personer = _personService.GetAllPerson();
         }
-       
-      
-       
-
      
     }
 }
