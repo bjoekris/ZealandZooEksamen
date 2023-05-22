@@ -29,13 +29,13 @@ namespace ZealandZooEksamen.Pages.EventCRUD
         public IActionResult OnPostSlet(int eventId)
         {
             //_service.DeleteMockEvent(eventId);
-            _service.DeleteEvent(eventId);
+            _service.DeleteEvent(eventId, tilmeldteId);
 
-            return RedirectToPage("Index");
+            return RedirectToPage("/Admin");
         }
         public IActionResult OnPostFortryd()
         {
-            return RedirectToPage("Index");
+            return RedirectToPage("/Admin");
         }
     }
 }

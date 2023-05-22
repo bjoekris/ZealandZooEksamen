@@ -65,11 +65,11 @@ namespace ZealandZooEksamen.Pages.EventCRUD
 
             _Service.EditEvent(eventId, editEvent);
 
-            return RedirectToPage("Index");
+            return RedirectToPage("/Admin");
         }
         public IActionResult OnPostFortryd()
         {
-            return RedirectToPage("Index");
+            return RedirectToPage("/Admin");
         }
     }
 }

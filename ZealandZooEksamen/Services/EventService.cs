@@ -11,7 +11,7 @@ namespace ZealandZooEksamen.Services
 
         private Kalender events = new Kalender();
 
-        public Event DeleteEvent(int eventId)
+        public Event DeleteEvent(int eventId, int tilmeldingId)
         {
             Event e = FindEvent(eventId);
             if (e is null)
@@ -19,17 +19,18 @@ namespace ZealandZooEksamen.Services
                 return null;
             }
 
-            String sql = "delete from Event where EventId = @EventId";
+            String sql = "delete from Event where EventId = @EventId" + "delete from TilmeldteEvent where TilmeldingId = @TilmeldingId";
 
             SqlConnection conn = new SqlConnection(ConnectionString);
             conn.Open();
 
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@EventId", eventId);
+            cmd.Parameters.AddWithValue("@TilmeldingId", tilmeldingId);
 
                 int row = cmd.ExecuteNonQuery();
 
-            if(row == 1)
+            if(row >= 1)
             {
                 return e;
             }
@@ -130,12 +131,13 @@ namespace ZealandZooEksamen.Services
         
         public Event EditEvent(int eventId, Event events)
         {
-            String sql = "update Event set Navn=@Navn, Dato=@Dato, TimeStart=@TimeStart, TimeEnd=@TimeEnd, MaksDeltagere=@MaksDeltagere, EventInfo=@EventInfo";
+            String sql = "update Event set Navn=@Navn, Dato=@Dato, TimeStart=@TimeStart, TimeEnd=@TimeEnd, MaksDeltagere=@MaksDeltagere, EventInfo=@EventInfo where EventId=@EventId";
             SqlConnection conn = new SqlConnection(ConnectionString);
             conn.Open();
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
+            cmd.Parameters.AddWithValue("@EventId", events.EventId);
             cmd.Parameters.AddWithValue("@Navn", events.Navn);
             cmd.Parameters.AddWithValue("@Dato", events.Dato);
             cmd.Parameters.AddWithValue("@TimeStart", events.TimeStart);

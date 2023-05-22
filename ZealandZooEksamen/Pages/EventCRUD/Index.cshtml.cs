@@ -15,11 +15,6 @@ namespace ZealandZooEksamen.Pages.EventCRUD
         private IEventService _service;
         private IPersonService _personService;
 
-
-
-
-
-
         public IndexModel(IEventService service, IPersonService personService)
         {
             _service = service;
@@ -58,9 +53,6 @@ namespace ZealandZooEksamen.Pages.EventCRUD
                 Personer = _personService.GetAllPerson();
             }
         }
-
-
-
 
         public double LedigePladser(int eventId)
         {
