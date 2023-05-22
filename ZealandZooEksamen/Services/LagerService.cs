@@ -165,7 +165,7 @@ namespace ZealandZooEksamen.Services
 
         public Lager EditLager(int lagerId, Lager lager)
         {
-            String sql = "update Lager set LagerNavn=@LagerNavn, LagerAntal=@LagerAntal, LagerPris=@LagerPris, LagerIndkøbPris=@LagerIndkøbPris";
+            String sql = "update Lager set LagerNavn=@LagerNavn, LagerAntal=@LagerAntal, LagerPris=@LagerPris, LagerIndkøbPris=@LagerIndkøbPris where LagerId=@LagerId";
 
             SqlConnection conn = new SqlConnection(ConnectionString);
             conn.Open();

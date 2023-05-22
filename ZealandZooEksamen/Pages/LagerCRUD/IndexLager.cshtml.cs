@@ -28,11 +28,12 @@ namespace ZealandZooEksamen.Pages.LagerCRUD
             
             Lageret = _service.GetAllLager();
 
-            double Omsætning = UdregnOmsætning();
+            double Omsætning = UdregnIndkøb();
 
         }
 
-        public double UdregnOmsætning()
+        
+        public double UdregnIndkøb()
         {
 
             var lager = Lageret;
@@ -41,7 +42,7 @@ namespace ZealandZooEksamen.Pages.LagerCRUD
             double sum = 0;
             foreach (var vare in lager)
             {
-                sum += vare.LagerPris * vare.LagerAntal;
+                sum += vare.LagerIndkøbPris * vare.LagerAntal;
             }
 
 
