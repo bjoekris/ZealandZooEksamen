@@ -40,7 +40,7 @@ namespace ZealandZooEksamen.Pages.EventCRUD
 
                 //Events
                 /*MockEvents = _service.GetAllMockEvents()*/
-                ;
+                
                 Events = _service.GetAllEvents();
 
                 ////Tilmelding

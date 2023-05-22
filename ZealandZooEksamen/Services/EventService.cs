@@ -1,50 +1,160 @@
-﻿using ZealandZooEksamen.MockData;
+﻿using DocumentFormat.OpenXml.Drawing.Charts;
+using System.Data.SqlClient;
+using ZealandZooEksamen.MockData;
 using ZealandZooEksamen.Model;
 
 namespace ZealandZooEksamen.Services
 {
     public class EventService : IEventService
     {
-        private MockEventListe mockEvents = new MockEventListe();
+        private const String ConnectionString = "Data Source = mssql5.unoeuro.com; Initial Catalog = bbksolutions_dk_db_databasen; User ID = bbksolutions_dk; Password=cmfbeAtrkR5zBaF426x3;Connect Timeout = 30; Encrypt=False;TrustServerCertificate=False;ApplicationIntent = ReadWrite; MultiSubnetFailover=False\r\n";
+
         private Kalender events = new Kalender();
-        public void DeleteEvent(int eventId)
+
+        public Event DeleteEvent(int eventId)
         {
-            events.SletEvent(eventId);
+            Event e = FindEvent(eventId);
+            if (e is null)
+            {
+                return null;
+            }
+
+            String sql = "delete from Event where EventId = @EventId";
+
+            SqlConnection conn = new SqlConnection(ConnectionString);
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@EventId", eventId);
+
+                int row = cmd.ExecuteNonQuery();
+
+            if(row == 1)
+            {
+                return e;
+            }
+            else
+            {
+                return null;
+            }
         }
 
-        public void DeleteMockEvent(int eventId)
-        {
-            mockEvents.SletMockEvent(eventId);
-        }
+        //events.SletEvent(eventId);
+        //mockEvents.SletMockEvent(eventId);
 
-        public void CreateEvent(Event ev)
+        public Event CreateEvent(Event ev)
         {
-            events.OpretEvent(ev);
-        }
+            String sql = @"insert into Event values(@Navn, @Dato, @TimeStart, @TimeEnd, @MaksDeltagere, @TilmeldingId, @EventInfo)";
 
+            SqlConnection conn = new SqlConnection(ConnectionString);
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@Navn", ev.Navn);
+            cmd.Parameters.AddWithValue("@Dato", ev.Dato);
+            cmd.Parameters.AddWithValue("@TimeStart", ev.TimeStart);
+            cmd.Parameters.AddWithValue("@TimeEnd", ev.TimeEnd);
+            cmd.Parameters.AddWithValue("@MaksDeltagere", ev.MaksDeltagere);
+            cmd.Parameters.AddWithValue("@TilmeldingId", 0); //Skal adde en foreign key, men skal bruge Tilmelding Service først, 0 er midlertidig.
+            cmd.Parameters.AddWithValue("@EventInfo", ev.EventInfo);
+
+            int row = cmd.ExecuteNonQuery();
+
+            if(row == 1)
+            {
+                return ev;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        
+        //events.OpretEvent(ev);
+        
         public Event FindEvent(int eventId)
         {
-            return events.FindEvent(eventId);
+            String sql = "select * from Event where EventId = @EventId";
+
+            SqlConnection conn = new SqlConnection(ConnectionString);
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@EventId", eventId);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if(reader.Read())
+            {
+                return ReadEvent(reader);
+            }
+            return null;
         }
 
-        public Event FindMockEvent(int eventId)
-        {
-            return mockEvents.FindMockEvent(eventId);
-        }
+        //return events.FindEvent(eventId);
 
         public List<Event> GetAllEvents()
         {
-            return events.GetAllEvents();
+            String sql = "select * from Event";
+
+            SqlConnection conn = new SqlConnection(ConnectionString);
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            List<Event> events = new List<Event>();
+            while (reader.Read())
+            {
+                events.Add(ReadEvent(reader));
+            }
+            return events;
         }
 
-        public List<Event> GetAllMockEvents()
+        private Event ReadEvent(SqlDataReader reader)
         {
-            return mockEvents.GetAllMockEvents();
+            Event e = new Event();
+
+            e.EventId = reader.GetInt32(0);
+            e.Navn = reader.GetString(1);
+            e.Dato = reader.GetString(2);
+            e.TimeStart = reader.GetString(3);
+            e.TimeEnd = reader.GetString(4);
+            e.MaksDeltagere = reader.GetDouble(5);
+            //e.TilmeldingId = reader.GetInt32(6);
+            e.EventInfo = reader.GetString(7);
+
+            return e;
+        }
+        
+        public Event EditEvent(int eventId, Event events)
+        {
+            String sql = "update Event set Navn=@Navn, Dato=@Dato, TimeStart=@TimeStart, TimeEnd=@TimeEnd, MaksDeltagere=@MaksDeltagere, EventInfo=@EventInfo";
+            SqlConnection conn = new SqlConnection(ConnectionString);
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            cmd.Parameters.AddWithValue("@Navn", events.Navn);
+            cmd.Parameters.AddWithValue("@Dato", events.Dato);
+            cmd.Parameters.AddWithValue("@TimeStart", events.TimeStart);
+            cmd.Parameters.AddWithValue("@TimeEnd", events.TimeEnd);
+            cmd.Parameters.AddWithValue("@MaksDeltagere", events.MaksDeltagere);
+            cmd.Parameters.AddWithValue("@EventInfo", events.EventInfo);
+
+            int row = cmd.ExecuteNonQuery();
+            if (row == 1)
+            {
+                events.EventId = eventId;
+                return events;
+            }
+            else
+            {
+                return null;
+            }
         }
 
-        public void EditEvent(Event newValues)
-        {
-            events.EditEvent(newValues);
-        }
+        //events.EditEvent(newValues);
     }
 }
