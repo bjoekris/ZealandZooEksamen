@@ -20,7 +20,7 @@
                 <input asp-for="@Model.OpretTilmeldte.Telefon" class="form-control" /><br />
             </div>
 
-            <td><a class="btn btn-success" asp-page="/TilmeldteCR/CreateTilmelding" asp-route-tilmeldingId="@t.TilmeldingId">Tilmeld</a></td>
+            <td><input type="submit" class="btn btn-success"  value="Tilmeld" asp-page-handler="Opret" /></td>
         </form>
     </div>
 </div>

@@ -13,7 +13,7 @@ namespace ZealandZooEksamen.Services
         //opret tilmelding
         public Tilmeldte CreateTilmeldte(Tilmeldte tilmeldte)
         {
-            String sql = "insert into Tilmeldte values(@Navn,@Telefon)";
+            String sql = "insert into TilmeldteEvent values(@Navn,@Telefon)";
 
             SqlConnection conn = new SqlConnection(ConnectionString);
             conn.Open();

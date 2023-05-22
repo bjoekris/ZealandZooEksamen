@@ -30,6 +30,7 @@ namespace ZealandZooEksamen.Pages.TilmeldteCR
         }
         public IActionResult OnPostBekræft()
         {
+            _tilmeldteService.CreateTilmeldte(OpretTilmeldte);
             return RedirectToPage("IndexTilmelding");
         }
     }
