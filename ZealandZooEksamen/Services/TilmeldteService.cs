@@ -1,4 +1,5 @@
-﻿using System.Data.SqlClient;
+﻿using Microsoft.Extensions.Logging;
+using System.Data.SqlClient;
 using ZealandZooEksamen.Model;
 
 namespace ZealandZooEksamen.Services
@@ -11,17 +12,17 @@ namespace ZealandZooEksamen.Services
 
 
         //opret tilmelding
-        public Tilmeldte CreateTilmeldte(Tilmeldte tilmeldte)
+        public Tilmeldte CreateTilmeldte(Tilmeldte tilmeldte, int eventId)
         {
-            String sql = "insert into TilmeldteEvent values(@Navn,@Telefon)";
+            String sql = "insert into TilmeldteEvent values(@Navn,@Telefon,@EventId)";
 
             SqlConnection conn = new SqlConnection(ConnectionString);
             conn.Open();
 
             SqlCommand cmd = new SqlCommand(sql, conn);
-            //cmd.Parameters.AddWithValue("@LagerId", lager.LagerId);
             cmd.Parameters.AddWithValue("@Navn", tilmeldte.Navn);
             cmd.Parameters.AddWithValue("@Telefon", tilmeldte.Telefon);
+            cmd.Parameters.AddWithValue("@EventId", eventId);
 
             int row = cmd.ExecuteNonQuery();
 
@@ -64,15 +65,15 @@ namespace ZealandZooEksamen.Services
 
 
         //Find Tilmelding
-        public Tilmeldte FindTilmeldte(int TilmeldingId)
+        public Tilmeldte FindTilmeldte(int tilmeldingId)
         {
-            String sql = "select * from TilmeldteEvent where Id = @Id";
+            String sql = "select * from TilmeldteEvent where TilmeldingId = @TilmeldingId";
 
             SqlConnection conn = new SqlConnection(ConnectionString);
             conn.Open();
 
             SqlCommand cmd = new SqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@Id", TilmeldingId);
+            cmd.Parameters.AddWithValue("@TilmelingId", tilmeldingId);
 
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -98,6 +99,32 @@ namespace ZealandZooEksamen.Services
             return t;
         }
 
-    }
+        public Tilmeldte DeleteTilmelding(int tilmeldingId)
+        {
+            Tilmeldte t = FindTilmeldte(tilmeldingId);
+            if (t is null)
+            {
+                return null;
+            }
 
+            String sql = "delete from TilmeldteEvent where TilmeldingId = @TilmeldingId";
+
+            SqlConnection conn = new SqlConnection(ConnectionString);
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@TilmeldingId", tilmeldingId);
+
+            int row = cmd.ExecuteNonQuery();
+
+            if (row == 1)
+            {
+                return t;
+            }
+            else
+            {
+                return null;
+            }
+        }
+    }
 }

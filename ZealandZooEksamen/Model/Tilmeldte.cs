@@ -53,5 +53,11 @@
         {
             tilmeldt.Add(t);
         }
+
+        public void SletTilmeldte(int tilmeldingId)
+        {
+            Tilmeldte sletTilmelding = FindTilmeldte(tilmeldingId);
+            tilmeldt.Remove(sletTilmelding);
+        }
     }
 }

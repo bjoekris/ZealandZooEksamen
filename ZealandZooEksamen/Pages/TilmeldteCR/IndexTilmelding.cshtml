@@ -4,12 +4,12 @@
 }
 
 <h2>Tilmeldte til dette event</h2>
-<a class="btn btn-success" asp-page="CreateTilmelding">Ny Tilmelding</a>
+<a class="btn btn-primary" asp-page="/EventCRUD/Index">Tilbage</a>
 <table class="table table-striped table-hover">
     <thead>
         <tr>
             <th>Id</th>
-            <th>VNavn</th>
+            <th>Navn</th>
             <th>Telefon</th>
         </tr>
     </thead>
@@ -18,14 +18,10 @@
         @foreach (var t in Model.Tilmeldte)
         {
             <tr>
-       
-
                 <td>@t.TilmeldingId</td>
                 <td>@t.Navn</td>
                 <td>@t.Telefon</td>
             </tr>
-
-
         }
     </tbody>
 </table>

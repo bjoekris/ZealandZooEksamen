@@ -42,23 +42,11 @@
                 <td>@events.AntalDeltagere</td>
                 <td>@events.MaksDeltagere</td>
 
-                @if (ZealandZooEksamen.Services.UserService.LoggedIn)
-                {
-                    <td><a class="btn btn-success" asp-page="Index" asp-route-eventId="@events.EventId">Tilmeld</a></td>
-                }
-
                 @*giver kun admin adgang til rediger*@
-                @if (ZealandZooEksamen.Services.UserService.iAmAdmin)
-                {
-                    <td><a class="btn btn-warning" asp-page="EventCRUD/EditEvent" asp-route-eventId="@events.EventId">Rediger</a></td>
-                }
-
+                <td><a class="btn btn-warning" asp-page="EventCRUD/EditEvent" asp-route-eventId="@events.EventId">Rediger</a></td>
 
                 @*giver kun admin adgang til slet*@
-                @if (ZealandZooEksamen.Services.UserService.iAmAdmin)
-                {
-                    <td><a class="btn btn-danger" asp-page="EventCRUD/DeleteEvent" asp-route-eventId="@events.EventId">Slet</a></td>
-                }
+                <td><a class="btn btn-danger" asp-page="EventCRUD/DeleteEvent" asp-route-eventId="@events.EventId">Slet</a></td>
             </tr>
         }
     </tbody>
