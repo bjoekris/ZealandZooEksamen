@@ -32,10 +32,7 @@ namespace ZealandZooEksamen.Pages.EventCRUD
         //public List<Event> MockEvents { get; set; }
         public List<Event> Events { get; set; }
         public List<Person> Personer { get; set; }
-
         public List <Tilmeldte> Tilmeldte { get; set; }
-
-
 
         public void OnGet(int? eventId)
         {
@@ -66,6 +63,11 @@ namespace ZealandZooEksamen.Pages.EventCRUD
                 Tilmeldte = _tilmeldteService.GetAllTilmeldte();
             }
         }
+        public double Tæler(int eventId)
+        {
+            double Tæler = _tilmeldteService.CountTilmeldinger(eventId);
+            return Tæler;
+        }
 
         public double LedigePladser(int eventId)
         {
@@ -75,7 +77,7 @@ namespace ZealandZooEksamen.Pages.EventCRUD
             double sum = 0;
             foreach (var e in events)
             {
-                sum += e.MaksDeltagere - e.AntalDeltagere;
+                sum += e.MaksDeltagere - Tæler(eventId);
             }
 
             return sum;
