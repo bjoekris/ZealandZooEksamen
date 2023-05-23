@@ -16,23 +16,23 @@
 
             <div class="form-group">
                 <label>Produkt Navn</label><br>
-                <input asp-for="@Model.OpretLager.LagerNavn" class="form-control" /><br />
+                <input asp-for="@Model.OpretLager.LagerNavn" class="form-control" required /><br />
             </div>
 
             <div class="form-group">
                 <label>Antal </label><br>
-                <input asp-for="@Model.OpretLager.LagerAntal" class="form-control" /><br />
+                <input asp-for="@Model.OpretLager.LagerAntal" class="form-control" required /><br />
             </div>
 
             <div class="form-group">
                 <label>Salgs Pris</label><br>
-                <input asp-for="@Model.OpretLager.LagerPris" class="form-control" /><br />
+                <input asp-for="@Model.OpretLager.LagerPris" class="form-control" required /><br />
                 <span asp-validation-for="@Model.OpretLager.LagerPris" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label>Indkøbs Pris</label><br>
-                <input asp-for="@Model.OpretLager.LagerIndkøbPris" class="form-control" /><br />
+                <input asp-for="@Model.OpretLager.LagerIndkøbPris" class="form-control" required /><br />
             </div>
 
              <div class="form-group">

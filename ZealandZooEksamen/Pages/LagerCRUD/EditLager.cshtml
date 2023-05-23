@@ -16,31 +16,31 @@
                 <form method="post">
 
                     <div >
-                    <input type="hidden" asp-for="@Model.LagerId" />
+                    <input type="hidden" asp-for="@Model.LagerId" required />
 
                     </div>
 
 
                     <div class="form-group">
                         <label>Lager Navn</label><br>
-                        <input asp-for="@Model.LagerNavn" class="form-control" /><br />
+                        <input asp-for="@Model.LagerNavn" class="form-control" required /><br />
                     </div>
 
                     <div class="form-group">
                         <label>Lager Antal</label><br>
-                        <input asp-for="@Model.LagerAntal" class="form-control" /><br />
+                        <input asp-for="@Model.LagerAntal" class="form-control" required /><br />
                         <span asp-validation-for="@Model.LagerAntal" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
                         <label>Salgs Pris</label><br>
-                        <input asp-for="@Model.LagerPris" class="form-control" /><br />
+                        <input asp-for="@Model.LagerPris" class="form-control" required /><br />
                         <span asp-validation-for="@Model.LagerPris" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
                         <label>Indkøbs Pris</label><br>
-                        <input asp-for="@Model.LagerIndkøbPris" class="form-control" /><br />
+                        <input asp-for="@Model.LagerIndkøbPris" class="form-control" required /><br />
                         <span asp-validation-for="@Model.LagerIndkøbPris" class="text-danger"></span>
                     </div>
 

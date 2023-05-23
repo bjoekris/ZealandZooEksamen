@@ -16,40 +16,40 @@
 
             <div class="form-group">
                 <label asp-for="@Model.OpretEvent.Navn" class="control-label">Event Navn</label><br>
-                <input asp-for="@Model.OpretEvent.Navn" class="form-control-sm" /><br>
+                <input asp-for="@Model.OpretEvent.Navn" class="form-control-sm" required /><br>
             </div>
 
             <div class="form-group">
                 <label asp-for="@Model.OpretEvent.EventInfo" class="control-label">Event Info</label><br>
-                <input asp-for="@Model.OpretEvent.EventInfo" class="form-control-sm" /><br>
+                <input asp-for="@Model.OpretEvent.EventInfo" class="form-control-sm" required /><br>
             </div>
 
             <div class="form-group">
                 <label for="dato">Dato:</label>
-                <input type="date" asp-for="@Model.OpretEvent.Dato" class="form-control" /><br />
+                <input type="date" asp-for="@Model.OpretEvent.Dato" class="form-control" required /><br />
             </div>
 
             <div class="form-group">
                 <label>Start tid</label><br>
-                <input type="time" asp-for="@Model.OpretEvent.TimeStart" class="form-control" /><br />
+                <input type="time" asp-for="@Model.OpretEvent.TimeStart" class="form-control" required /><br />
             </div>
 
             <div class="form-group">
                 <label>Slut tid</label><br>
-                <input type="time" asp-for="@Model.OpretEvent.TimeEnd" class="form-control" /><br />
+                <input type="time" asp-for="@Model.OpretEvent.TimeEnd" class="form-control" required /><br />
                 <span asp-validation-for="@Model.OpretEvent.TimeEnd" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label>Maks antal deltagere</label><br>
-                <input asp-for="@Model.OpretEvent.MaksDeltagere" class="form-control-sm" /><br />
+                <input asp-for="@Model.OpretEvent.MaksDeltagere" class="form-control-sm" required /><br />
             </div>
 
-            <div class="form-group">
+            @*<div class="form-group">
                 <input type="hidden" asp-for="@Model.OpretEvent.AntalDeltagere"/>
-                @*<label>Antal deltagere</label><br>
-                <input asp-for="@Model.OpretEvent.AntalDeltagere" class="form-control-sm" /><br />*@
-            </div>
+                <label>Antal deltagere</label><br>
+                <input asp-for="@Model.OpretEvent.AntalDeltagere" class="form-control-sm" /><br />
+            </div>*@
             
             <div class="form-group">
                 <input type="submit" class="btn btn-success" class="form-col" value="Opret Event" asp-page-handler="Opret" />
