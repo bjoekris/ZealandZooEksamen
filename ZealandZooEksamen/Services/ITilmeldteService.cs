@@ -13,5 +13,6 @@ namespace ZealandZooEksamen.Services
         public Tilmeldte DeleteTilmelding(int tilmeldingId);
 
         public double CountTilmeldinger(int eventId);
+        public List<Tilmeldte> GetAllById(int eventId);
     }
 }

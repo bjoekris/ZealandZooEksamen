@@ -140,5 +140,29 @@ namespace ZealandZooEksamen.Services
 
             return count;
         }
+
+        public List<Tilmeldte> GetAllById(int eventId)
+        {
+            String sql = "select * from TilmeldteEvent where EventId=@eventId";
+
+            //connection
+            SqlConnection conn = new SqlConnection(ConnectionString);
+            conn.Open();
+
+            //kommando
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@eventId", eventId);
+
+            //Sendes til server og få svar ("reader" er svar fra databasen).
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            //Laver en liste som svarene sættes ind i)
+            List<Tilmeldte> tilmeldte = new List<Tilmeldte>();
+            while (reader.Read())
+            {
+                tilmeldte.Add(ReadTilmeldte(reader));
+            }
+            return tilmeldte;
+        }
     }
 }
