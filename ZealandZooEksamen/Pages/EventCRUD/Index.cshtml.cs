@@ -67,9 +67,6 @@ namespace ZealandZooEksamen.Pages.EventCRUD
             }
         }
 
-
-
-
         public double LedigePladser(int eventId)
         {
 

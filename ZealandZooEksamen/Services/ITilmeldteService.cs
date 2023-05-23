@@ -8,7 +8,9 @@ namespace ZealandZooEksamen.Services
 
         public Tilmeldte FindTilmeldte(int tilmeldingId);
 
-        public Tilmeldte CreateTilmeldte(Tilmeldte t);
+        public Tilmeldte CreateTilmeldte(Tilmeldte tilmeldte, int eventId);
+
+        public Tilmeldte DeleteTilmelding(int tilmeldingId);
 
     }
 }

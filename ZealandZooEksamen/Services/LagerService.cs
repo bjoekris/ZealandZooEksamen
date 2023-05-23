@@ -1,4 +1,4 @@
-﻿using DocumentFormat.OpenXml.InkML;
+﻿    using DocumentFormat.OpenXml.InkML;
 using DocumentFormat.OpenXml.Office.Word;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System.Data.SqlClient;
@@ -165,7 +165,7 @@ namespace ZealandZooEksamen.Services
 
         public Lager EditLager(int lagerId, Lager lager)
         {
-            String sql = "update Lager set LagerNavn=@LagerNavn, LagerAntal=@LagerAntal, LagerPris=@LagerPris, LagerIndkøbPris=@LagerIndkøbPris";
+            String sql = "update Lager set LagerNavn=@LagerNavn, LagerAntal=@LagerAntal, LagerPris=@LagerPris, LagerIndkøbPris=@LagerIndkøbPris where LagerId=@LagerId";
 
             SqlConnection conn = new SqlConnection(ConnectionString);
             conn.Open();

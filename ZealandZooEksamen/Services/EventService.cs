@@ -29,7 +29,7 @@ namespace ZealandZooEksamen.Services
 
                 int row = cmd.ExecuteNonQuery();
 
-            if(row == 1)
+            if(row >= 1)
             {
                 return e;
             }
@@ -44,7 +44,7 @@ namespace ZealandZooEksamen.Services
 
         public Event CreateEvent(Event ev)
         {
-            String sql = @"insert into Event values(@Navn, @Dato, @TimeStart, @TimeEnd, @MaksDeltagere, @TilmeldingId, @EventInfo)";
+            String sql = @"insert into Event values(@Navn, @Dato, @TimeStart, @TimeEnd, @MaksDeltagere, @EventInfo)";
 
             SqlConnection conn = new SqlConnection(ConnectionString);
             conn.Open();
@@ -55,7 +55,6 @@ namespace ZealandZooEksamen.Services
             cmd.Parameters.AddWithValue("@TimeStart", ev.TimeStart);
             cmd.Parameters.AddWithValue("@TimeEnd", ev.TimeEnd);
             cmd.Parameters.AddWithValue("@MaksDeltagere", ev.MaksDeltagere);
-            cmd.Parameters.AddWithValue("@TilmeldingId", 0); //Skal adde en foreign key, men skal bruge Tilmelding Service først, 0 er midlertidig.
             cmd.Parameters.AddWithValue("@EventInfo", ev.EventInfo);
 
             int row = cmd.ExecuteNonQuery();
@@ -122,20 +121,20 @@ namespace ZealandZooEksamen.Services
             e.TimeStart = reader.GetString(3);
             e.TimeEnd = reader.GetString(4);
             e.MaksDeltagere = reader.GetDouble(5);
-            //e.TilmeldingId = reader.GetInt32(6);
-            e.EventInfo = reader.GetString(7);
+            e.EventInfo = reader.GetString(6);
 
             return e;
         }
         
         public Event EditEvent(int eventId, Event events)
         {
-            String sql = "update Event set Navn=@Navn, Dato=@Dato, TimeStart=@TimeStart, TimeEnd=@TimeEnd, MaksDeltagere=@MaksDeltagere, EventInfo=@EventInfo";
+            String sql = "update Event set Navn=@Navn, Dato=@Dato, TimeStart=@TimeStart, TimeEnd=@TimeEnd, MaksDeltagere=@MaksDeltagere, EventInfo=@EventInfo where EventId=@EventId";
             SqlConnection conn = new SqlConnection(ConnectionString);
             conn.Open();
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
+            cmd.Parameters.AddWithValue("@EventId", events.EventId);
             cmd.Parameters.AddWithValue("@Navn", events.Navn);
             cmd.Parameters.AddWithValue("@Dato", events.Dato);
             cmd.Parameters.AddWithValue("@TimeStart", events.TimeStart);

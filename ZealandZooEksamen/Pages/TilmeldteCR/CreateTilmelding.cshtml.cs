@@ -20,15 +20,23 @@ namespace ZealandZooEksamen.Pages.TilmeldteCR
             _tilmeldteService = tilmeldteService;
         }
 
-        public IActionResult OnPostOpret()
+        [BindProperty]
+        public int eventId { get; set; }
+
+        public void OnGet(int eventId)
         {
-            _tilmeldteService.CreateTilmeldte(OpretTilmeldte);
+            this.eventId = eventId;
+        }
+
+        public IActionResult OnPostOpret(int eventId)
+        {
+            _tilmeldteService.CreateTilmeldte(OpretTilmeldte, eventId);
 
             return RedirectToPage("IndexTilmelding");
         }
-        public IActionResult OnPostBekræft()
+        public IActionResult OnPostBekræft(int eventId)
         {
-            _tilmeldteService.CreateTilmeldte(OpretTilmeldte);
+            _tilmeldteService.CreateTilmeldte(OpretTilmeldte, eventId);
             return RedirectToPage("IndexTilmelding");
         }
     }

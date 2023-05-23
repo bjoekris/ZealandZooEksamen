@@ -13,6 +13,7 @@ builder.Services.AddSingleton<IEventService, EventService>();
 //builder.Services.AddSingleton<IUserService, UserService>();
 builder.Services.AddSession(); // opretter login session
 builder.Services.AddSingleton<ILagerService, LagerService>();
+builder.Services.AddSingleton<ISalgService, SalgService>();
 
 var app = builder.Build();
 

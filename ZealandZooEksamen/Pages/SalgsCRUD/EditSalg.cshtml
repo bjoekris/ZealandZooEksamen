@@ -1,0 +1,58 @@
+﻿@page
+@model ZealandZooEksamen.Pages.SalgsCRUD.EditSalgModel
+@{
+}
+
+@*Bjørn*@
+
+
+<div class="container border-2 rounded-2">
+
+    <h1>Ændre Varer @Model.SalgsId @Model.SalgsNavn</h1>
+    <div class="row">
+        <div class="col-md-6 text-white bg-danger">
+            <form method="post">
+
+                <div>
+                    <input type="hidden" asp-for="@Model.SalgsId" />
+
+                </div>
+
+
+                <div class="form-group">
+                    <label>Lager Navn</label><br>
+                    <input asp-for="@Model.SalgsNavn" class="form-control" /><br />
+                </div>
+
+                <div class="form-group">
+                    <label>Lager Antal</label><br>
+                    <input asp-for="@Model.SalgsAntal" class="form-control" /><br />
+                    <span asp-validation-for="@Model.SalgsAntal" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Salgs Pris</label><br>
+                    <input asp-for="@Model.SalgsPris" class="form-control" /><br />
+                    <span asp-validation-for="@Model.SalgsPris" class="text-danger"></span>
+                </div>
+
+          
+
+
+
+                <form method="post">
+                    <div class="form-group">
+                        <input type="submit" value="Ændre @Model.SalgsNavn" asp-page-handler="Edit" asp-route-salgsId="@Model.SalgsId" class="btn btn-dark" />
+                    </div>
+                    <p></p>
+                    <div class="form-group">
+                        <input type="submit" value="Fortryd" asp-page-handler="Fortryd" class="btn btn-dark" />
+                    </div>
+                    <p></p>
+                </form>
+
+            </form>
+        </div>
+    </div>
+
+</div>
