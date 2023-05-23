@@ -15,9 +15,9 @@ namespace ZealandZooEksamen.Pages.TilmeldteCR
         }
         public List<Tilmeldte> Tilmeldte { get; set; }
 
-        public void OnGet(int TilmeldingId)
+        public void OnGet(int eventId)
         {
-            Tilmeldte = _tilmeldteService.GetAllTilmeldte();
+            Tilmeldte = _tilmeldteService.GetAllById(eventId);
         }
     }
 }

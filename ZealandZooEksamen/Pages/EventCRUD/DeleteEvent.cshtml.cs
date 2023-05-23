@@ -10,7 +10,7 @@ namespace ZealandZooEksamen.Pages.EventCRUD
     public class DeleteEventModel : PageModel
     {
         private IEventService _service;
-        private ITilmeldteService _tilmeldingService;
+        private ITilmeldteService _tilmeldteService;
 
         [BindProperty]
         public Event SletEvent { get; set; }
@@ -18,10 +18,12 @@ namespace ZealandZooEksamen.Pages.EventCRUD
         [BindProperty]
         public Event SletMockEvent { get; set; }
 
-        public DeleteEventModel(IEventService service, ITilmeldteService tilmeldingService)
+        public List<Tilmeldte> Tilmeldte { get; set; }
+
+        public DeleteEventModel(IEventService service, ITilmeldteService tilmeldteService)
         {
             _service = service;
-            _tilmeldingService = tilmeldingService;
+            _tilmeldteService = tilmeldteService;
         }
         public void OnGet(int eventId)
         {
@@ -38,6 +40,11 @@ namespace ZealandZooEksamen.Pages.EventCRUD
         public IActionResult OnPostFortryd()
         {
             return RedirectToPage("/Admin");
+        }
+        public double Tæler(int eventId)
+        {
+            double Tæler = _tilmeldteService.CountTilmeldinger(eventId);
+            return Tæler;
         }
     }
 }

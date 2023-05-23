@@ -1,17 +1,21 @@
-﻿namespace ZealandZooEksamen.Model
+﻿using DocumentFormat.OpenXml.Wordprocessing;
+using System.ComponentModel.DataAnnotations;
+
+namespace ZealandZooEksamen.Model
 {
     public class Tilmeldte
     {
         public int TilmeldingId { get; set; }
         public string Navn { get; set; }
 
-        public int Telefon { get; set; }
+        [MaxLength(8)]
+        public string Telefon { get; set; }
 
 
         public Tilmeldte() { }
 
 
-        public Tilmeldte(int tilmeldingId, string navn, int telefon) 
+        public Tilmeldte(int tilmeldingId, string navn, string telefon) 
         {
             TilmeldingId = tilmeldingId;
             Navn = navn;

@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using DocumentFormat.OpenXml.Spreadsheet;
+using Microsoft.Extensions.Logging;
 using System.Data.SqlClient;
 using ZealandZooEksamen.Model;
 
@@ -94,7 +95,7 @@ namespace ZealandZooEksamen.Services
 
             t.TilmeldingId = reader.GetInt32(0);
             t.Navn = reader.GetString(1);
-            t.Telefon = reader.GetInt32(2);
+            t.Telefon = reader.GetString(2);
 
             return t;
         }
@@ -125,6 +126,43 @@ namespace ZealandZooEksamen.Services
             {
                 return null;
             }
+        }
+
+        public double CountTilmeldinger(int eventId)
+        {
+            SqlConnection conn = new SqlConnection(ConnectionString);
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand("select count(*) from TilmeldteEvent where EventId=@eventId", conn);
+            cmd.Parameters.AddWithValue("@eventid", eventId);
+
+            Int32 count = (Int32) cmd.ExecuteScalar();
+
+            return count;
+        }
+
+        public List<Tilmeldte> GetAllById(int eventId)
+        {
+            String sql = "select * from TilmeldteEvent where EventId=@eventId";
+
+            //connection
+            SqlConnection conn = new SqlConnection(ConnectionString);
+            conn.Open();
+
+            //kommando
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@eventId", eventId);
+
+            //Sendes til server og få svar ("reader" er svar fra databasen).
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            //Laver en liste som svarene sættes ind i)
+            List<Tilmeldte> tilmeldte = new List<Tilmeldte>();
+            while (reader.Read())
+            {
+                tilmeldte.Add(ReadTilmeldte(reader));
+            }
+            return tilmeldte;
         }
     }
 }
