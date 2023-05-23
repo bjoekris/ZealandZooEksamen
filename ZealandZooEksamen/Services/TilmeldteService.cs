@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using DocumentFormat.OpenXml.Spreadsheet;
+using Microsoft.Extensions.Logging;
 using System.Data.SqlClient;
 using ZealandZooEksamen.Model;
 
@@ -125,6 +126,19 @@ namespace ZealandZooEksamen.Services
             {
                 return null;
             }
+        }
+
+        public double CountTilmeldinger(int eventId)
+        {
+            SqlConnection conn = new SqlConnection(ConnectionString);
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand("select count(*) from TilmeldteEvent where EventId=@eventId", conn);
+            cmd.Parameters.AddWithValue("@eventid", eventId);
+
+            Int32 count = (Int32) cmd.ExecuteScalar();
+
+            return count;
         }
     }
 }
