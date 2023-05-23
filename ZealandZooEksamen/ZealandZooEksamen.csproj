@@ -7,7 +7,6 @@
 	  <AspNetCoreModuleName>AspNetCoreModule</AspNetCoreModuleName>
 	  <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
 	  
-	  
   </PropertyGroup>
 
   <ItemGroup>
