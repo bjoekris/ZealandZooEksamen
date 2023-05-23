@@ -4,6 +4,10 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+	  <AspNetCoreModuleName>AspNetCoreModule</AspNetCoreModuleName>
+	  <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+	  
+	  
   </PropertyGroup>
 
   <ItemGroup>
