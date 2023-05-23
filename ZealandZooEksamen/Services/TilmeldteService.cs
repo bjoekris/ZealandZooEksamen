@@ -95,7 +95,7 @@ namespace ZealandZooEksamen.Services
 
             t.TilmeldingId = reader.GetInt32(0);
             t.Navn = reader.GetString(1);
-            t.Telefon = reader.GetInt32(2);
+            t.Telefon = reader.GetString(2);
 
             return t;
         }
