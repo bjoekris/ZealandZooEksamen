@@ -43,10 +43,13 @@
                 <td>@events.MaksDeltagere</td>
 
                 @*giver kun admin adgang til rediger*@
-                <td><a class="btn btn-warning" asp-page="EventCRUD/EditEvent" asp-route-eventId="@events.EventId">Rediger</a></td>
+                @if (ZealandZooEksamen.Services.UserService.iAmAdmin)
+                {
+                    <td><a class="btn btn-warning" asp-page="EventCRUD/EditEvent" asp-route-eventId="@events.EventId">Rediger</a></td>
 
-                @*giver kun admin adgang til slet*@
-                <td><a class="btn btn-danger" asp-page="EventCRUD/DeleteEvent" asp-route-eventId="@events.EventId">Slet</a></td>
+                    @*giver kun admin adgang til slet*@
+                    <td><a class="btn btn-danger" asp-page="EventCRUD/DeleteEvent" asp-route-eventId="@events.EventId">Slet</a></td>
+                }
             </tr>
         }
     </tbody>
