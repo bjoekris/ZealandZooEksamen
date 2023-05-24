@@ -6,7 +6,8 @@
 }
 
 @*User story 14 - Magnus*@
-
+@if (ZealandZooEksamen.Services.UserService.iAmAdmin)
+                        {
 <div class="row">
     <div class="col-sm-3 text-black bg-light">
         @*<p>Event Id: @Model.SletMockEvent.EventId</p>
@@ -40,3 +41,5 @@
         </form>
     </div>
 </div>
+
+                }

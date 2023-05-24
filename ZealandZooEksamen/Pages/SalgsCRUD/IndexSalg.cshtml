@@ -29,13 +29,17 @@
                 <td>@vare.SalgsNavn</td>
                 <td>@vare.SalgsAntal</td>
                 <td>@vare.SalgsPris</td>
-                
 
-                <td><a class="btn btn-warning" asp-page="EditSalg" asp-route-salgsId="@vare.SalgsId">Rediger Salg</a></td>
+                @if (ZealandZooEksamen.Services.UserService.iAmAdmin)
+                {
+                    <td><a class="btn btn-warning" asp-page="EditSalg" asp-route-salgsId="@vare.SalgsId">Rediger Salg</a></td>
 
 
-                <td><a class="btn btn-danger" asp-page="DeleteSalg" asp-route-salgsId="@vare.SalgsId">Slet Salg</a></td>
+                    <td><a class="btn btn-danger" asp-page="DeleteSalg" asp-route-salgsId="@vare.SalgsId">Slet Salg</a></td>
+                }
             </tr>
+
+
 
 
         }

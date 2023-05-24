@@ -5,43 +5,46 @@
 
 @*User story 10 - Bjørn*@
 
-<div class="row">
-    <div class="col-md-6 text-black bg-light">
-        <form method="post">
-            <div class="form-group">
-                <input type="hidden" asp-for="@Model.OpretLager.LagerId" />
-                @*<label asp-for="@Model.OpretLager.LagerId" class="control-label">LagerId</label><br>
+@if (ZealandZooEksamen.Services.UserService.iAmAdmin)
+{
+
+    <div class="row">
+        <div class="col-md-6 text-black bg-light">
+            <form method="post">
+                <div class="form-group">
+                    <input type="hidden" asp-for="@Model.OpretLager.LagerId" />
+                    @*<label asp-for="@Model.OpretLager.LagerId" class="control-label">LagerId</label><br>
                 <input asp-for="@Model.OpretLager.LagerId" class="form-control" /><br>*@
-            </div>
+                </div>
 
-            <div class="form-group">
-                <label>Produkt Navn</label><br>
-                <input asp-for="@Model.OpretLager.LagerNavn" class="form-control" required /><br />
-            </div>
+                <div class="form-group">
+                    <label>Produkt Navn</label><br>
+                    <input asp-for="@Model.OpretLager.LagerNavn" class="form-control" required /><br />
+                </div>
 
-            <div class="form-group">
-                <label>Antal </label><br>
-                <input asp-for="@Model.OpretLager.LagerAntal" class="form-control" required /><br />
-            </div>
+                <div class="form-group">
+                    <label>Antal </label><br>
+                    <input asp-for="@Model.OpretLager.LagerAntal" class="form-control" required /><br />
+                </div>
 
-            <div class="form-group">
-                <label>Salgs Pris</label><br>
-                <input asp-for="@Model.OpretLager.LagerPris" class="form-control" required /><br />
-                <span asp-validation-for="@Model.OpretLager.LagerPris" class="text-danger"></span>
-            </div>
+                <div class="form-group">
+                    <label>Salgs Pris</label><br>
+                    <input asp-for="@Model.OpretLager.LagerPris" class="form-control" required /><br />
+                    <span asp-validation-for="@Model.OpretLager.LagerPris" class="text-danger"></span>
+                </div>
 
-            <div class="form-group">
-                <label>Indkøbs Pris</label><br>
-                <input asp-for="@Model.OpretLager.LagerIndkøbPris" class="form-control" required /><br />
-            </div>
+                <div class="form-group">
+                    <label>Indkøbs Pris</label><br>
+                    <input asp-for="@Model.OpretLager.LagerIndkøbPris" class="form-control" required /><br />
+                </div>
 
-             <div class="form-group">
-                <input type="submit" value="Opret Varer" asp-page-handler="Opret" />
-            </div>
+                <div class="form-group">
+                    <input type="submit" value="Opret Varer" asp-page-handler="Opret" />
+                </div>
 
 
-        </form>
-        
+            </form>
+
+        </div>
     </div>
-</div>
-
+}

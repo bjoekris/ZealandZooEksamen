@@ -32,12 +32,15 @@
                 <td>@vare.LagerPris</td>
                 <td>@vare.LagerIndkøbPris</td>
 
-                <td><a class="btn btn-warning" asp-page="EditLager" asp-route-lagerId="@vare.LagerId">Rediger vare</a></td>
+                @if (ZealandZooEksamen.Services.UserService.iAmAdmin)
+                {
+                    <td><a class="btn btn-warning" asp-page="EditLager" asp-route-lagerId="@vare.LagerId">Rediger vare</a></td>
 
-    
-                <td><a class="btn btn-danger" asp-page="DeleteLager" asp-route-lagerId="@vare.LagerId">Slet vare</a></td>
+
+                    <td><a class="btn btn-danger" asp-page="DeleteLager" asp-route-lagerId="@vare.LagerId">Slet vare</a></td>
+                }
             </tr>
-
+                
 
         }
     </tbody>

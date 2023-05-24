@@ -5,6 +5,8 @@
 
 @*Bjørn*@
 
+@if (ZealandZooEksamen.Services.UserService.iAmAdmin)
+                        {
 <div class="row">
     <div class="col-sm-3 text-black bg-light">  
         <p>Lager Id: @Model.SletSalg.SalgsId</p>
@@ -27,3 +29,5 @@
         </form>
     </div>
 </div>
+
+                        }

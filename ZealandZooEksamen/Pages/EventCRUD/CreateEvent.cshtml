@@ -3,7 +3,8 @@
 @{
 }
 @*Kader*@
-
+@if (ZealandZooEksamen.Services.UserService.iAmAdmin)
+                        {
 <div class="row">
     <div class="col-md-6 text-black bg-light">
         <form method="post">
@@ -58,3 +59,5 @@
         
     </div>
 </div>
+
+                }
