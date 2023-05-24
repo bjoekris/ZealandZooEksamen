@@ -4,21 +4,25 @@
     ViewData["Title"] = "Se " + @Model.SeEvent.Navn;
 }
 
-<form>
-    <div class="form-group">
-        <input type="submit" value="Tilbage" class="btn btn-primary" asp-page="Kalender" />
+<body class="bg-light">
+    <div class="container bg-yellow rounded-2" style="margin: auto; width: 50%;">
+        <br />
+        <p>Navn: <strong>@Model.SeEvent.Navn</strong></p>
+        <p>Dato: <strong>@Model.SeEvent.Dato</strong></p>
+        <div>
+            <p>Information: <strong>@Model.SeEvent.EventInfo</strong></p>
+        </div>
+        <p>Antal Deltagere: <strong>@Model.SeEvent.AntalDeltagere</strong></p>
+        <p>Maksimum Deltagere: <strong>@Model.SeEvent.MaksDeltagere</strong></p>
+        <br />
+        <p>Start Tid: <strong>@Model.SeEvent.TimeStart</strong></p>
+        <p>Slut Tid: <strong>@Model.SeEvent.TimeEnd</strong></p>
+        
+        <form>
+            <div class="form-group">
+                <input type="submit" value="Tilbage" class="btn btn-primary" asp-page="Kalender" />
+            </div>
+        </form>
+        <br />
     </div>
-</form>
-
-<div style="margin: auto; width: 50%;">
-    <p>Navn: <strong>@Model.SeEvent.Navn</strong></p>
-    <p>Dato: <strong>@Model.SeEvent.Dato</strong></p>
-    <div>
-        <p>Information: <strong>@Model.SeEvent.EventInfo</strong></p>
-    </div>
-    <p>Antal Deltagere: <strong>@Model.SeEvent.AntalDeltagere</strong></p>
-    <p>Maksimum Deltagere: <strong>@Model.SeEvent.MaksDeltagere</strong></p>
-    <br />
-    <p>Start Tid: <strong>@Model.SeEvent.TimeStart</strong></p>
-    <p>Slut Tid: <strong>@Model.SeEvent.TimeEnd</strong></p>
-</div>
+</body>

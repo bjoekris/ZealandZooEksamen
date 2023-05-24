@@ -6,37 +6,39 @@
 }
 
 @*User story 14 - Magnus*@
-
-<div class="row">
-    <div class="col-sm-3 text-black bg-light">
-        @*<p>Event Id: @Model.SletMockEvent.EventId</p>
-        <p>Event Navn: @Model.SletMockEvent.Navn</p>
-        <p>Event Dato: @Model.SletMockEvent.Dato</p>
-        <p>Event Info: @Model.SletMockEvent.EventInfo</p>
-        <p>Event Antal Deltagere: @Model.SletMockEvent.AntalDeltagere</p>
-        <p>Event Maksimum Deltagere: @Model.SletMockEvent.MaksDeltagere</p>
-        <p>Event Start Tid: @Model.SletMockEvent.TimeStart</p>
-        <p>Event Slut Tid: @Model.SletMockEvent.TimeEnd</p>*@
+<body class="bg-light">
+    <div class="row">
+        <div class="col-sm-3 text-black bg-yellow">
+            @*<p>Event Id: @Model.SletMockEvent.EventId</p>
+            <p>Event Navn: @Model.SletMockEvent.Navn</p>
+            <p>Event Dato: @Model.SletMockEvent.Dato</p>
+            <p>Event Info: @Model.SletMockEvent.EventInfo</p>
+            <p>Event Antal Deltagere: @Model.SletMockEvent.AntalDeltagere</p>
+            <p>Event Maksimum Deltagere: @Model.SletMockEvent.MaksDeltagere</p>
+            <p>Event Start Tid: @Model.SletMockEvent.TimeStart</p>
+            <p>Event Slut Tid: @Model.SletMockEvent.TimeEnd</p>*@
         
-        <p>Id: @Model.SletEvent.EventId</p>
-        <p>Navn: @Model.SletEvent.Navn</p>
-        <p>Dato: @Model.SletEvent.Dato</p>
-        <p>Info: @Model.SletEvent.EventInfo</p>
-        <p>Antal Deltagere: @Model.Tæler(Model.SletEvent.EventId)</p>
-        <p>Maksimum Deltagere: @Model.SletEvent.MaksDeltagere</p>
-        <p>Start Tid: @Model.SletEvent.TimeStart</p>
-        <p>Slut Tid: @Model.SletEvent.TimeEnd</p>
+            <p>Id: @Model.SletEvent.EventId</p>
+            <p>Navn: @Model.SletEvent.Navn</p>
+            <p>Dato: @Model.SletEvent.Dato</p>
+            <p>Info: @Model.SletEvent.EventInfo</p>
+            <p>Antal Deltagere: @Model.Tæler(Model.SletEvent.EventId)</p>
+            <p>Maksimum Deltagere: @Model.SletEvent.MaksDeltagere</p>
+            <p>Start Tid: @Model.SletEvent.TimeStart</p>
+            <p>Slut Tid: @Model.SletEvent.TimeEnd</p>
         
-        <p></p>
-        <form method="post">
-            <div class="form-group">
-                @*<input type="submit" value="Slet Event" asp-page-handler="Slet" asp-route-eventId="@Model.SletMockEvent.EventId" />*@
-                <input type="submit" value="Slet Event" class="btn btn-danger" asp-page-handler="Slet" asp-route-eventId="@Model.SletEvent.EventId" />
-            </div>
             <p></p>
-            <div class="form-group">
-                <input type="submit" value="Fortryd" class="btn btn-primary" asp-page-handler="Fortryd" />
-            </div>
-        </form>
+            <form method="post">
+                <div class="form-group">
+                    @*<input type="submit" value="Slet Event" asp-page-handler="Slet" asp-route-eventId="@Model.SletMockEvent.EventId" />*@
+                    <input type="submit" value="Slet Event" class="btn btn-danger" asp-page-handler="Slet" asp-route-eventId="@Model.SletEvent.EventId" />
+                </div>
+                <p></p>
+                <div class="form-group">
+                    <input type="submit" value="Fortryd" class="btn btn-primary" asp-page-handler="Fortryd" />
+                </div>
+                <br />
+            </form>
+        </div>
     </div>
-</div>
+</body>

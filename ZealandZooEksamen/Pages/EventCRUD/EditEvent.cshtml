@@ -1,14 +1,14 @@
 ﻿@page
 @model ZealandZooEksamen.Pages.EventCRUD.EditEventModel
 @{
-    // User Story 14 - Bjørn
+}
+    @*User Story 14 - Bjørn*@
 
-
+<body class="bg-light">
     <div class="container border-2 rounded-2">
-
         <h1>Rediger @Model.Navn</h1>
         <div class="row">
-            <div class="col-md-6 text-black bg-light">
+            <div class="col-md-6 text-black bg-yellow">
                 <form method="post">
                     <div>
                         <input type="hidden" asp-for="@Model.EventId" />
@@ -64,19 +64,10 @@
                         <div class="form-group">
                             <a asp-page="/Admin" class="btn btn-danger">Fortryd</a>
                         </div>
+                        <br />
                     </form>
                 </form>
             </div>
         </div>
-
     </div>
-
-
-
-
-
-
-
-
-
-}
+</body>
