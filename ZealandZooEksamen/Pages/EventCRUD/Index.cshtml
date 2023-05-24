@@ -25,20 +25,28 @@
                 <p>Starter <strong>@e.TimeStart</strong></p>
                 <p>Slutter <strong>@e.TimeEnd</strong></p>
                 <p>Der er <strong>@Model.LedigePladser(e.EventId)</strong> ledige pladser</p>
-                @if (ZealandZooEksamen.Services.UserService.LoggedIn)
-                {
-                    <br />
-                    <td><a class="btn btn-success" asp-page="/TilmeldteCR/CreateTilmelding" asp-route-eventId="@e.EventId">Tilmeld</a></td>
-                    <td><a class="btn btn-primary" asp-page="/TilmeldteCR/IndexTilmelding" asp-route-eventId="@e.EventId">Tilmeldings Liste</a></td>
-                }
             </div>
+            @if (ZealandZooEksamen.Services.UserService.LoggedIn)
+            {
+                <div class="card-footer">
+                    @if (Model.LedigePladser(e.EventId)>0)
+                    {
+                        <td><a class="btn btn-success" asp-page="/TilmeldteCR/CreateTilmelding" asp-route-eventId="@e.EventId">Tilmeld</a></td>
+                    }
+                    else
+                    {
+                        <td><a class="btn btn-danger disabled">Udsolgt</a></td>
+                    }
+                    <td><a class="btn btn-primary" asp-page="/TilmeldteCR/IndexTilmelding" asp-route-eventId="@e.EventId">Tilmeldings Liste</a></td>
+                </div>
+            }
         </div>
     }
 </div>
 <br />
 
 <div>
-    <h2>Gentagene Events</h2>
+    <h2>Faste åbningstider</h2>
     <table class="table table-striped table-hover">
         <thead>
             <tr>

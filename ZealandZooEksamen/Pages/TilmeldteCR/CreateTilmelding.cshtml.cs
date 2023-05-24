@@ -32,12 +32,12 @@ namespace ZealandZooEksamen.Pages.TilmeldteCR
         {
             _tilmeldteService.CreateTilmeldte(OpretTilmeldte, eventId);
 
-            return RedirectToPage("IndexTilmelding");
+            return RedirectToPage("/EventCRUD/Index");
         }
         public IActionResult OnPostBekræft(int eventId)
         {
             _tilmeldteService.CreateTilmeldte(OpretTilmeldte, eventId);
-            return RedirectToPage("IndexTilmelding");
+            return RedirectToPage("/EventCRUD/Index");
         }
     }
 }

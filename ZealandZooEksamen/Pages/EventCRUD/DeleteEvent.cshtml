@@ -18,14 +18,14 @@
         <p>Event Start Tid: @Model.SletMockEvent.TimeStart</p>
         <p>Event Slut Tid: @Model.SletMockEvent.TimeEnd</p>*@
         
-        <p>Event Id: @Model.SletEvent.EventId</p>
-        <p>Event Navn: @Model.SletEvent.Navn</p>
-        <p>Event Dato: @Model.SletEvent.Dato</p>
-        <p>Event Info: @Model.SletEvent.EventInfo</p>
-        <p>Event Antal Deltagere: @Model.SletEvent.AntalDeltagere</p>
-        <p>Event Maksimum Deltagere: @Model.SletEvent.MaksDeltagere</p>
-        <p>Event Start Tid: @Model.SletEvent.TimeStart</p>
-        <p>Event Slut Tid: @Model.SletEvent.TimeEnd</p>
+        <p>Id: @Model.SletEvent.EventId</p>
+        <p>Navn: @Model.SletEvent.Navn</p>
+        <p>Dato: @Model.SletEvent.Dato</p>
+        <p>Info: @Model.SletEvent.EventInfo</p>
+        <p>Antal Deltagere: @Model.Tæler(Model.SletEvent.EventId)</p>
+        <p>Maksimum Deltagere: @Model.SletEvent.MaksDeltagere</p>
+        <p>Start Tid: @Model.SletEvent.TimeStart</p>
+        <p>Slut Tid: @Model.SletEvent.TimeEnd</p>
         
         <p></p>
         <form method="post">

@@ -5,7 +5,7 @@
 @*Bjørn*@
 
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6 text-black bg-light">
         <form method="post">
             <div class="form-group">
                 <input type="hidden" asp-for="@Model.OpretSalg.SalgsId" />
@@ -14,23 +14,27 @@
 
             <div class="form-group">
                 <label>Produkt Navn</label><br>
-                <input asp-for="@Model.OpretSalg.SalgsNavn" class="form-control" /><br />
+                <input asp-for="@Model.OpretSalg.SalgsNavn" class="form-control" required /><br />
             </div>
 
             <div class="form-group">
                 <label>Antal </label><br>
-                <input asp-for="@Model.OpretSalg.SalgsAntal" class="form-control" /><br />
+                <input asp-for="@Model.OpretSalg.SalgsAntal" class="form-control" required /><br />
             </div>
 
             <div class="form-group">
                 <label>Salgs Pris</label><br>
-                <input asp-for="@Model.OpretSalg.SalgsPris" class="form-control" /><br />
+                <input asp-for="@Model.OpretSalg.SalgsPris" class="form-control" required /><br />
                 <span asp-validation-for="@Model.OpretSalg.SalgsPris" class="text-danger"></span>
             </div>
 
 
             <div class="form-group">
-                <input type="submit" value="Opret Solgte Varer" asp-page-handler="Opret" />
+                <input class="btn btn-success" type="submit" value="Opret Solgte Varer" asp-page-handler="Opret" />
+            </div>
+            <br />
+            <div class="form-group">
+                <a class="btn btn-danger" asp-page="IndexSalg">Fortryd</a>
             </div>
 
 
