@@ -55,7 +55,7 @@ namespace ZealandZooEksamen.Pages
 
 
             SessionHelper.SetUser(_userservice, HttpContext);
-            return RedirectToPage("EventCRUD/Index");
+            return RedirectToPage("Homepage");
         }
     }
 }

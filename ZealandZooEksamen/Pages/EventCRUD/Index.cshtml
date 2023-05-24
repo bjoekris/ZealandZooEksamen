@@ -31,13 +31,14 @@
                 <div class="card-footer">
                     @if (Model.LedigePladser(e.EventId)>0)
                     {
-                        <td><a class="btn btn-success" asp-page="/TilmeldteCR/CreateTilmelding" asp-route-eventId="@e.EventId">Tilmeld</a></td>
+                        <a class="btn btn-success" asp-page="/TilmeldteCR/CreateTilmelding" asp-route-eventId="@e.EventId">Tilmeld</a>
                     }
                     else
                     {
-                        <td><a class="btn btn-danger disabled">Udsolgt</a></td>
+                        <a class="btn btn-danger disabled">Udsolgt</a>
                     }
-                    <td><a class="btn btn-primary" asp-page="/TilmeldteCR/IndexTilmelding" asp-route-eventId="@e.EventId">Tilmeldings Liste</a></td>
+                    <h6></h6>
+                    <a class="btn btn-primary" asp-page="/TilmeldteCR/IndexTilmelding" asp-route-eventId="@e.EventId">Tilmeldings Liste</a>
                 </div>
             }
         </div>

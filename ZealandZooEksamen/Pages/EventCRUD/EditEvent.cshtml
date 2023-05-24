@@ -56,22 +56,19 @@
                         <span asp-validation-for="@Model.AntalDeltagere" class="text-danger"></span>
                     </div>*@
 
+                    <br />
+                    <form method="post">
+                        <div class="form-group">
+                            <input type="submit" value="Rediger" asp-page-handler="Edit" asp-route-eventId="@Model.EventId" class="btn btn-warning" />
+                        </div>
                         <br />
-
-                        <form method="post">
-                            <div class="form-group">
-                                <input type="submit" value="Rediger" asp-page-handler="Edit" asp-route-eventId="@Model.EventId" class="btn btn-warning" />
-                            </div>
-                            <br />
-                            <div class="form-group">
-                                <input type="submit" value="Fortryd" asp-page-handler="Fortryd" class="btn btn-primary" />
-                            </div>
-                            <p></p>
-                        </form>
-
+                        <div class="form-group">
+                            <a asp-page="/Admin" class="btn btn-danger">Fortryd</a>
+                        </div>
                     </form>
-                </div>
+                </form>
             </div>
+        </div>
 
         </div>
 

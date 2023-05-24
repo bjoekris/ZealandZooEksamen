@@ -25,10 +25,5 @@ namespace ZealandZooEksamen.Pages.EventCRUD
 
             return RedirectToPage("/Admin");
         }
-        public IActionResult OnPostBekræft()
-        {
-            return RedirectToPage("/Admin");
-        }
-
     }
 }

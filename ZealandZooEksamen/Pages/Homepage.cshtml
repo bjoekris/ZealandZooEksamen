@@ -1,0 +1,25 @@
+﻿@page
+@model ZealandZooEksamen.Pages.HomepageModel
+@{
+    ViewData["Title"] = "Zealand Zoo";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="text-center">
+    <h1> Zealand Zoo</h1>
+    <img src="~/images/Zealand Zoo.jpg" class="card-img-top w-25" alt="Zealand Zoo Logo">
+
+</div>
+
+<table class="table-center list-group-horizontal">
+    <tbody>
+        <tr>
+            <td class="td-padding">
+                <a class="btn btn-dark btn-size" asp-page="/EventCRUD/Index">Event Tiles</a>
+            </td>
+            <td class="td-padding">
+                <a class="btn btn-dark btn-size" asp-page="/Kalender/Kalender">Kalender</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

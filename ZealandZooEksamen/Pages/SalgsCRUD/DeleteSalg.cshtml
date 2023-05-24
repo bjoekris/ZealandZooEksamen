@@ -20,11 +20,11 @@
         <form method="post">
             <div class="form-group">
                 
-                <input type="submit" value="Slet Salget" asp-page-handler="Slet" asp-route-salgsId="@Model.SletSalg.SalgsId" />
+                <input class="btn btn-danger" type="submit" value="Slet Salget" asp-page-handler="Slet" asp-route-salgsId="@Model.SletSalg.SalgsId" />
             </div>
             <p></p>
             <div class="form-group">
-                <input type="submit" value="Fortryd" asp-page-handler="Fortryd" />
+                <input class="btn btn-primary" type="submit" value="Fortryd" asp-page-handler="Fortryd" />
             </div>
         </form>
     </div>
