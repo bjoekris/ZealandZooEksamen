@@ -28,18 +28,37 @@
                 <label for="dato">Dato:</label>
                 <input type="date" asp-for="@Model.OpretEvent.Dato" class="form-control" /><br />
             </div>
+        </form>
 
+
+            <form method="post" onsubmit="return validateTimes()">
             <div class="form-group">
                 <label>Start tid</label><br>
-                <input type="time" asp-for="@Model.OpretEvent.TimeStart" class="form-control" /><br />
+                <input type="time" asp-for="@Model.OpretEvent.TimeStart" id="startTime" class="form-control" /><br />
             </div>
 
             <div class="form-group">
                 <label>Slut tid</label><br>
-                <input type="time" asp-for="@Model.OpretEvent.TimeEnd" class="form-control" /><br />
+                <input type="time" asp-for="@Model.OpretEvent.TimeEnd" id="endTime" class="form-control" /><br />
                 <span asp-validation-for="@Model.OpretEvent.TimeEnd" class="text-danger"></span>
+            </form>
+                <script>
+                    function validateTimes() 
+                    {
+                        var startTime = document.getElementById('startTime').value;
+                        var endTime = document.getElementById('endTime').value;
+
+                        if (endTime < startTime) {
+                            alert('End Time cannot be before Start Time.');
+                            return false; // Prevent form submission
+                        }
+
+                        return true; // Proceed with form submission
+                    }
+                </script>
             </div>
 
+    <form method="post">
             <div class="form-group">
                 <label>Maks antal deltagere</label><br>
                 <input asp-for="@Model.OpretEvent.MaksDeltagere" class="form-control-sm" /><br />
