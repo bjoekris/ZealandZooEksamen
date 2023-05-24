@@ -22,8 +22,15 @@
                 <label>Telefon</label><br>
                 <input asp-for="@Model.OpretTilmeldte.Telefon" class="form-control" pattern="[0-9]{8}" title="Venligst indtast 8 tegn" required /><br />
             </div>
-
-            <td><input type="submit" class="btn btn-success"  value="Tilmeld" asp-page-handler="Opret" asp-route-eventId="@Model.eventId" /></td>
+            <br />
+            <div>
+                <input type="submit" class="btn btn-success" value="Tilmeld" asp-page-handler="Opret" asp-route-eventId="@Model.eventId" />
+            </div>
+            <br />
+            <div class="form-group">
+                <a class="btn btn-danger" asp-page="/EventCRUD/Index">Fortryd</a>
+            </div>
+            
         </form>
     </div>  
 </div>

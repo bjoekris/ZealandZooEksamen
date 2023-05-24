@@ -35,10 +35,14 @@
                 <input asp-for="@Model.OpretLager.LagerIndkøbPris" class="form-control" required /><br />
             </div>
 
+            <br />
              <div class="form-group">
-                <input type="submit" value="Opret Varer" asp-page-handler="Opret" />
+                <input type="submit" value="Opret Varer" class="btn btn-success" asp-page-handler="Opret" />
             </div>
-
+            <br />
+            <div class="form-group">
+                <a class="btn btn-danger" asp-page="IndexLager">Fortryd</a>
+            </div>
 
         </form>
         

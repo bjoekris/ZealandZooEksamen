@@ -51,10 +51,14 @@
                 <input asp-for="@Model.OpretEvent.AntalDeltagere" class="form-control-sm" /><br />
             </div>*@
             
+            <br />
             <div class="form-group">
-                <input type="submit" class="btn btn-success" class="form-col" value="Opret Event" asp-page-handler="Opret" />
+                <input type="submit" class="btn btn-success form-col" value="Opret Event" asp-page-handler="Opret" />
+            </div>
+            <br />
+            <div class="form-group">
+                <a class="btn btn-danger form-col" asp-page="/Admin">Fortryd</a>
             </div>
         </form>
-        
     </div>
 </div>
