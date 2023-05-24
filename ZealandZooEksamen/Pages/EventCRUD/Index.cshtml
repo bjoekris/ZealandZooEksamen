@@ -26,8 +26,7 @@
                 <p>Slutter <strong>@e.TimeEnd</strong></p>
                 <p>Der er <strong>@Model.LedigePladser(e.EventId)</strong> ledige pladser</p>
             </div>
-            @if (ZealandZooEksamen.Services.UserService.LoggedIn)
-            {
+           
                 <div class="card-footer">
                     @if (Model.LedigePladser(e.EventId)>0)
                     {
@@ -38,9 +37,9 @@
                         <a class="btn btn-danger disabled">Udsolgt</a>
                     }
                     <h6></h6>
-                    <a class="btn btn-primary" asp-page="/TilmeldteCR/IndexTilmelding" asp-route-eventId="@e.EventId">Tilmeldings Liste</a>
+                    <a class="btn btn-primary" asp-page="/TilmeldteCR/IndexTilmelding" asp-route-eventId="@e.EventId">Tilmeldte</a>
                 </div>
-            }
+            
         </div>
     }
 </div>

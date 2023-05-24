@@ -44,7 +44,7 @@ namespace ZealandZooEksamen.Pages
             }
 
 
-            if (Name == "admin" && Password1 == "secret")
+            if (Name == "admin" && Password1 == "mmbk23")
             {
                 _userservice.SetUserLoggedIn(Name, true);
             }
