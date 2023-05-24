@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-yellow-s border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-page="/Homepage"><img class="img-fluid" src="~/images/Zealand Hjemmelavet.png" width="75" alt="Zealand Zoo Logo går til startsiden"></a>
                 
@@ -28,6 +28,10 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Kalender/kalender">Kalender</a>
                         </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/EventCRUD/Index">Events</a>
+                        </li>
+
                         @if (!ZealandZooEksamen.Services.UserService.LoggedIn)
                         {
                             <li class="nav-item">
@@ -39,8 +43,6 @@
                         @*Kun admin får adgang til eventliste, varelager og admin siden*@
                         @if (ZealandZooEksamen.Services.UserService.iAmAdmin)
                         {
-                            
-
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/LagerCRUD/IndexLager">VareLager</a>
                             </li>
@@ -85,7 +87,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted bg-yellow-s">
         <div class="container">
             &copy; 2023 - ZealandZooEksamen - <a asp-area="" asp-page="/Privacy">Om os</a>
         </div>

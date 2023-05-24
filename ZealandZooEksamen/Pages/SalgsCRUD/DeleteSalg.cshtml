@@ -4,30 +4,32 @@
 }
 
 @*Bjørn*@
-
 @if (ZealandZooEksamen.Services.UserService.iAmAdmin)
-                        {
-<div class="row">
-    <div class="col-sm-3 text-black bg-light">  
-        <p>Lager Id: @Model.SletSalg.SalgsId</p>
-        <p>Lager Navn: @Model.SletSalg.SalgsNavn</p>
-        <p>Lager Antal: @Model.SletSalg.SalgsAntal</p>
-        <p>Lager Pris: @Model.SletSalg.SalgsPris</p>
+{
+<body class="bg-light">
+    <div class="row">
+        <div class="col-sm-3 text-black bg-yellow rounded-2">
+            <br />
+            <p>Lager Id: @Model.SletSalg.SalgsId</p>
+            <p>Lager Navn: @Model.SletSalg.SalgsNavn</p>
+            <p>Lager Antal: @Model.SletSalg.SalgsAntal</p>
+            <p>Lager Pris: @Model.SletSalg.SalgsPris</p>
        
      
         
-        <p></p>
-        <form method="post">
-            <div class="form-group">
-                
-                <input class="btn btn-danger" type="submit" value="Slet Salget" asp-page-handler="Slet" asp-route-salgsId="@Model.SletSalg.SalgsId" />
-            </div>
             <p></p>
-            <div class="form-group">
-                <input class="btn btn-primary" type="submit" value="Fortryd" asp-page-handler="Fortryd" />
-            </div>
-        </form>
+            <form method="post">
+                <div class="form-group">
+                
+                    <input class="btn btn-danger" type="submit" value="Slet Salget" asp-page-handler="Slet" asp-route-salgsId="@Model.SletSalg.SalgsId" />
+                </div>
+                <p></p>
+                <div class="form-group">
+                    <input class="btn btn-primary" type="submit" value="Fortryd" asp-page-handler="Fortryd" />
+                </div>
+            </form>
+            <br />
+        </div>
     </div>
-</div>
-
-                        }
+</body>
+}

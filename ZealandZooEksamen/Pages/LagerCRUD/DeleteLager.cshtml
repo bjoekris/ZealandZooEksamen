@@ -5,29 +5,31 @@
 @*User story 10 - Bjørn*@
 
 @if (ZealandZooEksamen.Services.UserService.iAmAdmin)
-                        {
-
-<div class="row">
-    <div class="col-sm-3 text-black bg-light">  
-        <p>Lager Id: @Model.SletLager.LagerId</p>
-        <p>Lager Navn: @Model.SletLager.LagerNavn</p>
-        <p>Lager Antal: @Model.SletLager.LagerAntal</p>
-        <p>Lager Pris: @Model.SletLager.LagerPris</p>
-        <p>Lager Indkøbs Pris: @Model.SletLager.LagerIndkøbPris</p>
+{
+<body class="bg-light">
+    <div class="row">
+        <div class="col-sm-3 text-black bg-yellow rounded-2">
+            <br />
+            <p>Lager Id: @Model.SletLager.LagerId</p>
+            <p>Lager Navn: @Model.SletLager.LagerNavn</p>
+            <p>Lager Antal: @Model.SletLager.LagerAntal</p>
+            <p>Lager Pris: @Model.SletLager.LagerPris</p>
+            <p>Lager Indkøbs Pris: @Model.SletLager.LagerIndkøbPris</p>
      
         
-        <p></p>
-        <form method="post">
-            <div class="form-group">
-                
-                <input type="submit" value="Slet Varer" class="btn btn-danger" asp-page-handler="Slet" asp-route-lagerId="@Model.SletLager.LagerId" />
-            </div>
             <p></p>
-            <div class="form-group">
-                <input type="submit" value="Fortryd" class="btn btn-primary" asp-page-handler="Fortryd" />
-            </div>
-        </form>
+            <form method="post">
+                <div class="form-group">
+                
+                    <input type="submit" value="Slet Varer" class="btn btn-danger" asp-page-handler="Slet" asp-route-lagerId="@Model.SletLager.LagerId" />
+                </div>
+                <p></p>
+                <div class="form-group">
+                    <input type="submit" value="Fortryd" class="btn btn-primary" asp-page-handler="Fortryd" />
+                </div>
+                <br />
+            </form>
+        </div>
     </div>
-</div>
-
-     }     
+</body>
+}

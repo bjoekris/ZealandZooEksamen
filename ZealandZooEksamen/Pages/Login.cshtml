@@ -3,35 +3,35 @@
 @{
     ViewData["Title"] = "Login";
 }
-
-<div class="container">
-    <div class="row-cols-1">
-        <h1>Log ind</h1>
-
-
-        <form method="post">
-            <div class="form-group">
-                <label asp-for="@Model.Name" class="control-label">Navn</label><br>
-                <input asp-for="@Model.Name" class="form-control-sm" required /><br>
-            </div>
+<body class="bg-yellow">
+    <div class="container" style="text-align: center;">
+        <div class="row-cols-1">
+            <h1>Log ind</h1>
 
 
-            <div class="form-group">
-                <label asp-for="@Model.Password1" class="control-label">Password</label><br>
-                <input type="password" asp-for="@Model.Password1" class="form-control-sm"
-                       placeholder="Mindst 6 tegn" minlength="6" required>
-            <br />
-            </div>
+            <form method="post">
+                <div class="form-group">
+                    <label asp-for="@Model.Name" class="control-label">Navn</label><br>
+                    <input asp-for="@Model.Name" class="form-control-sm" required /><br>
+                </div>
 
-            <br />
-            <div class="col-auto">
-                <input class="btn btn-primary" type="submit" value="Log ind" asp-page-handler="Login" />
-            </div>
-        </form>
 
+                <div class="form-group">
+                    <label asp-for="@Model.Password1" class="control-label">Password</label><br>
+                    <input type="password" asp-for="@Model.Password1" class="form-control-sm"
+                           placeholder="Mindst 6 tegn" minlength="6" required>
+                <br />
+                </div>
+
+                <br />
+                <div class="col-auto">
+                    <input class="btn btn-primary" type="submit" value="Log ind" asp-page-handler="Login" />
+                </div>
+            </form>
+
+        </div>
     </div>
-</div>
-
+</body>
 @*<label asp-for="@Model.Password1" class="control-label">Password</label>
 <br>
 <input type="password" asp-for="@Model.Password1" class="form-control-sm" class="control-label"> Skal være mindst 6 tegn< >

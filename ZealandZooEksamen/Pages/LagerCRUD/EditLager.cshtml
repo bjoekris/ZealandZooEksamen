@@ -8,14 +8,13 @@
 @if (ZealandZooEksamen.Services.UserService.iAmAdmin)
                         {
 
-
-<div class="container border-2 rounded-2">
-
+<body class="bg-light">
+    <div class="container border-2 rounded-2">
         <h1>Ændre Varer @Model.LagerId @Model.LagerNavn</h1>
         <div class="row">
-            <div class="col-md-6 text-black bg-light">
+            <div class="col-md-6 text-black bg-yellow rounded-2">
                 <form method="post">
-
+                    <br />
                     <div >
                     <input type="hidden" asp-for="@Model.LagerId" required />
 
@@ -55,13 +54,12 @@
                         <div class="form-group">
                             <a class="btn btn-danger" asp-page="IndexLager">Fortryd</a>
                         </div>
-                        <p></p>
+                        <br />
                     </form>
 
                 </form>
             </div>
         </div>
-
     </div>
-
-                            }
+</body>
+}
