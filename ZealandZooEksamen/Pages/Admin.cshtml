@@ -54,6 +54,7 @@
 <br />
 
 <h2>Tilmeldte til Nyhedsbrev</h2>
+<a class="btn btn-success" asp-page="TilmeldingIndex">Tilmeldte til nyhedsbrev</a>
 <table>
     <thead>
         <tr>
@@ -65,6 +66,7 @@
     </thead>
 
     <tbody>
+       
         @foreach (var person in Model.Personer)
         {
             <tr>
