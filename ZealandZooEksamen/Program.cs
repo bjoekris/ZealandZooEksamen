@@ -8,6 +8,8 @@ builder.Services.AddRazorPages();
 builder.Services.AddSingleton<IPersonService, PersonService>();
 builder.Services.AddRazorPages();
 builder.Services.AddSingleton<ITilmeldteService, TilmeldteService>();
+builder.Services.AddRazorPages();
+builder.Services.AddSingleton<INyhedsbrevService, NyhedsbrevService>();
 
 builder.Services.AddSingleton<IEventService, EventService>();
 //builder.Services.AddSingleton<IUserService, UserService>();

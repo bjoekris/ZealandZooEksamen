@@ -1,0 +1,42 @@
+﻿@page
+@model ZealandZooEksamen.Pages.TilmeldingCRUD.TilmeldingIndexModel
+@{
+}
+@if (ZealandZooEksamen.Services.UserService.iAmAdmin)
+{
+
+    <h2>Nyhedsbrev (TilmeldingCRUD)</h2>
+    <a class="btn btn-success" asp-page="TilmeldingCreate">Opret ny</a>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Navn</th>
+                <th>Telefon</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var Nyhedsbrev in Model.Nyhedsbrevet)
+            {
+                <tr>
+
+
+                <td>@Nyhedsbrev.NyhedsbrevId</td>
+                <td>@Nyhedsbrev.Navn</td>
+                <td>@Nyhedsbrev.Telefon</td>
+
+
+               
+
+
+                
+            </tr>
+
+
+        }
+    </tbody>
+</table>
+
+
+}
