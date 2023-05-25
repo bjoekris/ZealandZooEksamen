@@ -32,11 +32,11 @@ namespace ZealandZooEksamen.Pages.TilmeldingCRUD
         {
             _nyhedsbrevService.CreateNyhedsbrev(OpretNyhedsbrev);
 
-            return RedirectToPage("TilmeldingIndex");
+            return RedirectToPage("ConfirmNyhedsbrev");
         }
         public IActionResult OnPostBekræft()
         {
-            return RedirectToPage("TilmeldingIndex");
+            return RedirectToPage("ConfirmNyhedsbrev");
         }
     }
 

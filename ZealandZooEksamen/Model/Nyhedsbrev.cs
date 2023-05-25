@@ -13,7 +13,7 @@ namespace ZealandZooEksamen.Model
         public Nyhedsbrev() { }
 
 
-        public Nyhedsbrev(int NyhedsbrevId, string navn, string telefon)
+        public Nyhedsbrev(int nyhedsbrevId, string navn, string telefon)
         {
             NyhedsbrevId = nyhedsbrevId;
             Navn = navn;
@@ -27,11 +27,16 @@ namespace ZealandZooEksamen.Model
 
         public override string ToString()
         {
-            return $"{{{nameof(Navn)}={Navn}, {nameof(Telefon)}={Telefon.ToString()}}}";
+            return $"{{{nameof(NyhedsbrevId)}={NyhedsbrevId.ToString()}, {nameof(Navn)}={Navn}, {nameof(Telefon)}={Telefon}}}";
         }
 
-        private readonly List<Nyhedsbrev> tilmeldt = new List<Nyhedsbrev>();
-        private int nyhedsbrevId;
+
+        private readonly List<Nyhedsbrev> tilmeldt = new List<Nyhedsbrev>()
+        {
+
+        };
+
+      
 
         public List<Nyhedsbrev> GetAllNyhedsbrev(Nyhedsbrev nyhedsbrev)
         {

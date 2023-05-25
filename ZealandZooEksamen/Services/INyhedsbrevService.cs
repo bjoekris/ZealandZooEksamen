@@ -8,6 +8,9 @@ namespace ZealandZooEksamen.Services
 
     
         public Nyhedsbrev CreateNyhedsbrev(Nyhedsbrev nyhedsbrev);
+
+
+
         
     }
 }

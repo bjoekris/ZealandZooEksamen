@@ -2,6 +2,14 @@
 @model ZealandZooEksamen.Pages.AdminModel
 @{
 }
+@if (ZealandZooEksamen.Services.UserService.iAmAdmin){
+<h2>Tilmeldte til Nyhedsbrev</h2>
+<a class="btn btn-success" asp-page="/TilmeldingCRUD/TilmeldingIndex">Se tilmeldte til nyhedsbrev</a>
+ }
+ 
+ </br>
+ </br>
+ </br>
 
 @*giver kun admin adgang til opret*@
 @if (ZealandZooEksamen.Services.UserService.iAmAdmin)
@@ -53,9 +61,8 @@
 </table>
 <br />
 
-<h2>Tilmeldte til Nyhedsbrev</h2>
-<a class="btn btn-success" asp-page="TilmeldingIndex">Tilmeldte til nyhedsbrev</a>
-<table>
+
+@*<table>
     <thead>
         <tr>
             <th>Id</th>
@@ -77,5 +84,4 @@
             </tr>
         }
     </tbody>
-</table>
-<a asp-page="Index"></a>
+</table>*@
