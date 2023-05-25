@@ -2,16 +2,16 @@
 @model ZealandZooEksamen.Pages.TilmeldingCRUD.TilmeldingCreateModel
 @{
 }
-
+<body class="bg-light">
 <div class="row">
-    <div class="col-md-6 text-black bg-light">
+    <div class="col-md-6 text-black">
         <form method="post">
 
           <div class="form-group">
           <input type="hidden" asp-for="@Model.OpretNyhedsbrev.NyhedsbrevId" />
          
           </div>
-
+          <br />
          <div class="form-group">
           <label>Navn </label><br>
           <input asp-for="@Model.OpretNyhedsbrev.Navn" class="form-control" required /><br />
@@ -19,13 +19,18 @@
 
         <div class="form-group">
         <label>Telefon Nr.</label><br>
-         <input asp-for="@Model.OpretNyhedsbrev.Telefon" class="form-control" required /><br />
+         <input asp-for="@Model.OpretNyhedsbrev.Telefon" class="form-control" pattern="[0-9]{8}" title="Venligst indtast 8 tal" required /><br />
         </div>
         <div class="form-group">
-        <input type="submit" value="Tilmeld" asp-page-handler="Opret" />
+        <input type="submit" value="Tilmeld" class="btn btn-success" asp-page-handler="Opret" />
         </div>
-
+        <br />
+        <div class="form-group">
+            <a class="btn btn-danger" asp-page="/Homepage">Fortryd</a>
+        </div>
+        <br />
         </form>
 
     </div>
 </div>
+</body>

@@ -12,7 +12,7 @@
         <div>
             <p>Information: <strong>@Model.SeEvent.EventInfo</strong></p>
         </div>
-        <p>Antal Deltagere: <strong>@Model.SeEvent.AntalDeltagere</strong></p>
+        <p>Antal Deltagere: <strong>@Model.Tæler(Model.SeEvent.EventId)</strong></p>
         <p>Maksimum Deltagere: <strong>@Model.SeEvent.MaksDeltagere</strong></p>
         <br />
         <p>Start Tid: <strong>@Model.SeEvent.TimeStart</strong></p>
