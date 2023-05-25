@@ -12,9 +12,11 @@ namespace ZealandZooEksamen.Pages
         private IEventService _service;
         private IPersonService _personService;
         private ITilmeldteService _tilmeldteService;
-        public AdminModel(IEventService service, IPersonService personService, ITilmeldteService tilmeldteService)
+        private INyhedsbrevService _brevService;
+        public AdminModel(IEventService service, IPersonService personService, ITilmeldteService tilmeldteService, INyhedsbrevService nyhedsbrevService)
         {
             _service = service;
+            _brevService = nyhedsbrevService;
             _personService = personService;
             _tilmeldteService = tilmeldteService;
         }
@@ -23,6 +25,7 @@ namespace ZealandZooEksamen.Pages
         public List<Event> Events { get; set; }
         public List<Person> Personer { get; set; }
         public List<Tilmeldte> Tilmeldte { get; set; }
+        public List<Nyhedsbrev> Nyhedsbrevet { get; set; }
 
         public void OnGet(int? eventId)
         {
@@ -39,6 +42,9 @@ namespace ZealandZooEksamen.Pages
 
                 //Tilmelding
                 Tilmeldte = _tilmeldteService.GetAllTilmeldte();
+
+                //Nyhedsbrev
+                Nyhedsbrevet = _brevService.GetAllNyhedsbrev();
             }
             else
             {
@@ -51,6 +57,7 @@ namespace ZealandZooEksamen.Pages
                 Events = _service.GetAllEvents();
                 Personer = _personService.GetAllPerson();
                 Tilmeldte = _tilmeldteService.GetAllTilmeldte();
+                Nyhedsbrevet = _brevService.GetAllNyhedsbrev();
             }
         }
         public double Tæler(int eventId)
@@ -58,5 +65,16 @@ namespace ZealandZooEksamen.Pages
             double Tæler = _tilmeldteService.CountTilmeldinger(eventId);
             return Tæler;
         }
+
+
+        //Nyhedsbrev database
+
+     
+    
+
+       
+     
+
+
     }
 }
