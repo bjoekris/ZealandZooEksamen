@@ -29,14 +29,6 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Kalender/kalender">Kalender</a>
                         </li>
 
-                        @if (!ZealandZooEksamen.Services.UserService.LoggedIn)
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Login">Log ind</a>
-                            </li>
-
-
-                        }
                         @*Kun admin får adgang til eventliste, varelager og admin siden*@
                         @if (ZealandZooEksamen.Services.UserService.iAmAdmin)
                         {
@@ -62,18 +54,23 @@
                       @*  <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/SalgsCRUD/IndexSalg">VareSalg</a>
                         </li>*@
-
-
-                        @*log ud vises kun når man er logget ind*@
-                            @if (ZealandZooEksamen.Services.UserService.LoggedIn)
-                            {
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-page="/Logout">Log ud</a>
-                                </li>
-
-                            }
-             
+                        
                     </ul>
+                    @if (!ZealandZooEksamen.Services.UserService.LoggedIn)
+                    {
+                        <div class="nav-item" style="text-align:right;">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Login">Log ind</a>
+                        </div>
+
+                    }
+                    @*log ud vises kun når man er logget ind*@
+                    @if (ZealandZooEksamen.Services.UserService.LoggedIn)
+                    {
+                        <div class="nav-item" style="text-align:right;">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Logout">Log ud</a>
+                        </div>
+
+                    }
                 </div>
             </div>
         </nav>
