@@ -9,11 +9,11 @@ namespace ZealandZooEksamen.Pages.EventCRUD
 {
     public class EditEventModel : PageModel
     {
-        private IEventService _Service;
+        private IEventService _service;
 
         public EditEventModel(IEventService service)
         {
-            _Service = service;
+            _service = service;
         }
 
         [BindProperty]
@@ -42,7 +42,7 @@ namespace ZealandZooEksamen.Pages.EventCRUD
 
         public void OnGet(int eventId)
         {
-            Event editEvent = _Service.FindEvent(eventId);
+            Event editEvent = _service.FindEvent(eventId);
 
             Navn = editEvent.Navn;
             EventInfo = editEvent.EventInfo;
@@ -54,7 +54,7 @@ namespace ZealandZooEksamen.Pages.EventCRUD
 
         public IActionResult OnPostEdit(int eventId)
         {
-            Event editEvent = _Service.FindEvent(eventId);
+            Event editEvent = _service.FindEvent(eventId);
 
             editEvent.Navn = Navn;
             editEvent.EventInfo = EventInfo;
@@ -63,7 +63,7 @@ namespace ZealandZooEksamen.Pages.EventCRUD
             editEvent.TimeEnd = TimeEnd;   
             editEvent.MaksDeltagere= MaksDeltagere;
 
-            _Service.EditEvent(eventId, editEvent);
+            _service.EditEvent(eventId, editEvent);
 
             return RedirectToPage("/Admin");
         }

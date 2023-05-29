@@ -5,7 +5,7 @@ using ZealandZooEksamen.Services;
 using ZealandZooEksamen.UserStory_12;
 
 namespace ZealandZooEksamen.Pages
-{
+{ /*Bjørn*/
     public class AdminModel : PageModel
     {
         //Services til siden
@@ -60,6 +60,8 @@ namespace ZealandZooEksamen.Pages
                 Nyhedsbrevet = _brevService.GetAllNyhedsbrev();
             }
         }
+
+        //Magnus
         public double Tæler(int eventId)
         {
             double Tæler = _tilmeldteService.CountTilmeldinger(eventId);
