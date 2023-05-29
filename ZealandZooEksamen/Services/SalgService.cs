@@ -78,27 +78,18 @@ namespace ZealandZooEksamen.Services
             if (row == 1)
             {
                 try { 
-                 
                     OpdaterLager(salg);
-
                     return salg;
-                
                 }
-
-
                 catch
                 {
                     return null;
                 }
-
             }
             else
             {
                 return null;
             }
-
-
-
         }
         
         private void OpdaterLager(Salg salg)

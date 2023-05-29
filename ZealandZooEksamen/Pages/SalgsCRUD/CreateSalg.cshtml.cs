@@ -29,7 +29,7 @@ namespace ZealandZooEksamen.Pages.SalgsCRUD
 
             return RedirectToPage("IndexSalg");
         }
-        public IActionResult OnPostBekræft()
+        public IActionResult OnPostFortryd()
         {
             return RedirectToPage("IndexSalg");
         }
