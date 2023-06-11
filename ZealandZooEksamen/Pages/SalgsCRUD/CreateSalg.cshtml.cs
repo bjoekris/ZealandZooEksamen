@@ -13,14 +13,17 @@ namespace ZealandZooEksamen.Pages.SalgsCRUD
         //public void OnGet()
         //{
         //}
+        private ILagerService _service;
         private ISalgService _salgService;
 
         [BindProperty]
         public Salg OpretSalg { get; set; }
 
-        public CreateSalgModel(ISalgService salgService)
+        public CreateSalgModel(ISalgService salgService, ILagerService service)
         {
             _salgService = salgService;
+            _service = service;
+
         }
 
         public IActionResult OnPostOpret()
@@ -34,6 +37,16 @@ namespace ZealandZooEksamen.Pages.SalgsCRUD
             return RedirectToPage("IndexSalg");
         }
 
+
+
+        public List<Lager> Lageret { get; set; }
+
+        public void OnGet()
+        {
+
+
+            Lageret = _service.GetAllLager();
+        }
 
 
 
