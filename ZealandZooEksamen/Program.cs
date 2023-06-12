@@ -18,7 +18,7 @@ builder.Services.AddSingleton<IEventService, EventService>();
 builder.Services.AddSession(); // opretter login session
 
 
-//Singleton=findes kun 1 objekt <interface,>
+//Singleton=findes kun 1 objekt 
 builder.Services.AddSingleton<ILagerService, LagerService>();
 builder.Services.AddSingleton<ISalgService, SalgService>();
 

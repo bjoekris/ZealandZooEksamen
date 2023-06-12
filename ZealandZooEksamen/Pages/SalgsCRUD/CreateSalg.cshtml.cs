@@ -48,7 +48,7 @@ namespace ZealandZooEksamen.Pages.SalgsCRUD
         
         public List<Lager> Lageret { get; set; }
 
-        //finder værdier fra service, service>lageret, lageret i View
+        //metode, finder værdier fra service, service>lageret, lageret i View
         public void OnGet()
         {
             Lageret = _service.GetAllLager();
