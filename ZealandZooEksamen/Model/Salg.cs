@@ -3,15 +3,17 @@
     public class Salg
     {
 
-
+        //properties
         public int SalgsId { get; set; }
         public string SalgsNavn { get; set; }
         public double SalgsAntal { get; set; }
         public double SalgsPris { get; set; }
 
 
+        //default konkstruktør
         public Salg() { }
 
+        //konstruktør + instansfelter (objekter)
         public Salg(int salgsId, string salgsNavn, double salgsAntal, double salgsPris)
         {
             SalgsId = salgsId;
@@ -27,6 +29,7 @@
             return ToString();
         }
 
+        //Object into string
         public override string ToString()
         {
             return $"{{{nameof(SalgsId)}={SalgsId.ToString()}, {nameof(SalgsNavn)}={SalgsNavn}, {nameof(SalgsAntal)}={SalgsAntal.ToString()}, {nameof(SalgsPris)}={SalgsPris.ToString()}}}";
@@ -35,48 +38,52 @@
 
 
 
-        private readonly List<Salg> salget = new List<Salg>()
-        {
 
-        };
+        ////default liste, Type, variabel = nyt objekt, konstruktør
 
-        public List<Salg> GetAllSalg()
-        {
-            return new List<Salg>(salget);
-        }
+        //private readonly List<Salg> salget = new List<Salg>()
+        //{
 
-        public void SletSalg(int salgsId)
-        {
-            Salg sletSalg = FindSalg(salgsId);
-            salget.Remove(sletSalg);
-        }
+        //};
 
-        public Salg FindSalg(int salgsId)
-        {
-            foreach (Salg s in salget)
-            {
-                if (s.SalgsId == salgsId)
-                {
-                    return s;
-                }
-            }
-            throw new KeyNotFoundException();
-        }
+        //public List<Salg> GetAllSalg()
+        //{
+        //    return new List<Salg>(salget);
+        //}
 
-        public void OpretSalg(Salg sa)
-        {
-            salget.Add(sa);
-        }
+        //public void SletSalg(int salgsId)
+        //{
+        //    Salg sletSalg = FindSalg(salgsId);
+        //    salget.Remove(sletSalg);
+        //}
 
-        public void EditSalg(Salg newValuesSalg)
-        {
-            Salg editSalg = FindSalg(newValuesSalg.SalgsId);
+        //public Salg FindSalg(int salgsId)
+        //{
+        //    foreach (Salg s in salget)
+        //    {
+        //        if (s.SalgsId == salgsId)
+        //        {
+        //            return s;
+        //        }
+        //    }
+        //    throw new KeyNotFoundException();
+        //}
 
-            editSalg.SalgsId = newValuesSalg.SalgsId;
-            editSalg.SalgsNavn = editSalg.SalgsNavn;
-            editSalg.SalgsAntal = newValuesSalg.SalgsAntal;
-            editSalg.SalgsPris = newValuesSalg.SalgsPris;
-        }
+
+        //public void OpretSalg(Salg sa)
+        //{
+        //    salget.Add(sa);
+        //}
+
+        //public void EditSalg(Salg newValuesSalg)
+        //{
+        //    Salg editSalg = FindSalg(newValuesSalg.SalgsId);
+
+        //    editSalg.SalgsId = newValuesSalg.SalgsId;
+        //    editSalg.SalgsNavn = editSalg.SalgsNavn;
+        //    editSalg.SalgsAntal = newValuesSalg.SalgsAntal;
+        //    editSalg.SalgsPris = newValuesSalg.SalgsPris;
+        //}
 
         //internal List<Lager> GetAllLager()
         //{

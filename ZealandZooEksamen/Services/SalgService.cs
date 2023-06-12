@@ -20,6 +20,8 @@ namespace ZealandZooEksamen.Services
         //SQL koden cmfbeAtrkR5zBaF426x3
 
 
+        //Type, variabel = nyt objekt, konstruktør
+
         private Salg lageret = new Salg();
 
 
@@ -57,10 +59,11 @@ namespace ZealandZooEksamen.Services
 
 
 
-
-
+        
+        //metode
         public Salg CreateSalg(Salg salg)
         {
+            //Input til database, sql)
             String sql = "insert into Salg values(@SalgsNavn,@SalgsAntal,@SalgsPris)";
            
 
@@ -73,8 +76,10 @@ namespace ZealandZooEksamen.Services
             cmd.Parameters.AddWithValue("@SalgsAntal", salg.SalgsAntal);
             cmd.Parameters.AddWithValue("@SalgsPris", salg.SalgsPris);
 
+            //indsætter i DB
             int row = cmd.ExecuteNonQuery();
 
+            //Tjekker fejl
             if (row == 1)
             {
                 try { 
@@ -83,6 +88,7 @@ namespace ZealandZooEksamen.Services
                 }
                 catch
                 {
+                    //fejlmeddelse)
                     return null;
                 }
             }
