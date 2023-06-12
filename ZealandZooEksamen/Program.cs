@@ -1,4 +1,5 @@
 using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+using Microsoft.EntityFrameworkCore.Internal;
 using ZealandZooEksamen.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,9 +12,13 @@ builder.Services.AddSingleton<ITilmeldteService, TilmeldteService>();
 builder.Services.AddRazorPages();
 builder.Services.AddSingleton<INyhedsbrevService, NyhedsbrevService>();
 
+
 builder.Services.AddSingleton<IEventService, EventService>();
 //builder.Services.AddSingleton<IUserService, UserService>();
 builder.Services.AddSession(); // opretter login session
+
+
+//Singleton=findes kun 1 objekt <interface,>
 builder.Services.AddSingleton<ILagerService, LagerService>();
 builder.Services.AddSingleton<ISalgService, SalgService>();
 

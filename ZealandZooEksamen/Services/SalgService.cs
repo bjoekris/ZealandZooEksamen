@@ -10,6 +10,7 @@ using ZealandZooEksamen.MockData;
 
 namespace ZealandZooEksamen.Services
 {
+    //implementering af interface
     public class SalgService : ISalgService
     {
         //Connection string. Højreklik på databasen i SQL SOE, vælg properties. Øverste property kopieres ind i "". Password skal selv findes og sættes ind.
@@ -17,7 +18,7 @@ namespace ZealandZooEksamen.Services
 
 
         private const String ConnectionString = "Data Source = mssql5.unoeuro.com; Initial Catalog = bbksolutions_dk_db_databasen; User ID = bbksolutions_dk; Password=cmfbeAtrkR5zBaF426x3;Connect Timeout = 30; Encrypt=False;TrustServerCertificate=False;ApplicationIntent = ReadWrite; MultiSubnetFailover=False\r\n";
-        //SQL koden cmfbeAtrkR5zBaF426x3
+        //cmfbeAtrkR5zBaF426x3
 
 
         //Type, variabel = nyt objekt, konstruktør
@@ -79,7 +80,7 @@ namespace ZealandZooEksamen.Services
             //indsætter i DB
             int row = cmd.ExecuteNonQuery();
 
-            //Tjekker fejl
+            //Fjerner fra lager Lager
             if (row == 1)
             {
                 try { 
@@ -88,7 +89,7 @@ namespace ZealandZooEksamen.Services
                 }
                 catch
                 {
-                    //fejlmeddelse)
+                    //fejlmeddelse
                     return null;
                 }
             }
@@ -112,7 +113,7 @@ namespace ZealandZooEksamen.Services
             int row = cmd.ExecuteNonQuery();
             if (row != 1)
             {
-                throw new Exception();
+                throw new KeyNotFoundException("Kunne ikke finde row i tabel Lager");
             }
 
         }

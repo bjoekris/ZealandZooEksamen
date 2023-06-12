@@ -2,6 +2,8 @@
 
 namespace ZealandZooEksamen.Services
 {
+    //Hvilke metoder findes
+
     public interface ISalgService
     {
         public List<Salg> GetAllSalg();

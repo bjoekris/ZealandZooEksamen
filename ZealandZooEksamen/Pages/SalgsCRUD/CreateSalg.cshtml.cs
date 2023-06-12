@@ -18,11 +18,11 @@ namespace ZealandZooEksamen.Pages.SalgsCRUD
         private ILagerService _service;
         private ISalgService _salgService;
 
-        //property, tekstfelt(bind)
+        //Salgsproperty
         [BindProperty]
         public Salg OpretSalg { get; set; }
 
-        //Konstruktør
+        //Konstruktør (depency injection) [program.cs]
         public CreateSalgModel(ISalgService salgService, ILagerService service)
         {
             _salgService = salgService;
@@ -31,7 +31,7 @@ namespace ZealandZooEksamen.Pages.SalgsCRUD
         }
 
 
-        //Metode
+        //Metode (fra interface)
         public IActionResult OnPostOpret()
         {
             _salgService.CreateSalg(OpretSalg);
@@ -44,9 +44,11 @@ namespace ZealandZooEksamen.Pages.SalgsCRUD
         }
 
 
-        //property
+        //Lager property
+        
         public List<Lager> Lageret { get; set; }
 
+        //finder værdier fra service, service>lageret, lageret i View
         public void OnGet()
         {
             Lageret = _service.GetAllLager();

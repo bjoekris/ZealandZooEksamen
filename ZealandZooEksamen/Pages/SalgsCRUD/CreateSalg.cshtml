@@ -1,7 +1,13 @@
 ﻿@page
+
+@*Finder controller*@
 @model ZealandZooEksamen.Pages.SalgsCRUD.CreateSalgModel
 @{
+    //Faneblad
+    ViewData["Title"] = "CreateSalg";
 }
+
+@*HTML*@
 @*Bjørn*@
 @if (ZealandZooEksamen.Services.UserService.iAmAdmin)
 {
@@ -65,12 +71,13 @@
                         </tr>
                     </thead>
                     <tbody>
-
+                        
+    @*hvert element (vare) *@
                 @foreach (var vare in Model.Lageret)
                 {
                             <tr>
 
-
+                                @*Felter i tabel*@
                                 @*<td>@vare.LagerId</td>*@
                                 <td>@vare.LagerNavn</td>
                                 <td>@vare.LagerAntal</td>
