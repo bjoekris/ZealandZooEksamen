@@ -44,12 +44,11 @@ namespace ZealandZooEksamen.Pages.SalgsCRUD
         }
 
 
-
+        //property
         public List<Lager> Lageret { get; set; }
 
         public void OnGet()
         {
-
             Lageret = _service.GetAllLager();
         }
 
